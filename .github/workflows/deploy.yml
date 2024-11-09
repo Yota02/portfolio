@@ -24,6 +24,6 @@ jobs:
             # Mot de passe
             password: ${{ secrets.password }}
             # Dossier de destination dans le serveur (absolu, ou relatif...)
-            remote_path: ./public_html/hello_world_site/
+            remote_path: ./public_html/portfolio/
             # Si on utilise sftp
             sftp_only: true
