@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    background-image: url('../img/background4.jpeg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed; 
+    color: #fff;
+    height: 150vh;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('assets/fonts/Butler_Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('assets/fonts/Butler_Bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 20rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.5rem;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+.content h2 {
+    font-size: 2rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.skills-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.725);
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skills-list li:hover {
+    transform: scale(1.1);
+}
+
+.skills-list img {
+    width: 60px;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .skills-list {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
