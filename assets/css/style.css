@@ -33,11 +33,12 @@ body {
 }
 
 .header {
+    margin-top: 0;
     margin-bottom: 50px;
 }
 
 .header h1 {
-    font-size: 20rem;
+    font-size: 15rem;
     margin-bottom: 10px;
 }
 
@@ -46,7 +47,7 @@ body {
 }
 
 .content {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.851);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 2%;
@@ -60,6 +61,11 @@ body {
     font-size: 1.2rem;
 }
 
+.social-section {
+    text-align: center; 
+    margin: 40px 0; 
+}
+
 .skills-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -67,6 +73,64 @@ body {
     list-style-type: none;
     padding: 0;
     margin: 20px 0;
+}
+
+.projet-list {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.projet-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.725);
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    width: auto; 
+}
+
+.projet-list li:hover {
+    transform: scale(1.1);
+}
+
+.projet-list img {
+    width: 100%;
+    height: auto;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.social-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.725);
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    width: auto; 
+}
+
+.social-list li:hover {
+    transform: scale(1.1);
+}
+
+.social-list img {
+    width: 60px;
+    height: auto;
 }
 
 .skills-list li {
