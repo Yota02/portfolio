@@ -1,11 +1,12 @@
 body {
     margin: 0;
+    margin-top: 0;
     background-image: url('../img/background4.jpeg');
     background-size: cover; 
     background-position: center;
     background-attachment: fixed; 
     color: #fff;
-    height: 150vh;
+    height: 100%;
 }
 
 @font-face {
@@ -57,8 +58,24 @@ body {
     font-size: 2rem;
 }
 
+.content a p {
+    display: inline-block;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.content a p:hover {
+    background-color: #0056b3;
+}
+
 .content p {
     font-size: 1.2rem;
+    text-align: left;
+    padding: 1%;
 }
 
 .social-section {
