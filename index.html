@@ -8,7 +8,6 @@
     <script src="assets/js/navbar.js" defer></script>
 </head>
 <body>
-
     <nav class="navbar" id="navbar">
         <button class="toggle-btn" id="toggle-btn">
             <img src="assets/img/arrow.png" alt="Arrow" id="arrow">
@@ -16,7 +15,13 @@
         <ul>
             <li><a href="#header">Accueil</a></li>
             <li><a href="#about">A propos</a></li>
-            <li><a href="#projects">Projets</a></li>
+            <li class="dropdown">
+                <a href="#projects" class="dropdown-toggle">Projets</a>
+                <ul class="dropdown-menu">
+                    <li><a href="projetIUT.html">Projets Universitaires</a></li>
+                    <li><a href="projetPerso.html">Projets Personnels</a></li>
+                </ul>
+            </li>
             <li><a href="#skills">Compétences</a></li>
             <li><a href="assets/cv/Alexis Michaux-Kinet CV.pdf" download>Télécharger CV</a></li>
         </ul>
@@ -37,15 +42,6 @@
             </ul>
         </section>
 
-        <section id="projects" class="content">
-            <h2>Mes projets</h2>
-            <ul class="projet-list">
-                <li><a href="https://github.com/Yota02"><img src="assets/img/github.png" alt="GitHub"> </a></li>
-                <li><a href="https://github.com/Yota02"><img src="assets/img/github.png" alt="GitHub"> </a></li>
-                <li><a href="https://github.com/Yota02"><img src="assets/img/github.png" alt="GitHub"> </a></li>
-            </ul>
-        </section>
-
         <section id="skills" class="content">
             <h2>Mes compétences</h2>
             <ul class="skills-list">
@@ -63,6 +59,12 @@
                 <li><img src="assets/img/vujs.png" alt="VuJs"></li>
                 <li><img src="assets/img/office.png" alt="office"></li>
             </ul>
+        </section>
+
+
+        <section id="about" class="content">
+            <h2>Mon histoire</h2>
+            
         </section>
     </div>
 

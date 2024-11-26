@@ -5,12 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Alexis Michaux-Kinet</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/navbar.js" defer></script>
 </head>
 <body>
+
+    <nav class="navbar" id="navbar">
+        <button class="toggle-btn" id="toggle-btn">
+            <img src="assets/img/arrow.png" alt="Arrow" id="arrow">
+        </button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#about">A propos</a></li>
+            <li class="dropdown">
+                <a href="#projects" class="dropdown-toggle">Projets</a>
+                <ul class="dropdown-menu">
+                    <li><a href="projetIUT.html">Projets Universitaires</a></li>
+                    <li><a href="projetPerso.html">Projets Personnels</a></li>
+                </ul>
+            </li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="assets/cv/Alexis Michaux-Kinet CV.pdf" download>Télécharger CV</a></li>
+        </ul>
+    </nav>
+
     <div class="portfolio-container">
 
+        <section id="header" class="header">
+            <h2>Mes projet personnel</h2>
+        </section>    
+
+        <section id="projects" class="content">
+            <h2>Mes projets</h2>
+            <ul class="projet-list">
+                <li><a href="https://github.com/Ssea2/kiana_kaslana_img_researcher"><img src="assets/img/kiana.png" alt="Kiana_Ia"> </a></li>
+                <li><a href="https://github.com/Yota02"><img src="assets/img/github.png" alt="GitHub"> </a></li>
+                <li><a href="https://github.com/Yota02"><img src="assets/img/github.png" alt="GitHub"> </a></li>
+            </ul>
+        </section>
+
     
-        
     </div>
+
 </body>
 </html>
