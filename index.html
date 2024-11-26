@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Alexis Michaux-Kinet</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/navbar.js" defer></script>
 </head>
 <body>
-    <div class="portfolio-container">
 
-        <section class="header">
-            <h1>Hi, i'm Alexis</h1>
+    <nav class="navbar" id="navbar">
+        <button class="toggle-btn" id="toggle-btn">
+            <img src="assets/img/arrow.png" alt="Arrow" id="arrow">
+        </button>
+        <ul>
+            <li><a href="#header">Accueil</a></li>
+            <li><a href="#about">A propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="assets/cv/Alexis Michaux-Kinet CV.pdf" download>Télécharger CV</a></li>
+        </ul>
+    </nav>
+
+    <div class="portfolio-container">
+        <section id="header" class="header">
+            <h1>Hi, I'm Alexis</h1>
         </section>
 
-        <section class="content">
+        <section id="about" class="content">
             <h2>A propos de moi</h2>
             <p>Bonjour, <br> Je suis Alexis Michaux-Kinet, étudiant en informatique, passionné par les nouvelles technologies en rapport avec l'aérospatial</p>
         
@@ -21,14 +35,9 @@
                 <li><a href="https://github.com/Yota02"><img src="assets/img/github.png" alt="GitHub"> </a></li>
                 <li><a href="https://www.linkedin.com/in/alexis-michaux-kinet-89062b2b4/"><img src="assets/img/linkedin.png" alt="LinkedIn"></a></li>
             </ul>
-
-            <a href="assets/cv/Alexis Michaux-Kinet CV.pdf" download>
-                <p>Télécharger mon CV</p>
-            </a>
-
         </section>
-    
-        <section class="content">
+
+        <section id="projects" class="content">
             <h2>Mes projets</h2>
             <ul class="projet-list">
                 <li><a href="https://github.com/Yota02"><img src="assets/img/github.png" alt="GitHub"> </a></li>
@@ -37,7 +46,7 @@
             </ul>
         </section>
 
-        <section class="content">
+        <section id="skills" class="content">
             <h2>Mes compétences</h2>
             <ul class="skills-list">
                 <li><img src="assets/img/java.png" alt="Java"></li>
@@ -55,7 +64,7 @@
                 <li><img src="assets/img/office.png" alt="office"></li>
             </ul>
         </section>
-        
     </div>
+
 </body>
 </html>
