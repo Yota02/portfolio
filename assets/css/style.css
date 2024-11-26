@@ -1,7 +1,7 @@
 body {
     margin: 0;
     margin-top: 0;
-    background-image: url('../img/background4.jpeg');
+    background: wheat;
     background-size: cover; 
     background-position: center;
     background-attachment: fixed; 
