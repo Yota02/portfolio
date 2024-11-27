@@ -1,14 +1,12 @@
+/* Base */
 body {
     margin: 0;
-    margin-top: 0;
     background: whitesmoke;
-    background-size: cover; 
-    background-position: center;
-    background-attachment: fixed; 
     color: #fff;
     height: 100%;
 }
 
+/* Navigation */
 .navbar {
     position: fixed;
     right: -200px;
@@ -19,7 +17,6 @@ body {
     transition: right 0.3s ease;
     z-index: 1000;
 }
-
 
 .navbar ul {
     list-style-type: none;
@@ -34,7 +31,7 @@ body {
 }
 
 .navbar ul li a {
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
     display: block;
     transition: color 0.3s ease;
@@ -44,8 +41,9 @@ body {
     color: #383838;
 }
 
-/* Dropdown styles */
+/* Dropdown */
 .dropdown-menu {
+    background-color: whitesmoke;
     display: none;
     position: absolute;
     left: -200px;
@@ -64,22 +62,16 @@ body {
     padding: 10px;
 }
 
-.dropdown-menu li a {
-    color: black;
-}
-
 .dropdown-menu li:hover {
-    background-color: #ffffff;
+    background-color: white;
 }
 
-/* Indicator for dropdown */
 .dropdown-toggle::after {
     content: '▸';
     margin-left: 5px;
-    display: inline-block;
 }
 
-/* Styles pour le bouton de la flèche */
+/* Toggle Button */
 .toggle-btn {
     position: fixed;
     top: 20px;
@@ -97,19 +89,13 @@ body {
     width: 30px;
     height: 30px;
     transition: transform 0.3s ease;
-    transform: rotate(0deg);
 }
 
 .toggle-btn.open {
     right: 220px;
 }
 
-/* Quand la navbar est ouverte */
-.portfolio-container.open {
-    margin-right: 200px;
-}
-
-/* Styles généraux pour la page */
+/* Portfolio Container */
 .portfolio-container {
     display: flex;
     flex-direction: column;
@@ -121,8 +107,12 @@ body {
     transition: margin-right 0.3s ease;
 }
 
+.portfolio-container.open {
+    margin-right: 200px;
+}
+
+/* Header */
 .header {
-    margin-top: 0;
     margin-bottom: 50px;
 }
 
@@ -138,10 +128,7 @@ body {
     color: #333;
 }
 
-.header p {
-    font-size: 1.5rem;
-}
-
+/* Content Sections */
 .content {
     background-color: rgba(0, 0, 0, 0.851);
     padding: 20px;
@@ -163,37 +150,7 @@ body {
     line-height: 1.6;
 }
 
-/* Social Section Styles */
-.social-list {
-    display: flex;
-    justify-content: center; 
-    gap: 20px; 
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.social-list li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.725);
-    border-radius: 8px;
-    padding: 10px;
-    transition: transform 0.3s ease;
-    width: auto; 
-}
-
-.social-list li:hover {
-    transform: scale(1.1);
-}
-
-.social-list img {
-    width: 60px;
-    height: auto;
-}
-
-/* Projects Styles */
+/* Project List */
 .projet-list {
     display: flex;
     flex-wrap: wrap;
@@ -228,25 +185,14 @@ body {
 
 .project-info {
     position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 15px;
-    color: white;
+    padding: 10px;
+    border-radius: 15px;
     transition: bottom 0.3s ease;
-}
-
-.project-info h4 {
-    margin: 0 0 5px 0;
-    font-size: 1.1rem;
-}
-
-.project-info p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #ddd;
-    padding: 0;
 }
 
 .projet-list li:hover {
@@ -255,20 +201,28 @@ body {
 }
 
 .projet-list li:hover .project-info {
-    bottom: 0;
+    bottom: 10px;
 }
 
-/* Skills Styles */
+.projet-list li:hover img {
+    transform: scale(1.05);
+}
 .skills-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     list-style-type: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 0 auto; 
+    width: 100%;
+    max-width: 1200px; 
+    justify-items: center; 
+    align-items: center; 
 }
 
+/* Style des cartes */
 .skills-list li {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,87 +230,78 @@ body {
     border-radius: 8px;
     padding: 10px;
     transition: transform 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%; 
+    max-width: 150px; 
 }
 
+/* Effet au survol */
 .skills-list li:hover {
     transform: scale(1.1);
 }
 
+/* Icône de la compétence */
 .skills-list img {
     width: 60px;
     height: auto;
+    transition: transform 0.3s ease;
 }
+
+/* Description cachée au survol */
+.skill-description {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Affichage de la description au survol */
+.skills-list li:hover .skill-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Effet de zoom sur l'icône */
+.skills-list li:hover img {
+    transform: scale(1.2);
+}
+
 
 /* Media Queries */
 @media (max-width: 1024px) {
-    .header h1 {
-        font-size: 8rem;
-    }
-    
-    .skills-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .content {
-        width: 90%;
-    }
-
-    .projet-list li {
-        width: calc(50% - 20px);
-    }
+    .header h1 { font-size: 8rem; }
+    .skills-list { grid-template-columns: repeat(3, 1fr); }
+    .content { width: 90%; }
+    .projet-list li { width: calc(50% - 20px); }
 }
 
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 6rem;
-    }
-
+    .header h1 { font-size: 6rem; }
     .dropdown-menu {
         left: -150px;
         width: 150px;
     }
-
     .content {
         width: 95%;
         padding: 15px;
     }
-
-    .projet-list li {
-        width: calc(50% - 15px);
-    }
-
-    .skills-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .skills-list { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
-    .header h1 {
-        font-size: 4rem;
-    }
-
-    .toggle-btn.open {
-        right: 200px;
-    }
-
-    .portfolio-container.open {
-        margin-right: 180px;
-    }
-
-    .projet-list li {
-        width: 100%;
-    }
-
-    .skills-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .content h2 {
-        font-size: 1.5rem;
-    }
-
-    .content p {
-        font-size: 1rem;
-    }
+    .header h1 { font-size: 4rem; }
+    .toggle-btn.open { right: 200px; }
+    .portfolio-container.open { margin-right: 180px; }
+    .projet-list li { width: 100%; }
+    .content h2 { font-size: 1.5rem; }
+    .content p { font-size: 1rem; }
 }
