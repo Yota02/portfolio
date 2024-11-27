@@ -220,7 +220,6 @@ body {
     align-items: center; 
 }
 
-/* Style des cartes */
 .skills-list li {
     position: relative;
     display: flex;
@@ -236,19 +235,16 @@ body {
     max-width: 150px; 
 }
 
-/* Effet au survol */
 .skills-list li:hover {
     transform: scale(1.1);
 }
 
-/* Icône de la compétence */
 .skills-list img {
     width: 60px;
     height: auto;
     transition: transform 0.3s ease;
 }
 
-/* Description cachée au survol */
 .skill-description {
     position: absolute;
     bottom: 10px;
@@ -264,13 +260,11 @@ body {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Affichage de la description au survol */
 .skills-list li:hover .skill-description {
     opacity: 1;
     visibility: visible;
 }
 
-/* Effet de zoom sur l'icône */
 .skills-list li:hover img {
     transform: scale(1.2);
 }
