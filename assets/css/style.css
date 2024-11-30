@@ -269,8 +269,36 @@ body {
     transform: scale(1.2);
 }
 
+.realisation-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
 
-/* Media Queries */
+.realisation-container .text {
+    flex: 1;
+    padding: 2%;
+}
+
+.realisation-container .image {
+    flex: 1;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.realisation-container .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+    width: 75%;
+}
+
+.realisation-container.reversed {
+    flex-direction: row-reverse;
+}
+
 @media (max-width: 1024px) {
     .header h1 { font-size: 8rem; }
     .skills-list { grid-template-columns: repeat(3, 1fr); }
