@@ -154,8 +154,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 2%;
-    width: 80%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1800px;
     opacity: 0;
     transform: translateY(20px);
     animation: slideIn 0.6s ease-out forwards;
@@ -342,14 +342,15 @@ body {
     animation: slideInFromRight 0.8s ease-out forwards;
 }
 
-/* Animation pour le texte */
 .realisation-container .text {
     flex: 1;
     padding: 2%;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-out forwards;
-    animation-delay: 0.3s;
+    animation: fadeInUp 0.4s ease-out forwards;
+    font-weight: bold; 
+    font-size: 1.2rem;
+    width: 20px;
 }
 
 .realisation-container.reversed .text {
@@ -373,10 +374,10 @@ body {
 }
 
 .realisation-container .image img {
-    max-width: 100%;
+    max-width: 200%;
     height: auto;
     border-radius: 10%;
-    width: 75%;
+    width: 100%;
     transform: scale(0.95);
     transition: transform 0.3s ease-out;
 }
@@ -418,9 +419,6 @@ body {
     }
 }
 
-/* Pour assurer une transition fluide sur mobile */
-
-
 /* Image Container */
 .image-container {
     position: relative;
@@ -438,15 +436,90 @@ body {
 
 .pink-rectangle {
     position: absolute;
-    width: 40%;
+    width: 50%;
     height: 40%;
     background-color: transparent;
     border: 5px solid #ff0080;
     opacity: 0;
     top: 45%;
-    left: 35%;
+    left: 48%;
     transform: translate(-25%, -25%) scale(0);
     animation: appearAndCenter 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes appearAndCenter {
+    0% {
+        opacity: 0;
+        transform: translate(-200%, -50%) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-200%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Image Container avec animation */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.pink-rectangle {
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    background-color: transparent;
+    border: 5px solid #ff0080;
+    opacity: 0;
+    top: 45%;
+    left: 48%;
+    transform: translate(-25%, -25%) scale(0);
+    animation: appearAndCenter 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Image avec animation en boucle */
+.vanishing-image {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: appearAndVanish 3s ease-in-out infinite; /* Ajout de infinite */
+    animation-delay: 1.5s;
+}
+
+@keyframes appearAndVanish {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateX(50%);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.1) translateX(-50%);
+    }
 }
 
 @keyframes appearAndCenter {
