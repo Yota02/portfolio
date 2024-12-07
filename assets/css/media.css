@@ -1,0 +1,47 @@
+/* Media Queries */
+@media (max-width: 1024px) {
+    .header h1 { font-size: 8rem; }
+    .skills-list { grid-template-columns: repeat(3, 1fr); }
+    .content { width: 90%; }
+    .projet-list li { width: calc(50% - 20px); }
+}
+
+@media (max-width: 768px) {
+    .header h1 { font-size: 6rem; }
+    .dropdown-menu {
+        left: -150px;
+        width: 150px;
+    }
+    .content {
+        width: 95%;
+        padding: 15px;
+    }
+    .skills-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .realisation-container, 
+    .realisation-container.reversed {
+        flex-direction: column;
+    }
+
+    .realisation-container .text,
+    .realisation-container .image {
+        width: 100%;
+        animation-delay: 0.2s;
+    }
+
+    .realisation-container.reversed .text,
+    .realisation-container.reversed .image {
+        animation-delay: 0.2s;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 { font-size: 4rem; }
+    .toggle-btn.open { right: 200px; }
+    .portfolio-container.open { margin-right: 180px; }
+    .projet-list li { width: 100%; }
+    .content h2 { font-size: 1.5rem; }
+    .content p { font-size: 1rem; }
+}
