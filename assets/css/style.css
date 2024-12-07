@@ -5,7 +5,7 @@
 body {
     margin: 0;
     background: linear-gradient(rgba(134, 251, 255, 0.486), rgba(254, 229, 254, 0.705));
-    color: #fff;
+    color: #000000;
     height: 100%;
 }
 
@@ -60,7 +60,7 @@ body {
 
 /* Content Sections */
 .content {
-    background-color: rgba(0, 0, 0, 0.851);
+    background-color: rgba(255, 255, 255, 0.329);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 2%;
@@ -107,4 +107,30 @@ body {
     height: auto;
     display: block;
     border-radius: 8px;
+}
+
+/* Conteneur des icônes sociales */
+.social-list {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+    margin: 20px 0; 
+}
+
+.social-list li {
+    display: inline-block; 
+}
+
+.social-list a img {
+    width: 20%; 
+    height: 20%; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-list a img:hover {
+    transform: scale(1.2); 
+    cursor: pointer;
 }
