@@ -9,6 +9,45 @@ body {
     height: 100%;
 }
 
+.cv-download {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    margin: 0;
+}
+
+.cv-download .icon {
+    width: 5%;
+    height: 5%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cv-download .text {
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    color: #000;
+}
+
+.cv-download:hover .icon {
+    opacity: 0; 
+    transform: scale(0.8); 
+}
+
+.cv-download:hover .text {
+    opacity: 1; 
+    width: auto; 
+    margin-left: 10px;
+}
+
+
 /* Portfolio Container */
 .portfolio-container {
     display: flex;

@@ -5,7 +5,8 @@
     right: -200px;
     top: 0;
     width: 200px;
-    height: 100%;
+    height: 10%;
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.505);
     transition: right 0.3s ease;
     z-index: 1000;
@@ -14,7 +15,7 @@
 .navbar ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 50px;
+    margin-top: 10%;
 }
 
 .navbar ul li {
@@ -39,30 +40,29 @@
     background-color: rgba(255, 255, 255, 0.622);
     display: none;
     position: absolute;
-    left: -200px;
-    top: 0;
+    top: 100%; /* Place le menu juste en dessous du parent */
+    left: 0; /* Aligne le menu avec le parent */
     width: 200px;
     margin-top: 0 !important;
-    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Ajustez pour un effet d'ombre */
     z-index: 1001;
+    border-radius: 20px;
 }
 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
+/* Optionnel : amélioration du padding */
 .dropdown-menu li {
     padding: 10px;
 }
 
 .dropdown-menu li:hover {
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.745);
 }
 
-.dropdown-toggle::after {
-    content: '▸';
-    margin-left: 5px;
-}
 
 /* Toggle Button */
 .toggle-btn {
