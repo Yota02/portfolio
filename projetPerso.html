@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Alexis Michaux-Kinet</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    <link rel="stylesheet" href="assets/css/projet.css">
+    <link rel="stylesheet" href="assets/css/skills.css">
+    <link rel="stylesheet" href="assets/css/realisation.css">
     <script src="assets/js/navbar.js" defer></script>
 </head>
+
 <body>
     <nav class="navbar" id="navbar">
         <button class="toggle-btn" id="toggle-btn" aria-label="Toggle Navigation">
@@ -14,7 +20,7 @@
         </button>
         <ul class="nav-list">
             <li><a href="../index.html">Accueil</a></li>
-            <li><a href="../index.html#about">A propos</a></li>
+
             <li class="dropdown">
                 <a href="#projects" class="dropdown-toggle">Projets</a>
                 <ul class="dropdown-menu">
@@ -22,14 +28,15 @@
                     <li><a href="projetPerso.html">Projets Personnels</a></li>
                 </ul>
             </li>
-            <li><a href="assets/cv/Alexis Michaux-Kinet CV.pdf" download>Télécharger CV</a></li>
+
         </ul>
     </nav>
 
     <main class="portfolio-container">
         <header id="header" class="header">
-            <h2>Mes projets universitaires</h2>
+            <h2>Mes Projets Personnels</h2>
         </header>    
+        
         <section id="projects" class="content">
 
             <ul class="projet-list">
@@ -39,16 +46,25 @@
                         <img src="assets/img/iakiana/kiana.png" alt="Kiana_Ia">
                     </a>
                     <div class="project-info">
-                        <p>IA de reconnaissance faciale</p>
+                        <h3>IA de reconnaissance faciale</h3>
                     </div>
                 </li>
 
                 <li>
                     <a href="projet/nuitdelinfo2024.html">
-                        <img src="assets/img/github.png" alt="GitHub">
+                        <img src="assets/img/nutidelinfo2024/fond_carre.gif" alt="Fond">
                     </a>
                     <div class="project-info">
-                        <p>Nuit de l'Info</p>
+                        <h3>Nuit de l'Info 2024</h3>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="projet/space_clicker.html">
+                        <img src="assets/img/spaceclicker/spaceclicker.png" alt="space clicker">
+                    </a>
+                    <div class="project-info">
+                        <h3>Space clicker</h3>
                     </div>
                 </li>
                 
@@ -56,4 +72,6 @@
         </section>
     </main>
 </body>
+
+
 </html>
