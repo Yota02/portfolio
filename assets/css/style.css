@@ -8,6 +8,32 @@ body {
     color: #000000;
 }
 
+.title-link {
+    text-decoration: none; 
+    position: relative;
+    display: inline-block;
+    color: #333; 
+    font-weight: bold;
+    transition: transform 0.2s ease; 
+}
+
+.title-link a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.title-link h2 {
+    font-size: 5rem; 
+    text-transform: uppercase; 
+    margin: 0;
+    letter-spacing: 3px; 
+}
+
+.title-link:hover {
+    transform: scale(1.02); 
+    color: #555;
+}
+
 .cv-download {
     display: flex;
     align-items: center;
