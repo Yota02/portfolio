@@ -62,7 +62,7 @@
     max-width: 100%;
     height: auto;
     border-radius: 10%;
-    width: 75%;
+    width: 50%;
     transform: scale(0.95);
     transition: transform 0.3s ease-out;
 }
@@ -70,6 +70,11 @@
 .realisation-container:hover .image img {
     transform: scale(1);
 }
+
+p {
+    text-indent: 50px;  /* Ajoute un espacement de 30px au début de chaque paragraphe */
+}
+
 
 @keyframes fadeInUp {
     from {

@@ -16,3 +16,26 @@ document.getElementById("toggle-btn").addEventListener("click", function() {
         toggleBtn.classList.remove("open");
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".timeline-content");
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight * 0.8; // Ajustez le seuil de visibilité si nécessaire
+
+        items.forEach(item => {
+            const boxTop = item.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                item.classList.add("visible");
+            } else {
+                item.classList.remove("visible"); // Pour éviter qu'elles restent visibles hors de l'écran
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+
+    // Vérifiez la visibilité une fois au chargement
+    checkVisibility();
+});
