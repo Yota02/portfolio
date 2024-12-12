@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    background: linear-gradient(rgba(134, 251, 255, 0.486), rgba(254, 229, 254, 0.705));
+    background: linear-gradient(rgb(177, 198, 255), rgb(255, 210, 255));
     color: #000000;
     height: 100%;
 }
