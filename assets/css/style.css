@@ -201,10 +201,6 @@ body {
 
 
 
-
-
-
-/* Timeline section */
 .timeline {
     position: relative;
     width: 100%;
@@ -227,12 +223,12 @@ body {
 
 .timeline-item.left {
     left: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .timeline-item.right {
     left: 50%;
-    text-align: left;
+    text-align: center;
 }
 
 .timeline-content {
@@ -291,4 +287,31 @@ body {
 .timeline-content.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Hover animation */
+.timeline-content:hover .hidden-text {
+    display: block;
+    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.hidden-text {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    color: #333;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 200px;
+    }
 }
