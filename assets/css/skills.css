@@ -1,21 +1,21 @@
 
-/* Skills List */
 .skills-list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adapte le nombre de colonnes */
     gap: 20px;
     list-style-type: none;
     padding: 0;
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
-    justify-items: center;
-    align-items: center;
+    justify-items: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
 }
 
 .skills-list li {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.725);
@@ -25,7 +25,7 @@
     cursor: pointer;
     overflow: hidden;
     width: 100%;
-    max-width: 150px;
+    max-width: 100px;
 }
 
 .skills-list li:hover {
