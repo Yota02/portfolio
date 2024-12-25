@@ -8,6 +8,48 @@ body {
     color: #000000;
 }
 
+#about {
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px; 
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    padding: 0 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
 .title-link {
     text-decoration: none; 
     position: relative;
@@ -72,7 +114,6 @@ body {
     margin-left: 10px;
 }
 
-
 /* Portfolio Container */
 .portfolio-container {
     display: flex;
@@ -104,14 +145,15 @@ body {
 
 /* Header */
 .header {
-    margin-bottom: 50px;
+    margin-top: 0;  
+    margin-bottom: 30px;
     opacity: 0;
     animation: fadeIn 0.5s ease-out forwards;
     animation-delay: 0.2s;
 }
 
 .header h1 {
-    font-size: 15rem;
+    font-size: 700%;
     margin-bottom: 10px;
     color: #333;
 }
@@ -124,12 +166,13 @@ body {
 
 /* Content Sections */
 .content {
+    color: #333;
     background-color: rgba(255, 255, 255, 0.329);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 2%;
     width: 90%;
-    max-width: 1800px;
+    max-width: 1200px;
     opacity: 0;
     transform: translateY(20px);
     animation: slideIn 0.6s ease-out forwards;
@@ -199,11 +242,6 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
-
 /* Timeline section */
 .timeline {
     position: relative;
@@ -228,6 +266,14 @@ body {
 .timeline-item.left {
     left: 0;
     text-align: right;
+}
+
+.timeline-item.left p{
+    text-align: right;
+}
+
+.timeline-item.right p{
+    text-align: left;
 }
 
 .timeline-item.right {
