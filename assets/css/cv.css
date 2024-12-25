@@ -1,0 +1,52 @@
+.cv-download {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+
+    color: white;
+    padding: 12px 20px; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.cv-download .icon {
+    width: 24px; 
+    height: 24px;
+    transition: opacity 0.4s ease, transform 0.9s ease;
+}
+
+.cv-download .text {
+    white-space: nowrap;
+    font-size: 16px;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    color: #000000;
+}
+
+.cv-download:hover {
+    transform: translateY(-3px); 
+}
+
+.cv-download:hover .icon {
+    opacity: 0;
+    width: 50px;
+    transform: scale(0.8);
+}
+
+.cv-download:hover .text {
+    opacity: 1;
+    width: auto;
+    margin-left: 12px; 
+}
+
+.cv-download:active {
+    transform: translateY(1px); 
+}

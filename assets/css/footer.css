@@ -1,0 +1,69 @@
+footer {
+    color: black;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Crée deux colonnes égales */
+    gap: 20px; /* Espacement entre les colonnes */
+    padding: 0 20px;
+}
+
+.footer-content {
+    text-align: left;
+}
+
+.footer-content h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    max-width: 300px;
+}
+
+/* Liste des icônes sociales */
+.footer-social-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start; /* Aligner les icônes à gauche (vous pouvez mettre flex-end pour les aligner à droite) */
+}
+
+.footer-social-list li {
+    display: inline;
+}
+
+.footer-social-list a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.footer-icon {
+    width: 40px; /* Réduction de la taille des icônes pour une meilleure organisation */
+    transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Footer en bas de la page */
+.footer-bottom {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    grid-column: span 2; /* Permet à cette section de prendre les deux colonnes */
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: black;
+}

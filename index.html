@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/projet.css">
     <link rel="stylesheet" href="assets/css/skills.css">
     <link rel="stylesheet" href="assets/css/realisation.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/cv.css">
     <script src="assets/js/navbar.js" defer></script>
 </head>
 <body>
@@ -37,7 +39,7 @@
         <section id="about" class="content">
             <h2>A propos de moi</h2>
             
-            <p>Bonjour, Je suis Alexis Michaux-Kinet. </p>
+            <p>Bonjour, Je suis <strong>Alexis Michaux-Kinet </strong> . </p>
 
             <p>
                 Passionné par l'informatique, en particulier dans le développement d'applications, 
@@ -47,28 +49,15 @@
                 Je suis également un fervent créateur de petits projets personnels, me venant lors de balades.
             </p>
 
-            <ul class="social-list">
-                <li>
-                    <a href="https://github.com/Yota02">
-                        <img src="assets/img/logo/github.png" alt="GitHub">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/alexis-michaux-kinet-89062b2b4/">
-                        <img src="assets/img/logo/linkedin.png" alt="LinkedIn">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="assets/cv/Alexis-Michaux-Kinet-CV.pdf" download class="cv-download">
-                        <img src="assets/img/logo/fleche_simple.png" alt="Download CV" class="icon">
-                        <span class="text">Télécharger CV</span>
-                    </a>
-                </li>
-
-            </ul>
-
         </section>
+
+        <section>
+            <a href="assets/cv/Alexis-Michaux-Kinet-CV.pdf" download class="cv-download">
+                <img src="assets/img/logo/fleche_simple.png" alt="Download CV" class="icon">
+                <span class="text">Télécharger CV</span>
+            </a>
+        </section>
+        
         
         <section id="skills" class="content">
             <h2>Mes compétences</h2>
@@ -112,21 +101,21 @@
                 <div class="timeline-item left">
                     <div class="timeline-content">
                         <h3>🚀2024 - Stage au CSUM 🚀</h3>
-                        <p>Centre Spatial Universitaires de Montpellier</p>
+                        <p class="hidden-text">Centre Spatial Universitaires de Montpellier</p>
                     </div>
                 </div>
 
                 <div class="timeline-item right">
                     <div class="timeline-content">
                         <h3>🎓 2023/2026 - IUT informatique 🎓</h3>
-                        <p>IUT informatique de Montpellier</p>
+                        <p class="hidden-text">IUT informatique de Montpellier</p>
                     </div>
                 </div>
 
                 <div class="timeline-item left">
                     <div class="timeline-content">
                         <h3>🎓 2020/2023 - Bacalauréat général 🎓</h3>
-                        <p> Lycée jean jaurès Spécialité (Mathématiques / Info) </p>
+                        <p class="hidden-text"> Lycée jean jaurès Spécialité (Mathématiques / Info) </p>
                     </div>
                 </div> 
                 
@@ -135,4 +124,30 @@
         
     </div>
 </body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <h3>Contactez-moi</h3>
+            <p>Pour toute question ou projet, n'hésitez pas à me contacter !</p>
+            <ul class="footer-social-list">
+                <li>
+                    <a href="https://github.com/Yota02" aria-label="GitHub">
+                        <img src="assets/img/logo/github.png" alt="GitHub" class="footer-icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/alexis-michaux-kinet-89062b2b4/" aria-label="LinkedIn">
+                        <img src="assets/img/logo/linkedin.png" alt="LinkedIn" class="footer-icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Alexis Michaux-Kinet | Tous droits réservés</p>
+        </div>
+    </div>
+</footer>
+
+
 </html>
