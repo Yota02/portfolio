@@ -1,20 +1,25 @@
+/* Style global pour le footer */
 footer {
     color: black;
     padding: 20px 0;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Couleur de fond pour plus de contraste */
 }
 
+/* Conteneur principal du footer */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Crée deux colonnes égales */
+    grid-template-columns: 1fr 1fr 1fr; /* Trois colonnes égales */
     gap: 20px; /* Espacement entre les colonnes */
     padding: 0 20px;
+    align-items: center; /* Aligne les éléments verticalement au centre */
 }
 
+/* Contenu du footer à gauche */
 .footer-content {
-    text-align: left;
+    text-align: left; /* Texte aligné à gauche */
 }
 
 .footer-content h3 {
@@ -25,16 +30,20 @@ footer {
 .footer-content p {
     font-size: 14px;
     margin-bottom: 10px;
-    max-width: 300px;
+    max-width: 400px;
 }
 
-/* Liste des icônes sociales */
+/* Section des icônes sociales */
+.footer-icons {
+    text-align: center; /* Centre les icônes dans leur colonne */
+}
+
 .footer-social-list {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 10px;
-    justify-content: flex-start; /* Aligner les icônes à gauche (vous pouvez mettre flex-end pour les aligner à droite) */
+    gap: 10px; /* Espacement entre les icônes */
+    justify-content: center; /* Aligne les icônes au centre */
 }
 
 .footer-social-list li {
@@ -43,24 +52,23 @@ footer {
 
 .footer-social-list a {
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none; /* Supprime les soulignements des liens */
 }
 
 .footer-icon {
-    width: 40px; /* Réduction de la taille des icônes pour une meilleure organisation */
-    transition: transform 0.3s ease;
+    width: 40px; /* Taille des icônes */
+    transition: transform 0.3s ease; /* Animation lors du survol */
 }
 
 .footer-icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Agrandit légèrement les icônes au survol */
 }
 
-/* Footer en bas de la page */
+/* Section du bas du footer (droits d'auteur) */
 .footer-bottom {
-    text-align: center;
-    width: 100%;
+    text-align: right; /* Aligne le texte à droite */
+    grid-column: span 3; /* Fait prendre toute la largeur des colonnes */
     margin-top: 10px;
-    grid-column: span 2; /* Permet à cette section de prendre les deux colonnes */
 }
 
 .footer-bottom p {
