@@ -327,3 +327,45 @@ body {
         max-height: 200px;
     }
 }
+
+.date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    padding: 0 20px; 
+}
+
+
+.borDate {
+    border-radius: 1rem;
+    padding: 5px 15px; 
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 14px; 
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    z-index: 1;
+    margin: 0 6%; 
+}
+
+.borDate.left {
+    background-color: rgb(68, 171, 255);
+}
+
+.borDate.right {
+    background-color: rgb(255, 108, 255); 
+}
+
+.connector.solonely {
+    width: 20%;
+    height: 5px;
+    background: linear-gradient(45deg, rgba(0, 140, 255, 0.8) 10%, rgba(255, 88, 255, 0.8) 100%); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -200;
+}
