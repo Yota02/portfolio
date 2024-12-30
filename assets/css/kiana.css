@@ -1,15 +1,22 @@
 
 .pink-rectangle {
     position: absolute;
-    width: 40%;
+    width: 30%;
     height: 40%;
     background-color: transparent;
     border: 5px solid #ff0080;
     opacity: 0;
     top: 45%;
-    left: 35%;
+    left: 50%;
     transform: translate(-25%, -25%) scale(0);
     animation: appearAndCenter 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.image-container-kiana{
+    position: relative;
+    width: 100%;        
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 @keyframes appearAndCenter {
