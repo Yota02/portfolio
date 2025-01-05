@@ -8,19 +8,36 @@ body {
     color: #000000;
 }
 
-#about {
-    background-color: rgba(255, 255, 255, 0.85); 
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    margin-bottom: 60px; 
-    width: 80%;
-    max-width: 1200px;
-    margin: 30px auto; 
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideIn 0.6s ease-out forwards;
+/* Container for the about section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Pour les petits écrans */
+    gap: 20px; /* Espacement entre l'image et le texte */
 }
+
+/* Styling for the text part */
+.about-text {
+    flex: 1; /* Occupe tout l'espace disponible */
+    max-width: 60%; /* Limite la largeur pour éviter un trop grand texte */
+}
+
+/* Styling for the image part */
+.about-image {
+    flex: 0 0 auto; /* L'image ne se redimensionne pas automatiquement */
+    max-width: 30%; /* Limite la largeur de l'image */
+    text-align: center;
+    margin-right: 10%;
+}
+
+.about-image img {
+    width: 100%; /* Adapte l'image à la largeur définie */
+    max-width: 200px; /* Limite la taille de l'image */
+    border-radius: 50%; /* Rend l'image circulaire */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
+}
+
 
 @keyframes slideIn {
     from {
@@ -31,23 +48,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    margin-top: 0;
-    color: #333;
-    font-weight: bold;
-}
-
-#about p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-    padding: 0 20px;
-    text-align: justify;
-    margin-bottom: 20px;
 }
 
 .title-link {
