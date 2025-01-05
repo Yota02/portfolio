@@ -1,52 +1,33 @@
 .cv-download {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    position: relative;
-
-    color: white;
-    padding: 12px 20px; 
-    border-radius: 8px; 
-    font-size: 16px; 
-    font-weight: bold; 
-    cursor: pointer;
-    margin-bottom: 15px;
+    display: inline-block;
+    padding: 12px 24px;
+    margin-bottom: 10%;
+    background-color: rgb(157, 240, 255); /* Couleur verte */
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.cv-download .icon {
-    width: 24px; 
-    height: 24px;
-    transition: opacity 0.4s ease, transform 0.9s ease;
-}
-
-.cv-download .text {
-    white-space: nowrap;
-    font-size: 16px;
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, width 0.3s ease;
-    color: #000000;
-}
-
+/* Changement de couleur au survol */
 .cv-download:hover {
-    transform: translateY(-3px); 
+    background-color: rgb(130, 236, 255); /* Légère variation de vert */
+    transform: scale(1.05); /* Légère augmentation de la taille */
 }
 
-.cv-download:hover .icon {
-    opacity: 0;
-    width: 50px;
-    transform: scale(0.8);
+/* Style du texte à l'intérieur du lien */
+.text {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.cv-download:hover .text {
-    opacity: 1;
-    width: auto;
-    margin-left: 12px; 
-}
-
-.cv-download:active {
-    transform: translateY(1px); 
+/* Style pour l'icône si besoin (si ajoutée plus tard) */
+.cv-download::before {
+    content: url('path/to/icon.svg'); /* Remplacer par l'icône désirée */
+    margin-right: 8px;
+    vertical-align: middle;
 }
