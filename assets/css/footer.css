@@ -1,9 +1,10 @@
 /* Style global pour le footer */
 footer {
-    color: black;
-    padding: 20px 0;
+    color: #333;
+    padding: 40px 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Couleur de fond pour plus de contraste */
+    background-color: #ffffff;
+    border-top: 1px solid #ccc;
 }
 
 /* Conteneur principal du footer */
@@ -11,67 +12,122 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Trois colonnes égales */
-    gap: 20px; /* Espacement entre les colonnes */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
     padding: 0 20px;
-    align-items: center; /* Aligne les éléments verticalement au centre */
+    align-items: flex-start;
 }
 
-/* Contenu du footer à gauche */
+/* Style amélioré pour le formulaire */
+.footer-content form {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-content form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.footer-content form input,
+.footer-content form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-content form input:focus,
+.footer-content form textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.footer-content form button {
+    width: 100%;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-content form button:hover {
+    background-color: #0052a3;
+    transform: translateY(-2px);
+}
+
+.footer-content form button:active {
+    transform: translateY(0);
+}
+
+/* Reste du style footer inchangé */
 .footer-content {
-    text-align: left; /* Texte aligné à gauche */
+    text-align: left;
 }
 
 .footer-content h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
 }
 
 .footer-content p {
     font-size: 14px;
     margin-bottom: 10px;
     max-width: 400px;
+    line-height: 1.6;
+    color: #555;
 }
 
-/* Section des icônes sociales */
 .footer-icons {
-    text-align: center; /* Centre les icônes dans leur colonne */
+    text-align: center;
 }
 
 .footer-social-list {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 10px; /* Espacement entre les icônes */
-    justify-content: center; /* Aligne les icônes au centre */
+    gap: 15px;
+    justify-content: center;
 }
 
 .footer-social-list li {
     display: inline;
 }
 
-.footer-social-list a {
-    display: inline-block;
-    text-decoration: none; /* Supprime les soulignements des liens */
-}
-
 .footer-icon {
-    width: 40px; /* Taille des icônes */
-    transition: transform 0.3s ease; /* Animation lors du survol */
+    width: 35px;
+    transition: transform 0.3s ease;
 }
 
 .footer-icon:hover {
-    transform: scale(1.1); /* Agrandit légèrement les icônes au survol */
+    transform: scale(1.2);
 }
 
-/* Section du bas du footer (droits d'auteur) */
 .footer-bottom {
-    text-align: right; /* Aligne le texte à droite */
-    grid-column: span 3; /* Fait prendre toute la largeur des colonnes */
-    margin-top: 10px;
-}
-
-.footer-bottom p {
+    grid-column: span 3;
+    text-align: center;
+    margin-top: 30px;
     font-size: 12px;
-    color: black;
+    color: #777;
 }
