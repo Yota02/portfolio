@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre spécifique au projet -->
+    <title>CodeTonFutur</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Même feuille de style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header identique -->
+    <header class="site-header">
+        <a href="../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html#accueil">Accueil</a></li>
+                <li><a href="../index.html#projets" class="active">Projets</a></li> <!-- Marquer Projets comme actif -->
+                <li><a href="../index.html#a-propos">À Propos</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal spécifique au projet -->
+    <main class="project-detail-page">
+        <section class="project-header section">
+            <!-- Titre du projet en rouge -->
+            <h1>CodeTonFutur</h1>
+            <p class="project-subtitle">Une brève description ou le type de projet.</p>
+             <!-- Lien retour optionnel -->
+             <a href="../index.html#projets" class="back-link">← Retour aux projets</a>
+        </section>
+
+        <!-- Image principale ou vidéo -->
+        <section class="project-media section">
+             <img src="images/projet1-main.jpg" alt="Image principale du Projet 1" class="main-project-image">
+             <!-- ou <video controls>...</video> -->
+        </section>
+
+        <section class="project-info section">
+            <div class="info-columns">
+                <div class="column description">
+                    <h2>Description</h2>
+                    <p>Description détaillée...</p>
+                </div>
+                <div class="column tech-stack">
+                    <h2>Technologies Utilisées</h2>
+                    <ul class="tech-logo-list">
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/python.png" alt="Logo Python" class="tech-logo">
+                                <span>Python</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/flask.png" alt="Logo Flask" class="tech-logo">
+                                <span>Flask</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/js.png" alt="Logo JavaScript" class="tech-logo">
+                                <span>JavaScript</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/html.png" alt="Logo HTML5" class="tech-logo">
+                                <span>HTML5</span>
+                            </div>
+                        </li>
+                         <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/css.png" alt="Logo CSS3" class="tech-logo">
+                                <span>CSS3</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/postgresql-logo.svg" alt="Logo PostgreSQL" class="tech-logo">
+                                <span>PostgreSQL</span>
+                            </div>
+                        </li>
+                        <!-- Ajoutez autant de <li> que nécessaire pour vos technos -->
+                    </ul>
+                    <!-- Les liens restent en dehors de la liste des logos -->
+                    <div class="project-external-links">
+                        <h2>Liens</h2>
+                        <p><a href="#" target="_blank" rel="noopener noreferrer">Voir le Code (GitHub)</a></p>
+                        <p><a href="#" target="_blank" rel="noopener noreferrer">Voir la Démo Live</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie d'images additionnelles -->
+        <section class="project-gallery section">
+            <h2>Galerie</h2>
+            <div class="gallery-grid">
+                <img src="images/projet1-screen1.jpg" alt="Screenshot 1">
+                <img src="images/projet1-screen2.jpg" alt="Screenshot 2">
+                <img src="images/projet1-screen3.jpg" alt="Screenshot 3">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer identique -->
+    <footer class="site-footer-bottom">
+        <p>© 2024 [Ton Nom]. Inspiré par la simplicité japonaise.</p>
+    </footer>
+
+    <script src="../js/script.js"></script> <!-- Même script -->
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Alexis Michaux</title> <!-- Titre mis à jour -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header identique sur toutes les pages -->
+        <header class="site-header">
+            <!-- Logo peut être simple texte ou un cercle rouge ? -->
+            <a href="index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+            <nav class="main-nav">
+                <ul>
+                    <!-- Liens pointant vers les sections de index.html -->
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#a-propos">À Propos</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Section Accueil -->
+            <section id="accueil" class="hero-section section">
+                <div class="hero-content">
+                    <!-- Le h1 peut-être en rouge ? -->
+                    <h1>Mon portfolio</h1>
+                    <p class="subtitle">Développeur Créatif | Design Épuré</p>
+                    <!-- Bouton CTA potentiellement rond/pill-shape et rouge -->
+                    <a href="#projets" class="cta-button">Voir les Projets</a>
+                </div>
+            </section>
+
+            <!-- Section Liste des Projets -->
+            <section id="projets" class="section projets-section">
+                <!-- Titre avec déco cercle rouge ? -->
+                <h2>Mes Projets (作品)</h2>
+                
+                <div class="project-grid">
+                    <!-- Ajouter ce lien après la section project-grid -->
+                    
+                    <!-- Projet 1 - Carte simplifiée -->
+                    <div class="project-card">
+                        <div class="placeholder-img ">
+                            <img src="images/projet/starGuardian/icon.png" alt="Projet 1" class="project-thumbnail">
+                        </div>
+                        <!-- Placeholder circulaire -->
+                        <h3>Star Guardian</h3>
+                        <p>Courte accroche du projet.</p>
+                        <!-- Lien vers la page dédiée -->
+                        <a href="projets/projet1.html" class="details-link">
+                            Voir les détails →</a>
+                    </div>
+
+                    <!-- Projet 2 - Carte simplifiée -->
+                    <div class="project-card">
+                        <div class="placeholder-img circle-placeholder">
+                            <img src="images/projet/CodeTonFutur/victoria_v.png" alt="Projet 1" class="project-thumbnail">
+                        </div>
+                        <h3>CodeTonFutur</h3>
+                        <p>Technologies principales : React, Node.js.</p>
+                        <a href="projets/CodeTonFutur.html" class="details-link">Voir les
+                            détails →</a>
+                    </div>
+
+                    <!-- Ajouter d'autres cartes ici, pointant vers projet3.html, etc. -->
+
+                </div>
+
+                <div class="view-all-projects">
+                    <a href="projets/tous-les-projets.html"
+                        class="cta-button">Voir tous les projets</a>
+                </div>
+            </section>
+
+            <!-- Section À Propos -->
+            <section id="a-propos" class="section about-section">
+                <h2>À Propos (自己紹介)</h2>
+                <div class="about-content">
+                    <p>Présentation...</p>
+                    <p>Compétences : ...</p>
+                </div>
+            </section>
+
+            <!-- Section Contact -->
+            <section id="contact" class="section contact-section">
+                <h2>Contact (連絡)</h2>
+                <p><a
+                        href="mailto:alexis.michaux-kinet@etu.umontpellier.fr">alexis.michaux-kinet@etu.umontpellier.fr</a></p>
+                <p>
+                    <a href="https://www.linkedin.com/in/alexis-michaux-kinet-89062b2b4/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a> |
+                    <a href="https://github.com/Yota02" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </p>
+            </section>
+
+        </main>
+
+        <!-- Footer identique sur toutes les pages -->
+        <footer class="site-footer-bottom">
+            <p>© 2025 Alexis Michaux-Kinet (アレクシ)</p>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

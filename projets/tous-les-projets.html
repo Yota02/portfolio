@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tous les Projets - Portfolio Alexis Michaux</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <a href="../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html#accueil">Accueil</a></li>
+                <li><a href="../index.html#projets" class="active">Projets</a></li>
+                <li><a href="../index.html#a-propos">À Propos</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+
+    <main class="projects-catalog">
+        
+        <section class="project-header section">
+            <a href="../index.html#projets" class="back-link">← Retour aux projets mis en avant</a>
+            <h1>Catalogue des Projets</h1>
+            
+            <p class="project-subtitle">Découvrez mes réalisations par catégories</p>
+
+            <nav class="category-nav">
+                <select id="categorySelect" onchange="scrollToCategory(this.value)">
+                    <option value="">Choisir une catégorie</option>
+                    <option value="web">Développement Web (ウェブ開発)</option>
+                    <option value="games">Jeux Vidéo (ゲーム開発)</option>
+                    <option value="ai">Intelligence Artificielle (AI・機械学習)</option>
+                    <option value="apps">Applications & Utilitaires (アプリ・ツール)</option>
+                </select>
+            </nav>
+
+            
+            
+        </section>
+
+        <!-- Section Développement Web -->
+        <section  id="web" class="project-category section">
+            <h2>Développement Web (ウェブ開発)</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="../images/projets/projet1-thumb.jpg" alt="Projet 1" class="project-thumbnail">
+                    <h3>Nom du Projet Web 1</h3>
+                    <p>Description courte du projet web.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                    </div>
+                    <a href="projet1.html" class="details-link">Voir les détails →</a>
+                </div>
+                <!-- Ajoutez d'autres projets web -->
+            </div>
+        </section>
+
+        <!-- Section Jeux Vidéo -->
+        <section id="games" class="project-category section">
+            <h2>Jeux Vidéo (ゲーム開発)</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="../images/projets/game1-thumb.jpg" alt="Jeu 1" class="project-thumbnail">
+                    <h3>Nom du Jeu 1</h3>
+                    <p>Description courte du jeu.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                    </div>
+                    <a href="jeu1.html" class="details-link">Voir les détails →</a>
+                </div>
+                <!-- Ajoutez d'autres jeux -->
+            </div>
+        </section>
+
+        <!-- Section IA & Machine Learning -->
+        <section id="ai" class="project-category section">
+            <h2>Intelligence Artificielle (AI・機械学習)</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="../images/projets/ia1-thumb.jpg" alt="Projet IA 1" class="project-thumbnail">
+                    <h3>Nom du Projet IA 1</h3>
+                    <p>Description courte du projet IA.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                    </div>
+                    <a href="ia1.html" class="details-link">Voir les détails →</a>
+                </div>
+                <!-- Ajoutez d'autres projets IA -->
+            </div>
+        </section>
+
+        <!-- Section Applications & Utilitaires -->
+        <section id="apps" class="project-category section">
+            <h2>Applications & Utilitaires (アプリ・ツール)</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="../images/projets/app1-thumb.jpg" alt="Application 1" class="project-thumbnail">
+                    <h3>Nom de l'Application 1</h3>
+                    <p>Description courte de l'application.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">JavaFX</span>
+                    </div>
+                    <a href="app1.html" class="details-link">Voir les détails →</a>
+                </div>
+                <!-- Ajoutez d'autres applications -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <p>© 2024 Alexis Michaux-Kinet. Inspiré par la simplicité japonaise.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

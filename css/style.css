@@ -1,0 +1,568 @@
+/* --- Variables (Palette Hinomaru - Rouge & Blanc) --- */
+:root {
+    --bg-color: #ffffff;       /* Blanc pur */
+    --text-color: #222222;     /* Noir/Gris très foncé pour contraste */
+    --subtle-text-color: #555555; /* Gris moyen */
+
+    /* --- Rouge Hinomaru --- */
+    --accent-color: #bc002d;   /* Rouge officiel du drapeau */
+    --subtle-accent: #a10026;  /* Rouge légèrement plus sombre pour hover */
+
+    --border-color: #eeeeee;   /* Bordure gris très clair */
+    --card-bg: #ffffff;        /* Fond des cartes blanc */
+    --shadow-color: rgba(0, 0, 0, 0.07); /* Ombre neutre et légère */
+
+    /* Polices */
+    --font-body: 'Noto Sans JP', sans-serif;
+    --font-headings: 'Noto Serif JP', serif; /* Ou une Sans Serif audacieuse ? */
+}
+
+/* --- Reset et Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7; /* Augmenter légèrement pour l'aspect épuré */
+}
+
+/* --- Header et Navigation --- */
+.site-header {
+    position: sticky; /* Sticky peut être mieux que fixed ici */
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Presque opaque */
+    backdrop-filter: blur(8px);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 1.6em;
+    color: var(--text-color); /* Logo en noir/gris */
+    text-decoration: none;
+    /* Alternative: logo = cercle rouge ? */
+    /* width: 30px; height: 30px; background: var(--accent-color); border-radius: 50%; text-indent: -9999px; */
+}
+a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
+
+.main-nav ul { list-style: none; display: flex; gap: 30px; }
+.main-nav a {
+    text-decoration: none;
+    color: var(--subtle-text-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 8px; /* Espace pour le point */
+}
+/* Indicateur Actif/Hover: Point Rouge sous le lien */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px; /* Taille du point */
+    height: 6px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.3s ease;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--accent-color); /* Texte en rouge */
+}
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    opacity: 1; /* Afficher le point */
+}
+
+/* --- Sections Générales (index.html) --- */
+.section { padding: 80px 5%; }
+#accueil {
+    padding-top: 100px; /* Plus d'espace pour la première section */
+    min-height: calc(100vh - 60px); /* Hauteur min moins header approx */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Hero Section (index.html) --- */
+.hero-content h1 {
+    font-family: var(--font-headings);
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    color: var(--accent-color); /* Titre en rouge */
+}
+.hero-content .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 35px;
+    font-weight: 300;
+    color: var(--subtle-text-color);
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 13px 30px;
+    border-radius: 50px; /* Forme pilule/ronde */
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(188, 0, 45, 0.3); /* Ombre rouge */
+}
+.cta-button:hover {
+    background-color: var(--subtle-accent);
+    transform: translateY(-4px);
+}
+
+/* --- Section Liste Projets (index.html) --- */
+.projets-section h2,
+.about-section h2,
+.contact-section h2,
+.project-detail-page h1, /* Titres page projet */
+.project-detail-page h2 {
+    text-align: center;
+    font-family: var(--font-headings);
+    font-size: 2.5em;
+    margin-bottom: 60px; /* Plus d'espace */
+    position: relative;
+}
+/* Décoration Titre: Point Rouge */
+.projets-section h2::after,
+.about-section h2::after,
+.contact-section h2::after,
+.project-detail-page h2::after { /* Ajouté pour les h2 de page projet */
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin: 15px auto 0;
+}
+/* Spécificité pour H1 de page projet */
+.project-detail-page .project-header h1 {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 10px; /* Moins d'espace sous le H1 */
+}
+.project-detail-page .project-header h1::after { display: none; } /* Pas de point sous H1 */
+.project-subtitle {
+    font-size: 1.2em;
+    color: var(--subtle-text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--subtle-text-color);
+    text-decoration: none;
+}
+.back-link:hover { color: var(--accent-color); }
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    padding: 30px;
+    box-shadow: 0 6px 25px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px var(--shadow-color);
+}
+.project-card .placeholder-img {
+    height: 150px;
+    width: 150px; /* Pour forcer cercle */
+    background-color: #f0f0f0; /* Placeholder neutre */
+    margin: 0 auto 20px auto; /* Centrer */
+    border-radius: 50%; /* Rond */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--subtle-text-color);
+    font-size: 0.9em;
+    border: 5px solid var(--bg-color); /* Effet "découpé" */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+/* Si vraie image, la rendre ronde */
+.project-card img.project-thumbnail {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    display: block;
+    border: none;
+}
+
+.project-card h3 {
+    font-family: var(--font-headings);
+    margin-bottom: 10px;
+    color: var(--accent-color); /* Titre carte en rouge */
+    font-size: 1.4em;
+}
+.project-card p {
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    color: var(--subtle-text-color);
+    min-height: 40px; /* Pour aligner les boutons */
+}
+.details-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+.details-link:hover { color: var(--subtle-accent); }
+
+/* --- Sections About & Contact (index.html) --- */
+.about-content { max-width: 700px; margin: 0 auto; text-align: center; }
+.contact-section { text-align: center; }
+.contact-section a { color: var(--accent-color); text-decoration: none; }
+.contact-section a:hover { color: var(--subtle-accent); text-decoration: underline;}
+
+/* --- Styles pour Page Projet (projetX.html) --- */
+.project-detail-page { /* Conteneur principal */ }
+.project-header { padding-bottom: 40px; } /* Moins de padding en bas */
+.project-media { text-align: center; padding-top: 0; padding-bottom: 60px; }
+.main-project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.project-info { background-color: #f9f9f9; padding: 60px 5%;} /* Section sur fond légèrement gris */
+.info-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.column { flex: 1; min-width: 300px; }
+.column h2 { text-align: left; margin-bottom: 20px; font-size: 1.8em;}
+.column h2::after { margin-left: 0; /* Point aligné à gauche */ }
+.tech-stack ul { list-style: none; padding-left: 0; }
+.tech-stack li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+.tech-stack li::before { /* Point rouge devant chaque tech */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+.tech-stack a { color: var(--accent-color); }
+.tech-stack a:hover { color: var(--subtle-accent); }
+
+.project-gallery { padding-top: 60px; }
+.project-gallery h2 { text-align: center; margin-bottom: 40px; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Footer --- */
+.site-footer-bottom {
+    text-align: center;
+    padding: 30px;
+    margin-top: 80px;
+    background-color: var(--bg-color); /* Retour au blanc */
+    color: var(--subtle-text-color);
+    font-size: 0.9em;
+    border-top: 1px solid var(--border-color);
+}
+
+
+.tech-stack h2 { /* Style du titre "Technologies Utilisées" */
+    /* On peut garder le style existant ou l'ajuster */
+    text-align: left; /* Déjà défini dans .column h2 */
+    margin-bottom: 20px;/* Déjà défini dans .column h2 */
+ }
+ 
+ /* Supprimer l'ancien style de puce pour la liste tech */
+ .tech-stack ul {
+     list-style: none;
+     padding-left: 0;
+ }
+ .tech-stack li::before {
+     display: none; /* On n'utilise plus le point rouge ici */
+ }
+ 
+ /* Nouvelle liste de logos */
+ .tech-logo-list {
+     list-style: none;
+     padding: 0;
+     display: grid; /* Utiliser Grid pour un alignement facile */
+     /* Crée des colonnes d'au moins 120px de large */
+     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+     gap: 20px; /* Espace entre les logos */
+     margin-bottom: 40px; /* Espace avant la section "Liens" */
+ }
+ 
+ .tech-logo-list li {
+     padding: 0; /* Reset padding */
+     margin: 0; /* Reset margin */
+ }
+ 
+ .tech-item {
+     display: flex;
+     flex-direction: column; /* Logo au-dessus du texte */
+     align-items: center; /* Centrer horizontalement */
+     text-align: center;
+     padding: 10px;
+     border-radius: 4px;
+     transition: background-color 0.3s ease; /* Transition douce pour le fond au survol */
+ }
+ 
+ .tech-logo {
+     height: 40px; /* Taille du logo (ajuster si besoin) */
+     width: auto; /* Garder les proportions */
+     margin-bottom: 8px; /* Espace entre logo et texte */
+     object-fit: contain; /* S'assure que le logo est entièrement visible */
+ 
+     /* --- Préparation pour l'animation --- */
+     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), /* Courbe pour un effet rebond léger */
+                 opacity 0.3s ease;
+     opacity: 0.85; /* Légèrement transparent au repos */
+ }
+ 
+ /* --- L'Animation au Survol --- */
+ .tech-item:hover .tech-logo {
+     transform: translateY(-5px) scale(1.1); /* Le logo monte un peu et grossit */
+     opacity: 1; /* Entièrement opaque */
+ }
+ 
+ /* Optionnel: léger fond au survol de l'item entier */
+ .tech-item:hover {
+     background-color: #f9f9f9;
+ }
+ 
+ .tech-item span {
+     font-size: 0.85em; /* Taille du nom de la techno */
+     color: var(--subtle-text-color);
+     font-weight: 500; /* Un peu plus gras */
+ }
+ 
+ /* Style pour la section Liens (si déplacée) */
+ .project-external-links {
+     margin-top: 40px; /* Espace après la grille de logos */
+ }
+ .project-external-links h2 {
+     /* Utiliser le même style que .column h2 */
+     text-align: left;
+     margin-bottom: 20px;
+     font-size: 1.8em;
+ }
+ .project-external-links h2::after {
+      /* Utiliser le même style que .column h2::after */
+     content: '';
+     display: block;
+     width: 10px;
+     height: 10px;
+     background-color: var(--accent-color);
+     border-radius: 50%;
+     margin: 15px 0 0 0; /* Point aligné à gauche */
+ }
+ .project-external-links p {
+     margin-bottom: 10px;
+ }
+ .project-external-links a {
+     color: var(--accent-color);
+     text-decoration: none;
+     font-weight: bold;
+ }
+ .project-external-links a:hover {
+     color: var(--subtle-accent);
+     text-decoration: underline;
+ }
+
+
+/* --- Styles pour la page Catalogue des Projets --- */
+.projects-catalog .project-category {
+    padding: 60px 5%;
+}
+
+.projects-catalog .project-category:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tech-tags {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tech-tag {
+    background-color: #f0f0f0;
+    color: var(--subtle-text-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+/* Ajoutez ce style pour centrer le bouton */
+.view-all-projects {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.view-all-projects .cta-button {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* Ajustements pour les thumbnails dans cette vue */
+.projects-catalog .project-thumbnail {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projects-catalog .project-category {
+        padding: 40px 4%;
+    }
+    
+    .projects-catalog .project-thumbnail {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+    .tech-logo-list {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Colonnes plus petites sur très petits écrans */
+        gap: 15px;
+    }
+    .tech-logo {
+        height: 35px; /* Logos légèrement plus petits */
+    }
+     .project-external-links h2,
+     .project-external-links h2::after { /* Centrer sur mobile */
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+     }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.6em; }
+    .hero-content .subtitle { font-size: 1.2em; }
+    .main-nav { /* (Ici implémenter menu burger si besoin) */ }
+    .section { padding: 60px 4%; }
+     #accueil { padding-top: 80px; }
+    .project-grid { grid-template-columns: 1fr; } /* Une colonne */
+    .info-columns { flex-direction: column; }
+    .column h2 { text-align: center; }
+    .column h2::after { margin: 15px auto 0; }
+    .tech-stack li { padding-left: 25px; }
+    .tech-stack li::before { left: 5px; }
+}
+
+
+/* Style pour le menu déroulant des catégories */
+.category-nav {
+    position: fixed; /* Change sticky to fixed pour le garder à droite */
+    top: 100px; /* Ajusté pour être sous le header */
+    right: 20px; /* Position à droite */
+    z-index: 100;
+    background: transparent;
+    padding: 0;
+    width: auto; /* Au lieu de 100% */
+    text-align: right;
+    border: none;
+}
+
+.category-nav select {
+    width: auto; /* Au lieu de 100% */
+    max-width: 250px; /* Réduit la largeur maximale */
+    padding: 8px 35px 8px 15px; /* Ajusté pour être plus compact */
+    border: 1px solid var(--border-color); /* Bordure plus subtile */
+    border-radius: 20px;
+    font-size: 0.9em;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.category-nav select:hover {
+    border-color: var(--accent-color);
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuster l'espacement du header */
+.project-header.section {
+    padding-top: 40px; /* Réduit de 80px à 40px */
+    padding-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .category-nav {
+        position: sticky;
+        top: 60px;
+        right: auto;
+        width: 100%;
+        background: white;
+        padding: 10px 20px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .category-nav select {
+        width: 100%;
+        max-width: 300px;
+    }
+}
