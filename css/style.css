@@ -34,7 +34,7 @@ body {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95); /* Presque opaque */
     backdrop-filter: blur(8px);
-    padding: 15px 5%;
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,7 +135,7 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     text-align: center;
     font-family: var(--font-headings);
     font-size: 2.5em;
-    margin-bottom: 60px; /* Plus d'espace */
+    margin-bottom: 40px; /* Plus d'espace */
     position: relative;
 }
 /* Décoration Titre: Point Rouge */
@@ -165,14 +165,33 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     margin-bottom: 20px;
 }
 
+.page-navigation {
+    padding: 20px 5%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .page-navigation {
+        padding: 15px 4%;
+    }
+}
+
 .back-link {
     display: inline-block;
-    margin-bottom: 20px;
     color: var(--subtle-text-color);
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 20px;
 }
-.back-link:hover { color: var(--accent-color); }
 
+.back-link:hover {
+    color: var(--accent-color);
+    background-color: rgba(188, 0, 45, 0.05);
+    transform: translateX(-5px);
+}
 
 .project-grid {
     display: grid;
@@ -297,14 +316,73 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 }
 
 /* --- Footer --- */
-.site-footer-bottom {
-    text-align: center;
-    padding: 30px;
+/* Nouveau style pour le footer */
+.site-footer {
+    background-color: #f9f9f9;
+    padding: 60px 5% 30px;
     margin-top: 80px;
-    background-color: var(--bg-color); /* Retour au blanc */
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.site-footer .contact-section {
+    margin-bottom: 50px;
+}
+
+.site-footer h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.site-footer h2::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin: 15px auto 0;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--subtle-accent);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
     color: var(--subtle-text-color);
     font-size: 0.9em;
-    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 4% 20px;
+    }
+    
+    .site-footer h2 {
+        font-size: 1.8em;
+    }
 }
 
 
@@ -545,8 +623,110 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 
 /* Ajuster l'espacement du header */
 .project-header.section {
-    padding-top: 40px; /* Réduit de 80px à 40px */
-    padding-bottom: 40px;
+    padding-top: 20px; /* Réduit de 40px à 20px */
+    padding-bottom: 20px;
+}
+
+.story-section h2::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin: 15px auto 0;
+}
+
+/* Styles pour la section Histoire & Ambitions */
+.story-section {
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.story-section h2 {
+    text-align: center;
+    font-family: var(--font-headings);
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 50px;
+    margin-top: 40px;
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--accent-color);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.timeline-item h3 {
+    color: var(--accent-color);
+    font-family: var(--font-headings);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.timeline-item p {
+    color: var(--subtle-text-color);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Responsive design pour la timeline */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline::before {
+        left: 8px;
+    }
+    
+    .timeline-marker {
+        left: -30px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 768px) {
