@@ -1,112 +1,229 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initializeNavigation();
+    initializeGallery();
+    initializeModal();
+});
 
-    const isIndexPage = document.getElementById('accueil') !== null; // Vérifie si on est sur index.html
+// Configuration des galeries de projets
+const projectGalleries = {
+    'CodeTonFutur': {
+        images: [
+            '../images/projet/CodeTonFutur/chatbot.png',
+            '../images/projet/CodeTonFutur/Exercice1.png',
+            '../images/projet/CodeTonFutur/main.png'
+        ],
+        titles: [
+            'Chatbot IA',
+            'Exercices Interactifs',
+            'Interface Principale'
+        ],
+        descriptions: [
+            'Interface de discussion avec notre assistant virtuel',
+            'Plateforme d\'exercices avec correction instantanée',
+            'Dashboard personnalisé pour suivre sa progression'
+        ]
+    },
+    // Ajoutez d'autres projets ici
+};
+
+// Variables globales pour la galerie
+let currentProject = '';
+let currentSlideIndex = 0;
+
+// Initialisation de la navigation
+function initializeNavigation() {
+    const isIndexPage = document.getElementById('accueil') !== null;
     const navLinks = document.querySelectorAll('.main-nav a');
     const header = document.querySelector('.site-header');
-    const headerHeight = header ? header.offsetHeight : 60; // Hauteur par défaut si header non trouvé
+    const headerHeight = header ? header.offsetHeight : 60;
 
-    // --- Smooth scrolling (seulement pour les liens internes sur index.html) ---
+    setupSmoothScrolling(navLinks, isIndexPage, headerHeight);
+    if (isIndexPage) {
+        setupScrollspy(navLinks, headerHeight);
+    } else {
+        setActiveProjectNav(navLinks);
+    }
+}
+
+// Configuration du défilement fluide
+function setupSmoothScrolling(navLinks, isIndexPage, headerHeight) {
     navLinks.forEach(link => {
-        // Vérifie si le lien pointe vers une ancre sur la page actuelle OU vers index.html
         const href = link.getAttribute('href');
         const isInternalLink = href.startsWith('#') || href.startsWith('index.html#');
 
         if (isInternalLink) {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href').split('#')[1]; // Extrait l'ID après #
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                     e.preventDefault(); // Empêche le saut uniquement si la cible est sur cette page
-
-                     // Si on est sur une page projet et on clique sur un lien vers index.html#...
-                    if (!isIndexPage && href.startsWith('index.html#')) {
-                         window.location.href = href; // Redirige simplement
-                         // Le scroll se fera au chargement de index.html (voir ci-dessous)
-                    } else if (isIndexPage) {
-                        // Scroll fluide sur index.html
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - headerHeight - 20;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                } else if (href.startsWith('index.html#')) {
-                     // Si on est sur une page projet et l'élément n'est pas trouvé (normal), redirige
-                      window.location.href = href;
-                }
-            });
+            link.addEventListener('click', (e) => handleNavClick(e, link, isIndexPage, headerHeight));
         }
     });
+}
 
-    // --- Active Navigation Link Highlighting ---
-    if (isIndexPage) {
-        // Scrollspy uniquement sur index.html
-        const sections = document.querySelectorAll('section[id]');
+// Gestion des clics de navigation
+function handleNavClick(e, link, isIndexPage, headerHeight) {
+    const targetId = link.getAttribute('href').split('#')[1];
+    const targetElement = document.getElementById(targetId);
 
-        const activateNavLinks = () => {
-            let currentSectionId = '';
-            const scrollPosition = window.pageYOffset + headerHeight + 50;
+    if (targetElement && isIndexPage) {
+        e.preventDefault();
+        scrollToElement(targetElement, headerHeight);
+    } else if (link.getAttribute('href').startsWith('index.html#')) {
+        window.location.href = link.getAttribute('href');
+    }
+}
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    currentSectionId = section.getAttribute('id');
-                }
-            });
+// Défilement vers un élément
+function scrollToElement(element, headerHeight) {
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerHeight - 20;
 
-             // Cas spécial pour être tout en haut (section accueil)
-             if (window.pageYOffset < sections[0].offsetTop - headerHeight) {
-                 currentSectionId = sections[0].getAttribute('id');
-             }
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+}
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                // Compare l'ID de section avec la partie après # dans href
-                 const linkHref = link.getAttribute('href');
-                if (linkHref === `#${currentSectionId}` || linkHref === `index.html#${currentSectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        };
+// Configuration du Scrollspy
+function setupScrollspy(navLinks, headerHeight) {
+    const sections = document.querySelectorAll('section[id]');
+    
+    const activateNavLinks = () => {
+        const scrollPosition = window.pageYOffset + headerHeight + 50;
+        let currentSectionId = '';
 
-        window.addEventListener('scroll', activateNavLinks);
-        activateNavLinks(); // Initial call
-
-        // --- Scroll vers l'ancre si on arrive depuis une autre page ---
-        if (window.location.hash) {
-             setTimeout(() => { // Timeout pour laisser le temps au DOM de se stabiliser
-                 const targetElement = document.querySelector(window.location.hash);
-                 if (targetElement) {
-                     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                     const offsetPosition = elementPosition - headerHeight - 20;
-                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                 }
-             }, 100);
-         }
-
-    } else {
-        // Si ce n'est pas index.html (donc une page projet), forcer 'Projets' à être actif
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes('#projets')) {
-                link.classList.add('active');
+        sections.forEach(section => {
+            if (scrollPosition >= section.offsetTop && 
+                scrollPosition < section.offsetTop + section.offsetHeight) {
+                currentSectionId = section.getAttribute('id');
             }
         });
+
+        updateActiveNavLink(navLinks, currentSectionId);
+    };
+
+    window.addEventListener('scroll', activateNavLinks);
+    activateNavLinks();
+}
+
+// Mise à jour du lien actif
+function updateActiveNavLink(navLinks, currentSectionId) {
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkHref = link.getAttribute('href');
+        if (linkHref === `#${currentSectionId}` || linkHref === `index.html#${currentSectionId}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Configuration du lien Projets actif
+function setActiveProjectNav(navLinks) {
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes('#projets')) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Initialisation de la galerie
+function initializeGallery() {
+    const projectPath = window.location.pathname.split('/').pop().replace('.html', '');
+    currentProject = projectPath;
+    
+    if (projectGalleries[currentProject]) {
+        setupGalleryGrid();
     }
+}
 
-    // --- Ajouter d'autres interactions si besoin ---
+// Configuration de la grille de la galerie
+function setupGalleryGrid() {
+    const galleryGrid = document.querySelector('.gallery-grid');
+    if (!galleryGrid) return;
 
-}); // End DOMContentLoaded
+    const gallery = projectGalleries[currentProject];
+    galleryGrid.innerHTML = gallery.images.map((src, index) => `
+        <div class="gallery-item">
+            <img src="${src}" alt="${gallery.titles[index]}" onclick="openModal(${index})">
+            <div class="gallery-overlay">
+                <h3>${gallery.titles[index]}</h3>
+                <p>${gallery.descriptions[index]}</p>
+            </div>
+        </div>
+    `).join('');
+}
 
+// Initialisation du modal
+function initializeModal() {
+    const modal = document.getElementById('imageModal');
+    if (!modal) return;
+
+    setupModalEvents();
+    setupKeyboardNavigation();
+}
+
+// Configuration des événements du modal
+function setupModalEvents() {
+    const modal = document.getElementById('imageModal');
+    const closeBtn = modal.querySelector('.close');
+    
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+}
+
+// Configuration de la navigation au clavier
+function setupKeyboardNavigation() {
+    document.addEventListener('keydown', (e) => {
+        if (document.getElementById('imageModal').style.display !== 'block') return;
+
+        switch(e.key) {
+            case 'ArrowLeft': changeSlide(-1); break;
+            case 'ArrowRight': changeSlide(1); break;
+            case 'Escape': closeModal(); break;
+        }
+    });
+}
+
+// Fonctions de gestion du modal
+function openModal(index) {
+    if (!projectGalleries[currentProject]) return;
+    
+    document.getElementById('imageModal').style.display = 'block';
+    currentSlideIndex = index;
+    showSlide();
+}
+
+function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+}
+
+function changeSlide(direction) {
+    if (!projectGalleries[currentProject]) return;
+    
+    const images = projectGalleries[currentProject].images;
+    currentSlideIndex = (currentSlideIndex + direction + images.length) % images.length;
+    showSlide();
+}
+
+function showSlide() {
+    if (!projectGalleries[currentProject]) return;
+    
+    const gallery = projectGalleries[currentProject];
+    const modalImg = document.getElementById('modalImage');
+    const counter = document.getElementById('imageCounter');
+    
+    modalImg.src = gallery.images[currentSlideIndex];
+    counter.textContent = `${currentSlideIndex + 1} / ${gallery.images.length}`;
+}
+
+// Fonction pour le défilement vers une catégorie
 function scrollToCategory(categoryId) {
     if (!categoryId) return;
     
     const element = document.getElementById(categoryId);
-    const headerOffset = 150; // Ajuster selon la hauteur du header + menu
+    if (!element) return;
+
+    const headerOffset = 150;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
