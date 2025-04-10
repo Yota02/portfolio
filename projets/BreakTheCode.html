@@ -4,69 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Titre spécifique au projet -->
-    <title>Break The Code</title>
+    <title>CodeTonFutur</title>
     <link rel="stylesheet" href="../css/style.css"> <!-- Même feuille de style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Header identique -->
     <header class="site-header">
         <a href="../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
         <nav class="main-nav">
             <ul>
                 <li><a href="../index.html#accueil">Accueil</a></li>
-                <li><a href="../index.html#projets" class="active">Projets</a></li> <!-- Marquer Projets comme actif -->
+                <li><a href="tous-les-projets.html" class="active">Projets</a></li> <!-- Marquer Projets comme actif -->
                 <li><a href="../index.html#a-propos">À Propos</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- <nav class="page-navigation">
-        <a href="../index.html#projets" class="back-link">← Retour aux projets</a>
-    </nav> -->
-
     <!-- Contenu principal spécifique au projet -->
     <main class="project-detail-page">
+        <a href="tous-les-projets.html" class="back-link">← Retour aux projets</a>
+        
+
         <section class="project-header section">
             <!-- Titre du projet en rouge -->
-            <h1>StarGuardian</h1>
-            <p class="project-subtitle">Star Guardian est un outil conçu pour récupérer les données d'alerte collision brutes de satellites et les organiser automatiquement dans des fichiers Excel. Ce logiciel vous permet d’exploiter facilement les informations issues des observations du NORAD pour vos études et analyses.</p>
+            <h1>Break The Code</h1>
+            <p class="project-subtitle">Plateforme dédiée aux défis Capture The Flag</p>
              <!-- Lien retour optionnel -->
-             
         </section>
 
         <!-- Image principale ou vidéo -->
         <section class="project-media section">
-             <img src="../images/projet/starGuardian/starguardian_complet.png" alt="Image principale du Projet 1" class="main-project-image">
+            <div class="main-image-container">
+                <img src="../images/projet/CTF/breakthecode1.png" alt="Image principale du Projet 1" class="main-project-image" onclick="openMainImageModal()">
+                <div class="image-overlay">
+                    <span class="zoom-icon">🔍</span>
+                    <span class="overlay-text">Cliquez pour agrandir</span>
+                </div>
+            </div>
         </section>
+
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Image agrandie">
+                <div id="imageCounter" class="image-counter"></div>
+            </div>
+        </div>
 
         <section class="project-info section">
             <div class="info-columns">
                 <div class="column description">
                     <h2>Description</h2>
                     <p>Description détaillée...</p>
+
+                    <div class="features-section">
+                        <h2>Fonctionnalités Clés</h2>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h3>Défis utilisant des vulnérailibé SSH</h3>
+                                <p>Un chatbot intelligent basé sur GPT pour répondre aux questions des étudiants et les guider dans leur apprentissage.</p>
+                                <div class="feature-image">
+                                    <img src="../images/projet/CTF/ssh.png" alt="IA Chatbot">
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h3>📚 Exercices Interactifs</h3>
+                                <p>Des exercices pratiques avec correction automatique et feedback personnalisé pour progresser à son rythme.</p>
+                                <div class="feature-image">
+                                    <img src="../images/projet/CTF/affichage_challenge.png" alt="IA Chatbot">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
                 </div>
                 <div class="column tech-stack">
                     <h2>Technologies Utilisées</h2>
                     <ul class="tech-logo-list">
                         <li>
                             <div class="tech-item">
-                                <img src="../images/logos/python.png" alt="Logo Python" class="tech-logo">
-                                <span>Python</span>
+                                <img src="../images/logos/ssh.png" alt="Logo Python" class="tech-logo">
+                                <span>SSH</span>
                             </div>
                         </li>
                         <li>
                             <div class="tech-item">
                                 <img src="../images/logos/flask.png" alt="Logo Flask" class="tech-logo">
-                                <span>Tkinter</span>
+                                <span>Flask</span>
                             </div>
                         </li>
-                        
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/ctfd.png" alt="Logo JavaScript" class="tech-logo">
+                                <span>Ctdf</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/docker.png" alt="Logo HTML5" class="tech-logo">
+                                <span>Docker</span>
+                            </div>
+                        </li>
+                         <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/scrum.png" alt="Logo CSS3" class="tech-logo">
+                                <span>Scrum</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/wordpress.png" alt="Logo CSS3" class="tech-logo">
+                                <span>Wordpress</span>
+                            </div>
+                        </li>
+                        <!-- Ajoutez autant de <li> que nécessaire pour vos technos -->
                     </ul>
+
+                    <div class="project-details">
+                        <h2>Détails Techniques</h2>
+                        <ul class="details-list">
+                            <li><strong>Architecture :</strong> MVC</li>
+                            <li><strong>Base de données :</strong> MySql</li>
+                            <!-- <li><strong>API :</strong> REST</li> -->
+                            <li><strong>Déploiement :</strong> Docker</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-stats">
+                        <h2>Statistiques</h2>
+                        <ul class="stats-list">
+                            <li>
+                                <span class="stat-label">Date de début</span>
+                                <span class="stat-value">Septembre 2024</span>
+                            </li>
+                            <li>
+                                <span class="stat-label">Date de fin</span>
+                                <span class="stat-value">Janvier 2025</span>
+                            </li>
+                            <!-- <li>
+                                <span class="stat-label">Lignes de code</span>
+                                <span class="stat-value">5000+</span>
+                            </li> -->
+                            <!-- <li>
+                                <span class="stat-label">Tests unitaires</span>
+                                <span class="stat-value">150+</span>
+                            </li> -->
+                        </ul>
+                    </div>
+
                     <!-- Les liens restent en dehors de la liste des logos -->
                     <div class="project-external-links">
                         <h2>Liens</h2>
@@ -81,11 +173,39 @@
         <section class="project-gallery section">
             <h2>Galerie</h2>
             <div class="gallery-grid">
-                <img src="../images/projet/starGuardian/starguardian_complet.png" alt="Screenshot 1">
-                <img src="../images/projet/starGuardian/execl_star_guardian.png" alt="Screenshot 2">
-                <img src="images/projet1-screen3.jpg" alt="Screenshot 3">
+                <div class="gallery-item">
+                    <img src="../images/projet/CodeTonFutur/chatbot.png" alt="Screenshot 1">
+                    <div class="gallery-overlay">
+                        <h3>Chatbot IA</h3>
+                        <p>Interface de discussion avec notre assistant virtuel</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/projet/CodeTonFutur/Exercice1.png" alt="Screenshot 2">
+                    <div class="gallery-overlay">
+                        <h3>Exercices Interactifs</h3>
+                        <p>Plateforme d'exercices avec correction instantanée</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/projet/CodeTonFutur/main.png" alt="Screenshot 3">
+                    <div class="gallery-overlay">
+                        <h3>Interface Principale</h3>
+                        <p>Dashboard personnalisé pour suivre sa progression</p>
+                    </div>
+                </div>
             </div>
-        </section>
+        </section>  
+
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Modal Image">
+                <div id="imageCounter" class="image-counter"></div>
+            </div>
+        </div>
 
     </main>
 

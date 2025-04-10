@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeNavigation();
     initializeGallery();
     initializeModal();
+    /* initializeDaruma(); */
+    initializeKanjiEffects();
 });
 
 // Configuration des galeries de projets
@@ -23,8 +25,158 @@ const projectGalleries = {
             'Dashboard personnalisé pour suivre sa progression'
         ]
     },
+    'PlayToWin': {
+        images: [
+            '../images/projet/PlayToWin/playtowin.png',
+            '../images/projet/PlayToWin/liste-coach.gif',
+            '../images/projet/PlayToWin/admin.png'
+        ],
+        titles: [
+            'Chatbot IA',
+            'Exercices Interactifs',
+            'Interface Principale'
+        ],
+        descriptions: [
+            'Interface de discussion avec notre assistant virtuel',
+            'Plateforme d\'exercices avec correction instantanée',
+            'Dashboard personnalisé pour suivre sa progression'
+        ]
+    },
+    'BreakTheCode': {
+        images: [
+            '../images/projet/CTF/cristal_malicieux.gif',
+            '../images/projet/CTF/rainbow_jumper.gif',
+            '../images/projet/CTF/ssh.png',
+            '../images/projet/CTF/challenges.gif',
+            '../images/projet/CTF/affichage_challenge.png',
+            '../images/projet/CTF/wordpress_defis.png',
+        ],
+        titles: [
+            'Chatbot IA',
+            'Exercices Interactifs',
+            'Interface Principale'
+        ],
+        descriptions: [
+            'Interface de discussion avec notre assistant virtuel',
+            'Plateforme d\'exercices avec correction instantanée',
+            'Dashboard personnalisé pour suivre sa progression'
+        ]
+    },
     // Ajoutez d'autres projets ici
 };
+
+
+let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            // Effet manga/anime
+            const elements = document.querySelectorAll('h1, h2, h3');
+            elements.forEach(el => {
+                el.style.fontFamily = "'Comic Sans MS', cursive";
+                el.style.transition = 'all 0.5s';
+                el.dataset.originalText = el.textContent;
+                el.textContent = `${el.textContent} ゼロツー`;
+            });
+
+            // Jouer un son d'anime
+            const animeSound = new Audio('sounds/anime-wow.mp3');
+            animeSound.play();
+
+            // Créer l'effet de pétales qui tombent
+            createSakuraPetals();
+
+            // Retour à la normale après 5 secondes
+            setTimeout(() => {
+                elements.forEach(el => {
+                    el.style.fontFamily = '';
+                    el.textContent = el.dataset.originalText;
+                });
+            }, 5000);
+            konamiIndex = 0;
+        }
+    } else {
+        konamiIndex = 0;
+    }
+});
+
+function createSakuraPetals() {
+    const petals = ['🌸', '🌺']; // Différents types de pétales
+    for (let i = 0; i < 60; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'sakura-petal';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.top = -50 + 'px'; // Commence au-dessus de l'écran
+        petal.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        petal.style.animationDelay = Math.random() * 2 + 's';
+        petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+        document.body.appendChild(petal);
+
+        // Supprimer les pétales après leur animation
+        setTimeout(() => {
+            petal.remove();
+        }, 10000);
+    }
+}
+
+let darumaClicks = 0;
+const darumaMessages = ['がんばって！', 'よくできました！', '素晴らしい！'];
+
+function initializeDaruma() {
+    const daruma = document.createElement('div');
+    daruma.className = 'daruma';
+    daruma.innerHTML = '🎎';
+    daruma.style.position = 'fixed';
+    daruma.style.bottom = '20px';
+    daruma.style.right = '20px';
+    daruma.style.fontSize = '30px';
+    daruma.style.cursor = 'pointer';
+    
+    daruma.addEventListener('click', () => {
+        darumaClicks++;
+        if (darumaClicks % 3 === 0) {
+            const msg = darumaMessages[Math.floor(Math.random() * darumaMessages.length)];
+            showJapaneseMessage(msg);
+        }
+        daruma.style.transform = `scale(${1 + (darumaClicks % 3) * 0.1})`;
+    });
+    
+    document.body.appendChild(daruma);
+}
+
+function showJapaneseMessage(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'japanese-message';
+    messageDiv.textContent = message;
+    document.body.appendChild(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 2000);
+}
+
+function initializeKanjiEffects() {
+    const kanji = ['夢', '希望', '努力', '成功', '技術'];
+    let kanjiIndex = 0;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY % 200 === 0) {
+            const floatingKanji = document.createElement('div');
+            floatingKanji.className = 'floating-kanji';
+            floatingKanji.textContent = kanji[kanjiIndex];
+            floatingKanji.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(floatingKanji);
+            
+            kanjiIndex = (kanjiIndex + 1) % kanji.length;
+            
+            setTimeout(() => floatingKanji.remove(), 3000);
+        }
+    });
+}
+
 
 // Variables globales pour la galerie
 let currentProject = '';
