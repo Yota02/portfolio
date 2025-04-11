@@ -40,9 +40,11 @@
         <section class="project-media section">
             <div class="main-image-container">
                 <img src="../images/projet/CodeTonFutur/main2.png" alt="Image principale du Projet 1" class="main-project-image" onclick="openMainImageModal()">
-                <div class="image-overlay">
-                    <span class="zoom-icon">🔍</span>
-                    <span class="overlay-text">Cliquez pour agrandir</span>
+                <div id="mainImageModal" class="modal">
+                    <span class="close" onclick="closeMainImageModal()">&times;</span>
+                    <div class="modal-content">
+                        <img id="mainModalImage" src="" alt="Image principale agrandie">
+                    </div>
                 </div>
             </div>
         </section>

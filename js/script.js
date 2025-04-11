@@ -25,11 +25,29 @@ const projectGalleries = {
             'Dashboard personnalisé pour suivre sa progression'
         ]
     },
+    'StarGuardian': {
+        images: [
+            '../images/projet/StarGuardian/execl_star_guardian.png',
+            '../images/projet/CodeTonFutur/Exercice1.png',
+            '../images/projet/CodeTonFutur/main.png'
+        ],
+        titles: [
+            'Execl final',
+            'Exercices Interactifs',
+            'Interface Principale'
+        ],
+        descriptions: [
+            'Interface de discussion avec notre assistant virtuel',
+            'Plateforme d\'exercices avec correction instantanée',
+            'Dashboard personnalisé pour suivre sa progression'
+        ]
+    },
     'PlayToWin': {
         images: [
             '../images/projet/PlayToWin/playtowin.png',
             '../images/projet/PlayToWin/liste-coach.gif',
-            '../images/projet/PlayToWin/admin.png'
+            '../images/projet/PlayToWin/admin.png',
+            '../images/projet/PlayToWin/service.gif',
         ],
         titles: [
             'Chatbot IA',
@@ -39,7 +57,8 @@ const projectGalleries = {
         descriptions: [
             'Interface de discussion avec notre assistant virtuel',
             'Plateforme d\'exercices avec correction instantanée',
-            'Dashboard personnalisé pour suivre sa progression'
+            'Dashboard personnalisé pour suivre sa progression',
+            'Service '
         ]
     },
     'BreakTheCode': {
@@ -383,4 +402,54 @@ function scrollToCategory(categoryId) {
         top: offsetPosition,
         behavior: "smooth"
     });
+}
+
+// Ajouter ces nouvelles fonctions après les fonctions modal existantes
+
+function openMainImageModal() {
+    const mainImage = document.querySelector('.main-project-image');
+    const modal = document.getElementById('mainImageModal');
+    const modalImg = document.getElementById('mainModalImage');
+    
+    if (!mainImage || !modal || !modalImg) return;
+    
+    modal.style.display = 'block';
+    modalImg.src = mainImage.src;
+    
+    // Ajouter un gestionnaire d'événements pour fermer avec Escape
+    document.addEventListener('keydown', closeMainImageModalOnEscape);
+}
+
+function closeMainImageModal() {
+    const modal = document.getElementById('mainImageModal');
+    if (!modal) return;
+    
+    modal.style.display = 'none';
+    // Retirer le gestionnaire d'événements
+    document.removeEventListener('keydown', closeMainImageModalOnEscape);
+}
+
+function closeMainImageModalOnEscape(e) {
+    if (e.key === 'Escape') {
+        closeMainImageModal();
+    }
+}
+
+// Modifier la fonction initializeModal pour inclure la nouvelle modal
+function initializeModal() {
+    const galleryModal = document.getElementById('imageModal');
+    const mainModal = document.getElementById('mainImageModal');
+    
+    if (galleryModal) {
+        setupModalEvents();
+        setupKeyboardNavigation();
+    }
+    
+    if (mainModal) {
+        mainModal.addEventListener('click', (e) => {
+            if (e.target === mainModal) {
+                closeMainImageModal();
+            }
+        });
+    }
 }
