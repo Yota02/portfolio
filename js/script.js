@@ -28,18 +28,18 @@ const projectGalleries = {
     'StarGuardian': {
         images: [
             '../images/projet/StarGuardian/execl_star_guardian.png',
-            '../images/projet/CodeTonFutur/Exercice1.png',
-            '../images/projet/CodeTonFutur/main.png'
+            '../images/projet/StarGuardian/main.png'
         ],
         titles: [
             'Execl final',
-            'Exercices Interactifs',
-            'Interface Principale'
+            'Interface principale',
+            'Paramètres',
+            
+            
         ],
         descriptions: [
-            'Interface de discussion avec notre assistant virtuel',
-            'Plateforme d\'exercices avec correction instantanée',
-            'Dashboard personnalisé pour suivre sa progression'
+            'Execl final',
+            'Plateforme d\'exercices avec correction instantanée'
         ]
     },
     'OneClickIssue': {
