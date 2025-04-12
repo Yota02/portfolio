@@ -1366,3 +1366,17 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     width: 100%;
     height: auto;
 }
+
+/* Style pour le logo à côté du titre */
+.project-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espace entre le logo et le texte */
+    justify-content: center; /* Centrer le contenu */
+}
+
+.project-logo {
+    width: 150px; /* Taille du logo */
+    height: auto; /* Conserver les proportions */
+    object-fit: contain; /* S'assurer que le logo est bien contenu */
+}

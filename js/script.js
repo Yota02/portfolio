@@ -42,6 +42,26 @@ const projectGalleries = {
             'Dashboard personnalisé pour suivre sa progression'
         ]
     },
+    'OneClickIssue': {
+        images: [
+            '../images/projet/OneClickIssue/connection.png',
+            '../images/projet/OneClickIssue/list_issues.png',
+            '../images/projet/OneClickIssue/issues_feature.png',
+            '../images/projet/OneClickIssue/issues_github.png',
+        ],
+        titles: [
+            'Connection a GitHub',
+            'Liste des issues',
+            'Templates de création d\'issues',
+            'Issues GitHub'
+        ],
+        descriptions: [
+            'Permet de se connecter à GitHub',
+            'Liste des issues de votre dépôt',
+            'Création d\'issues personnalisées et en un clic',
+            'Exemple d\'issues créées sur GitHub'
+        ]
+    },
     'PlayToWin': {
         images: [
             '../images/projet/PlayToWin/playtowin.png',
