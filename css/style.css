@@ -1380,3 +1380,328 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     height: auto; /* Conserver les proportions */
     object-fit: contain; /* S'assurer que le logo est bien contenu */
 }
+
+
+
+
+
+/* --- Styles pour la page Compétences --- */
+.competences-header {
+    text-align: center;
+    margin-bottom: 0; /* Réduit de 1rem à 0.5rem */
+}
+
+.competences-header h1 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem; /* Réduit également cette marge */
+}
+
+.competences-header .subtitle {
+    color: var(--subtle-text-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem; /* Ajout d'une petite marge en bas */
+}
+
+.competences-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 2rem;
+    margin-left: 150px; /* Pour la navigation latérale */
+}
+
+
+.competence-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.competence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.competence-card h2 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid var(--accent-color);
+    width: 100%;
+}
+
+.ac-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.ac-item:hover {
+    transform: translateX(10px);
+}
+
+.ac-item h3 {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ac-item h3::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.project-evidence {
+    background: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.project-evidence:hover {
+    transform: translateX(5px);
+}
+
+.project-evidence h4 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.project-evidence p {
+    color: var(--subtle-text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Media Queries pour le responsive */
+@media (max-width: 1200px) {
+    .competences-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur écrans plus petits */
+    }
+}
+
+@media (max-width: 768px) {
+    .competence-card {
+        padding: 1.5rem;
+    }
+
+    .ac-item {
+        padding: 1.2rem;
+    }
+
+    .project-evidence {
+        padding: 1rem;
+    }
+
+    .competence-card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Styles pour la navigation des compétences */
+.competences-nav {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 1rem;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.competences-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.competences-nav li {
+    margin: 1rem 0;
+}
+
+.competences-nav .nav-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.competences-nav .nav-item:hover,
+.competences-nav .nav-item.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Ajustement de la mise en page principale */
+.competences-page {
+    margin-left: 150px; /* Espace pour la navigation */
+}
+
+/* Media Query pour la version mobile */
+@media (max-width: 768px) {
+    .competences-nav {
+        position: sticky;
+        top: 60px;
+        left: auto;
+        transform: none;
+        width: 100%;
+        background: white;
+        border-radius: 0;
+        margin-bottom: 1rem;
+    }
+
+    .competences-nav ul {
+        display: flex;
+        overflow-x: auto;
+        padding: 0.5rem;
+    }
+
+    .competences-nav li {
+        margin: 0 0.5rem;
+        flex-shrink: 0;
+    }
+
+    .competences-page {
+        margin-left: 0;
+    }
+}
+
+/* Style pour le statut d'acquisition */
+.acquisition-status {
+    background-color: #f0f8ff;
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.status-badge {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.acquisition-status p {
+    color: var(--subtle-text-color);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Style pour les liens de projet */
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateX(5px);
+}
+
+.view-project {
+    display: inline-block;
+    color: var(--accent-color);
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-link:hover .view-project {
+    opacity: 1;
+}
+
+/* Ajustement du hover pour le nouveau système de liens */
+.project-evidence {
+    background: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.project-evidence:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-color: var(--accent-color);
+}
+
+
+.ac-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ac-level {
+    
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.level-title {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.level-title::before {
+    content: '';
+    position: absolute;
+    left: -1.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+/* Ajustement pour le responsive */
+@media (max-width: 768px) {
+    .ac-level {
+        padding-left: 1rem;
+    }
+    
+    .level-title {
+        font-size: 1.2rem;
+    }
+}

@@ -473,3 +473,52 @@ function initializeModal() {
         });
     }
 }
+
+
+
+
+// Navigation des compétences
+document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.competences-nav .nav-item');
+    const competenceCards = document.querySelectorAll('.competence-card');
+    
+    // Fonction pour activer le lien de navigation
+    const activateNavItem = (id) => {
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if(item.getAttribute('href') === '#' + id) {
+                item.classList.add('active');
+            }
+        });
+    };
+
+    // Observer pour détecter la compétence visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                activateNavItem(entry.target.id);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observer chaque carte de compétence
+    competenceCards.forEach(card => {
+        observer.observe(card);
+    });
+
+    // Scroll doux vers les sections
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if(targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
