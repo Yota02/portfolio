@@ -1754,3 +1754,146 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 .project-badge:hover::after {
     opacity: 1;
 }
+
+.about-section {
+    padding: 80px 5%;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent-color);
+    object-fit: cover;
+}
+
+.about-header h3 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.about-subtitle {
+    color: var(--subtle-text-color);
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+.about-interests {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.about-interests h4 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.interests-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.interest-tag {
+    background-color: white;
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.interest-tag:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .about-card {
+        padding: 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .about-text {
+        padding: 0;
+    }
+}
+
+
+.cv-download {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cv-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background-color: #e60012;
+}
+
+.cv-icon {
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .cv-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
