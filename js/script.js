@@ -101,6 +101,26 @@ const projectGalleries = {
             'Dashboard personnalisé pour suivre sa progression'
         ]
     },
+    'ProjektBersetzung': {
+        images: [
+            '../images/projet/ProjektBersetzung/screenshot.png',
+            '../images/projet/ProjektBersetzung/fichier_français.png',
+            '../images/projet/ProjektBersetzung/fichier_anglais.png',
+            '../images/projet/ProjektBersetzung/fichier_2.png',
+        ],
+        titles: [
+            ' Interface principale',
+            'Fichier en français',
+            'Fichier en anglais',
+            'Traduction des fichiers'
+        ],
+        descriptions: [
+            'Interface principal de l\'application',
+            'Fichier traduit en français',
+            'ichier traduit en anglais',
+            'Fichier traduit de l\'anglais vers le français'
+        ]
+    },
     // Ajoutez d'autres projets ici
 };
 
