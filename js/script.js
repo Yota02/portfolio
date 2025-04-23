@@ -121,6 +121,20 @@ const projectGalleries = {
             'Fichier traduit de l\'anglais vers le français'
         ]
     },
+    'Img Classifier': {
+        images: [
+            '../images/projet/IA_Kiana/entrainement.png',
+            
+        ],
+        titles: [
+            'Suivis de l\'entrainement',
+            
+        ],
+        descriptions: [
+            'Evolution de l\'entrainement du modèle après chaque epoch',
+            
+        ]
+    },
     // Ajoutez d'autres projets ici
 };
 
