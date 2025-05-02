@@ -139,6 +139,23 @@ const projectGalleries = {
 };
 
 
+function initializeTimelineAnimation() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    timelineItems.forEach(item => {
+        observer.observe(item);
+    });
+}
+
 let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 let konamiIndex = 0;
 
@@ -513,6 +530,8 @@ function initializeModal() {
 
 // Navigation des compétences
 document.addEventListener('DOMContentLoaded', () => {
+
+    initializeTimelineAnimation();
     const navItems = document.querySelectorAll('.competences-nav .nav-item');
     const competenceCards = document.querySelectorAll('.competence-card');
     
