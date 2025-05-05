@@ -20,16 +20,13 @@
 /* --- Reset et Base --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
     font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.7; /* Augmenter légèrement pour l'aspect épuré */
 }
-
-
-
-
 
 /* --- Header et Navigation --- */
 .site-header {
@@ -135,7 +132,8 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 
 .projets-section h2,
 .about-section h2,
-.story-section h2 {
+.story-section h2,
+.stats-section h2 {
     text-align: center;
     font-family: var(--font-headings);
     font-size: 2.5em;
@@ -150,7 +148,8 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 
 .contact-section h2,
 .project-detail-page h2,
-.story-section h2{
+.story-section h2,
+.stats-section h2{
     text-align: center;
     font-family: var(--font-headings);
     font-size: 2.5em;
@@ -158,7 +157,7 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: left; 
+    justify-content: center; 
     gap: 15px;
 }
 
@@ -171,7 +170,8 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 
 .projets-section h2::before,
 .about-section h2::before, 
-.story-section h2::before{
+.story-section h2::before, 
+.stats-section h2::before{
     content: '';
     display: block;
     width: 10px;
@@ -354,6 +354,7 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
     text-align: center;
+    
 }
 .project-card:hover {
     transform: translateY(-10px);
@@ -633,18 +634,15 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 
 /* --- Footer --- */
 /* Nouveau style pour le footer */
-.site-footer {
-    background-color: #f9f9f9;
-    padding: 60px 5% 30px;
-    margin-top: 80px;
-    border-top: 1px solid var(--border-color);
-}
+
 
 .site-footer {
     background-color: #f9f9f9;
     padding: 30px 5% 10px; /* Réduit le padding vertical */
     margin-top: 40px; /* Réduit la marge supérieure */
     border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .footer-content {
@@ -967,133 +965,7 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     padding-bottom: 20px;
 }
 
-/* Styles pour la section Histoire & Ambitions */
-.story-section {
-    background-color: var(--bg-color);
-    text-align: center;
-}
 
-.story-section h2 {
-    text-align: center;
-    font-family: var(--font-headings);
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centre le titre */
-    gap: 15px;
-}
-
-.story-section h2::before {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    margin: 0; /* Retire les marges pour un centrage parfait */
-}
-
-.story-section h2::after {
-    display: none;
-}
-
-.story-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.timeline {
-    position: relative;
-    padding-left: 50px;
-    margin-top: 40px;
-    text-align: left; /* Alignement du texte à gauche */
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--accent-color);
-    opacity: 0.3;
-}
-
-/* Animations pour la timeline */
-.timeline-item {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s ease;
-}
-
-.timeline-item.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.timeline-marker {
-    transform: scale(0);
-    transition: transform 0.5s ease 0.3s;
-}
-
-.timeline-item.visible .timeline-marker {
-    transform: scale(1);
-}
-
-/* Animation pour le texte japonais */
-.timeline-item h3::after {
-    content: attr(data-jp);
-    opacity: 0;
-    font-size: 0.8em;
-    margin-left: 10px;
-    transition: all 0.3s ease;
-    color: var(--accent-color);
-}
-
-.timeline-item:hover h3::after {
-    opacity: 1;
-    transform: translateX(10px);
-}
-
-/* Animation des icônes */
-.timeline-item h3 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.timeline-item h3 span {
-    transition: transform 0.3s ease;
-}
-
-.timeline-item:hover h3 span {
-    transform: rotate(360deg) scale(1.2);
-}
-
-/* Responsive design pour la timeline */
-@media (max-width: 768px) {
-    .timeline {
-        padding-left: 30px;
-    }
-    
-    .timeline::before {
-        left: 8px;
-    }
-    
-    .timeline-marker {
-        left: -30px;
-        width: 16px;
-        height: 16px;
-    }
-    
-    .timeline-item {
-        margin-bottom: 40px;
-    }
-}
 
 @media (max-width: 768px) {
     .category-nav {
@@ -1903,3 +1775,255 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
         font-size: 0.9em;
     }
 }
+
+/* Section Statistiques */
+/* Mise à jour de la section Statistiques */
+.stats-section {
+    padding: 6rem 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 280px;
+    padding: 3rem 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(188, 0, 45, 0.05), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(188, 0, 45, 0.15);
+}
+
+.stat-item:hover::before {
+    transform: translateX(100%);
+}
+
+.stat-number {
+    display: inline-block;
+    font-size: 4.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--accent-color), #ff1744);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: statNumberAppear 0.8s ease forwards;
+}
+
+.stat-label {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: statLabelAppear 0.8s ease forwards 0.3s;
+    letter-spacing: 0.5px;
+}
+
+@keyframes statNumberAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes statLabelAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de ligne animée au survol */
+.stat-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), #ff1744);
+    transition: all 0.6s ease;
+    transform: translateX(-50%);
+}
+
+.stat-item:hover::after {
+    width: 90%;
+}
+
+/* Mise à jour du style pour la Story Section */
+.story-section {
+    background-color: #ffffff;
+    padding: 80px 5%;
+    position: relative;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 60px;
+    margin-top: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(188, 0, 45, 0.1);
+}
+
+.timeline-item.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animation du point */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px rgba(188, 0, 45, 0.2);
+    z-index: 1;
+    transition: transform 0.4s ease 0.3s;
+}
+
+.timeline-item h3[data-jp]::after {
+    content: attr(data-jp);
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-item:hover h3[data-jp]::after {
+    opacity: 1;
+}
+
+.timeline-item.appear::before {
+    transform: translateY(-50%) scale(1);
+}
+
+.timeline-item h3 {
+    color: var(--accent-color);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.timeline-item p {
+    color: var(--subtle-text-color);
+    font-size: 0.95em;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    border-color: var(--accent-color);
+}
+
+/* Animation pour le texte japonais */
+.timeline-item h3 data-jp {
+    font-size: 0.8em;
+    color: var(--accent-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover h3 data-jp {
+    opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 40px;
+    }
+    
+    .timeline-item {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-item::before {
+        left: -40px;
+    }
+    
+    .timeline-item h3 {
+        font-size: 1.2em;
+    }
+}
+

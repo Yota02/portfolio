@@ -34,8 +34,6 @@ const projectGalleries = {
             'Execl final',
             'Interface principale',
             'Paramètres',
-            
-            
         ],
         descriptions: [
             'Execl final',
@@ -70,15 +68,16 @@ const projectGalleries = {
             '../images/projet/PlayToWin/service.gif',
         ],
         titles: [
-            'Chatbot IA',
-            'Exercices Interactifs',
-            'Interface Principale'
+            'Interface principal',
+            'Liste des coachs',
+            'Interface admin',
+            'Service de coaching'
         ],
         descriptions: [
-            'Interface de discussion avec notre assistant virtuel',
-            'Plateforme d\'exercices avec correction instantanée',
-            'Dashboard personnalisé pour suivre sa progression',
-            'Service '
+            'Interface principal de Play To Win',
+            'Affichage de la liste des coachs',
+            'Interface admin de Play To Win',
+            'Affichage du service de coaching'
         ]
     },
     'BreakTheCode': {
@@ -91,14 +90,20 @@ const projectGalleries = {
             '../images/projet/CTF/wordpress_defis.png',
         ],
         titles: [
-            'Chatbot IA',
-            'Exercices Interactifs',
-            'Interface Principale'
+            'Christal Malicieux',
+            'Rainbow Jumper',
+            'Défis sur les vulnérailibé SSH',
+            'Interface BreakTheCode',
+            'Affichage personnalisé',
+            'Défis WordPress'
         ],
         descriptions: [
-            'Interface de discussion avec notre assistant virtuel',
-            'Plateforme d\'exercices avec correction instantanée',
-            'Dashboard personnalisé pour suivre sa progression'
+            'Un jeu JavaScript où il faut cliquer sur le cristal qui ne fait que de se déplacer.',
+            'Une version revisitée du dinosaure de Chrome, sur le thème de My Little Pony.',
+            'Défis sur les vulnérabilités SSH, en se connectant à un docker.',
+            'Interface de la plateforme BreakTheCode.',
+            'Affichage personnalisé des défis sur le site.',
+            'Défis utilisant les fonctionnalités de WordPress.'
         ]
     },
     'ProjektBersetzung': {
@@ -525,9 +530,6 @@ function initializeModal() {
     }
 }
 
-
-
-
 // Navigation des compétences
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -575,3 +577,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.timeline-item').forEach((item) => {
+        observer.observe(item);
+    });
+});
+
+// Remplacer la fonction addFlowerEffect par :
+function initializeStatsSection() {
+    const statItems = document.querySelectorAll('.stat-item');
+    
+    statItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateY(-5px)';
+            // L'effet de bandeau est géré par le CSS
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'translateY(0)';
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeStatsSection();
+});
+
