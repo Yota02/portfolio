@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/logos/Victoria.png" type="image/png">
 </head>
 <body>
     <!-- Header identique -->
@@ -20,7 +21,7 @@
                 <li><a href="tous-les-projets.html" class="active">Projets</a></li> <!-- Marquer Projets comme actif -->
                 <li><a href="../competences.html" class="active">Compétences</a></li>
                 <li><a href="../index.html#a-propos">À Propos</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -62,33 +63,37 @@
             <div class="info-columns">
                 <div class="column description">
                     <h2>Description</h2>
-                    <p>Description détaillée...</p>
+                    <p>L'idée de ce projet personnel est née d'une problématique liée au tri des images dans une bibliothèque. Le processus consistant à classer les images par catégorie tout en les renommant s'avérait long et fastidieux. 
+                
+                <br>Je me suis alors dit : <strong>pourquoi ne pas créer une IA capable de réaliser cette tâche à ma place ?</strong> <br><br>
+                Cela m'a conduit à explorer ce sujet, en me lançant dans la réalisation de ce projet. 
+                J'ai ainsi découvert des outils comme PyTorch, les réseaux de convolution et le deep learning.</p>
 
                     <div class="features-section">
                         <h2>Fonctionnalités Clés</h2>
 
                         <div class="feature-list">
-                            <div class="feature-item">
-                                <h3>🤖 </h3>
+                            <!-- <div class="feature-item">
+                                <h3>🤖 Interface utilisateur </h3>
                                 <p></p>
                                 <div class="feature-image">
-                                    <img src="../images/projet/" alt="IA Chatbot">
+                                    <img src="../images/projet/IA_Kiana/res_lumine.png" alt="IA Chatbot">
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <div class="feature-item">
-                                <h3>📚 </h3>
-                                <p> </p>
+                                <h3>📊 Résultat</h3>
+                                <p>L'image a été détectée avec une précision de 98 % lors des tests.</p>
                                 <div class="feature-image">
-                                    <img src="../images/projet/IA_Kiana/" alt="IA Chatbot">
+                                    <img src="../images/projet/IA_Kiana/res_lumine.png" alt="Résultat de la détection">
                                 </div>
                             </div>
 
                             <div class="feature-item">
-                                <h3>📚 </h3>
-                                <p></p>
+                                <h3>🧠 Fonctionnement de l'IA</h3>
+                                <p>La convolution extrait des caractéristiques importantes des images en appliquant des filtres pour détecter des motifs comme les bords, les textures et les formes.</p>
                                 <div class="feature-image">
-                                    <img src="../images/projet/IA_Kiana/convulotion.gif" alt="IA Chatbot">
+                                    <img src="../images/projet/IA_Kiana/convulotion.gif" alt="Fonctionnement de l'IA">
                                 </div>
                             </div>
                             
@@ -103,6 +108,7 @@
                     </div>
 
                 </div>
+
                 <div class="column tech-stack">
                     <h2>Technologies Utilisées</h2>
                     <ul class="tech-logo-list">
@@ -114,32 +120,32 @@
                         </li>
                         <li>
                             <div class="tech-item">
-                                <img src="../images/logos/flask.png" alt="Logo Flask" class="tech-logo">
-                                <span>Flask</span>
+                                <img src="../images/logos/pytorch.png" alt="Logo Flask" class="tech-logo">
+                                <span>Pytorch</span>
                             </div>
                         </li>
                         <li>
                             <div class="tech-item">
-                                <img src="../images/logos/js.png" alt="Logo JavaScript" class="tech-logo">
-                                <span>JavaScript</span>
+                                <img src="../images/logos/conda.png" alt="Logo CSS3" class="tech-logo">
+                                <span>Conda</span>
                             </div>
                         </li>
                         <li>
                             <div class="tech-item">
-                                <img src="../images/logos/html.png" alt="Logo HTML5" class="tech-logo">
-                                <span>HTML5</span>
+                                <img src="../images/logos/deeplearning.png" alt="Logo HTML5" class="tech-logo">
+                                <span>Deep Learning</span>
                             </div>
                         </li>
                          <li>
                             <div class="tech-item">
-                                <img src="../images/logos/css.png" alt="Logo CSS3" class="tech-logo">
-                                <span>CSS3</span>
+                                <img src="../images/logos/Tkinter.png" alt="Logo CSS3" class="tech-logo">
+                                <span>Tkinter</span>
                             </div>
                         </li>
                         <li>
                             <div class="tech-item">
-                                <img src="../images/logos/mysql.png" alt="Logo CSS3" class="tech-logo">
-                                <span>MySql</span>
+                                <img src="../images/logos/pyinstaller.png" alt="Logo CSS3" class="tech-logo">
+                                <span>Pyinstaller</span>
                             </div>
                         </li>
                         <!-- Ajoutez autant de <li> que nécessaire pour vos technos -->
@@ -148,10 +154,11 @@
                     <div class="project-details">
                         <h2>Détails Techniques</h2>
                         <ul class="details-list">
-                            <li><strong>Architecture :</strong> MVC</li>
-                            <li><strong>Base de données :</strong> MySql</li>
-                            <!-- <li><strong>API :</strong> REST</li> -->
-                            <li><strong>Déploiement :</strong> Docker</li>
+                            <li><strong>Framework IA :</strong> PyTorch</li>
+                            <li><strong>Interface utilisateur :</strong> Tkinter</li>
+                            <li><strong>Packaging :</strong> PyInstaller</li>
+                            <li><strong>Déploiement :</strong> Conda</li>
+                            <li><strong>Type de modèle :</strong> Deep Learning</li>
                         </ul>
                     </div>
 
@@ -160,38 +167,35 @@
                         <ul class="stats-list">
                             <li>
                                 <span class="stat-label">Date de début</span>
-                                <span class="stat-value">Janvier 2025</span>
+                                <span class="stat-value">Novembre 2024</span>
                             </li>
                             <li>
                                 <span class="stat-label">Date de fin</span>
                                 <span class="stat-value">En cours</span>
                             </li>
                             <li>
-                                <span class="stat-label">Lignes de code</span>
-                                <span class="stat-value">5000+</span>
+                                <span class="stat-label">Précision du modèle</span>
+                                <span class="stat-value">95%</span>
                             </li>
-                            <!-- <li>
-                                <span class="stat-label">Tests unitaires</span>
-                                <span class="stat-value">150+</span>
-                            </li> -->
+                            <li>
+                                <span class="stat-label">Nombre d'images traitées</span>
+                                <span class="stat-value">10,000</span>
+                            </li>
+                            <li>
+                                <span class="stat-label">Temps d'entraînement</span>
+                                <span class="stat-value">6 heures</span>
+                            </li>
+                            <li>
+                                <span class="stat-label">Nombre d'époques</span>
+                                <span class="stat-value">100</span>
+                            </li>
+                            <li>
+                                <span class="stat-label">Taille du dataset</span>
+                                <span class="stat-value">15,000 images</span>
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="project-resources">
-                        <h2>Ressources</h2>
-                        <ul class="resources-list">
-                            <li><a href="#" target="_blank">Documentation API</a></li>
-                            <li><a href="#" target="_blank">Guide d'utilisation</a></li>
-                            <li><a href="#" target="_blank">Rapport technique</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Les liens restent en dehors de la liste des logos -->
-                    <div class="project-external-links">
-                        <h2>Liens</h2>
-                        <p><a href="#" target="_blank" rel="noopener noreferrer">Voir le Code (GitHub)</a></p>
-                        <p><a href="#" target="_blank" rel="noopener noreferrer">Voir la Démo Live</a></p>
-                    </div>
                 </div>
             </div>
         </section>

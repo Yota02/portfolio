@@ -25,6 +25,26 @@ const projectGalleries = {
             'Dashboard personnalisé pour suivre sa progression'
         ]
     },
+    'trains': {
+        images: [
+            '../images/projet/trains/Trains_IHM.png',
+            '../images/projet/trains/page_accueil.gif',
+            '../images/projet/trains/test_train.png', 
+            '../images/projet/trains/jeux_en_cours (1).gif'
+        ],
+        titles: [
+            'IHM de train',
+            'Page d\'accueil',
+            'Test de train',
+            'Jeux en cours'
+        ],
+        descriptions: [
+            'Interface IHM de train, permettant de jouer',
+            'Page d\'accueil du jeux',
+            'Près de 150 tests de train',
+            'Jeux en cours, permettant de jouer à plusieurs'
+        ]
+    },
     'StarGuardian': {
         images: [
             '../images/projet/StarGuardian/execl_star_guardian.png',
@@ -126,17 +146,24 @@ const projectGalleries = {
             'Fichier traduit de l\'anglais vers le français'
         ]
     },
-    'Img Classifier': {
+    'classifier_kiana': {
         images: [
             '../images/projet/IA_Kiana/entrainement.png',
-            
+            '../images/projet/IA_Kiana/res_lumine.png',
+            '../images/projet/IA_Kiana/convulotion.gif',
+            '../images/projet/IA_Kiana/cnn.png',
         ],
         titles: [
             'Suivis de l\'entrainement',
-            
+            'Résultat de la classification',
+            'Convolution',
+            'CNN'
         ],
         descriptions: [
             'Evolution de l\'entrainement du modèle après chaque epoch',
+            'Résultat de la classification de l\'image',
+            'Animation de la convolution sur image',
+            'Principe de la convolution sur image'
             
         ]
     },
