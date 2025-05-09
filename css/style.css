@@ -133,7 +133,9 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 .projets-section h2,
 .about-section h2,
 .story-section h2,
-.stats-section h2 {
+.stats-section h2,
+.hobbies-section h2,
+.langues-section h2 {
     text-align: center;
     font-family: var(--font-headings);
     font-size: 2.5em;
@@ -149,7 +151,9 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 .contact-section h2,
 .project-detail-page h2,
 .story-section h2,
-.stats-section h2{
+.stats-section h2, 
+.hobbies-section h2,
+.langues-section h2 {
     text-align: center;
     font-family: var(--font-headings);
     font-size: 2.5em;
@@ -171,7 +175,9 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 .projets-section h2::before,
 .about-section h2::before, 
 .story-section h2::before, 
-.stats-section h2::before{
+.stats-section h2::before,
+.hobbies-section h2::before,
+.langues-section h2::before {
     content: '';
     display: block;
     width: 10px;
@@ -2282,4 +2288,100 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
 .langue-niveau:hover {
     transform: scale(1.2);
     color: var(--subtle-accent);
+}
+
+
+/* Section Loisirs */
+.hobbies-section {
+    text-align: center;
+    padding: 80px 5%;
+    
+}
+
+.hobbies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.hobby-item {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hobby-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hobby-icon-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.hobby-item:hover .hobby-icon-container {
+    transform: scale(1.1);
+}
+
+.hobby-icon {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.hobby-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.hobby-item p {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Animation pour l'apparition des hobbies */
+.hobby-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hobby-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.hobby-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.hobby-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.hobby-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.hobby-item:nth-child(5) {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
