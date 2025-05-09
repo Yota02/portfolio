@@ -48,7 +48,7 @@ const projectGalleries = {
     'StarGuardian': {
         images: [
             '../images/projet/StarGuardian/execl_star_guardian.png',
-            '../images/projet/StarGuardian/main.png'
+            '../images/projet/StarGuardian/main.png',
         ],
         titles: [
             'Execl final',
@@ -57,7 +57,7 @@ const projectGalleries = {
         ],
         descriptions: [
             'Execl final',
-            'Plateforme d\'exercices avec correction instantanée'
+            'Interface principale de Star Guardian',
         ]
     },
     'OneClickIssue': {
