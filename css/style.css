@@ -2204,3 +2204,82 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
     font-weight: 500;
     color: #333;
 }
+
+/* Section Langues */
+/* Section Langues */
+.langues-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.langues-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.langues-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.langue-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.langue-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.langue-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.langue-item:hover img {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.langue-item h3 {
+    font-size: 1.5rem;
+    margin: 15px 0 5px;
+    color: var(--text-color);
+}
+
+.langue-item p {
+    font-size: 1rem;
+    color: var(--subtle-text-color);
+    margin-bottom: 10px;
+}
+
+.langue-niveau {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--accent-color);
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+.langue-niveau:hover {
+    transform: scale(1.2);
+    color: var(--subtle-accent);
+}
