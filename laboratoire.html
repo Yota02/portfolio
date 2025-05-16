@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratoire - Alexis Michaux</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/laboratoire.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logos/Victoria.png" type="image/png">
+</head>
+<body>
+    <!-- Header identique sur toutes les pages -->
+    <header class="site-header">
+        <a href="index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="projets/tous-les-projets.html">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="certification.html">Certifications</a></li>
+                <li><a href="index.html#a-propos">À Propos</a></li>
+                <li><a href="laboratoire.html" class="active">Laboratoire</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="laboratoire-content">
+        <section class="lab-header">
+            <h1>Mon Laboratoire <span class="jp-text">(実験室)</span></h1>
+            <p class="lab-subtitle">Découvrez mes expérimentations et projets innovants en cours de développement</p>
+        </section>
+
+        <!-- Filtres pour le laboratoire -->
+        <div class="lab-filters">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="experimental">Expérimentaux</button>
+            <button class="filter-btn" data-filter="prototype">Prototypes</button>
+            <button class="filter-btn" data-filter="conceptual">Concepts</button>
+        </div>
+
+        <div class="lab-grid">
+            <!-- NeuroLink AI -->
+
+
+            <!-- Bio-Interface -->
+            <div class="lab-card" data-category="prototype"> <!-- experimental ou conceptual -->
+                <div class="lab-card-header">
+                    <h2>Bio-Interface</h2>
+                    <span class="status-badge prototype">Prototype</span>
+                </div>
+                <div class="lab-card-body">
+                    <div class="experiment-visual">
+                        <img src="images/laboratoire/biointerface.jpg" alt="Bio-Interface">
+                    </div>
+                    <div class="experiment-details">
+                        <p>Interface utilisateur basée sur des capteurs biométriques permettant le contrôle d'applications par les signaux biologiques.</p>
+                        <div class="tech-list">
+                            <span class="tech-pill">Arduino</span>
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Signal Processing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lab-card-footer">
+                    <div class="progress-container">
+                        <div class="progress-label">Avancement: <span class="progress-value">60%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="lab-card-actions">
+                        <button class="lab-button">Suivre ce projet</button>
+                        <a href="#" class="lab-link">Voir la démo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IA Creative Writing -->
+
+
+           
+
+            <!-- Zone d'idée pour nouveau projet -->
+            <div class="lab-card idea-card" data-category="all">
+                <div class="idea-content">
+                    <div class="idea-icon">💡</div>
+                    <h3>Proposez une idée</h3>
+                    <p>Vous avez une idée de projet expérimental ou une suggestion d'amélioration ?</p>
+                    <button class="lab-button idea-button" id="openIdeaForm">Partagez votre idée</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulaire de proposition d'idée (caché par défaut) -->
+        <div id="ideaFormOverlay" class="form-overlay">
+            <div class="idea-form-container">
+                <span class="close-form">&times;</span>
+                <h3>Partagez votre idée de projet</h3>
+                <form id="ideaForm">
+                    <div class="form-group">
+                        <label for="ideaTitle">Titre de l'idée</label>
+                        <input type="text" id="ideaTitle" name="ideaTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaDescription">Description</label>
+                        <textarea id="ideaDescription" name="ideaDescription" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaCategory">Catégorie</label>
+                        <select id="ideaCategory" name="ideaCategory" required>
+                            <option value="">Sélectionnez une catégorie</option>
+                            <option value="ia">Intelligence Artificielle</option>
+                            <option value="web">Développement Web</option>
+                            <option value="mobile">Applications Mobiles</option>
+                            <option value="hardware">Matériel/Hardware</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ideaContact">Votre email (optionnel)</label>
+                        <input type="email" id="ideaContact" name="ideaContact">
+                        <p class="form-hint">Laissez votre email si vous souhaitez être contacté au sujet de cette idée.</p>
+                    </div>
+                    <button type="submit" class="lab-button submit-idea">Soumettre l'idée</button>
+                </form>
+            </div>
+        </div>
+
+        <section class="lab-process">
+            <h2>Mon Processus Expérimental</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Idéation</h3>
+                    <p>Génération et exploration de concepts innovants à travers la recherche et la veille technologique.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Prototypage</h3>
+                    <p>Création de maquettes fonctionnelles pour tester rapidement les hypothèses techniques.</p>
+                    
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Expérimentation</h3>
+                    <p>Tests intensifs et itérations pour valider les fonctionnalités et optimiser les performances.</p>
+                    
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Implémentation</h3>
+                    <p>Transformation des prototypes validés en solutions complètes intégrables à des projets réels.</p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Journal de laboratoire -->
+        <!-- <section class="lab-journal">
+            <h2>Journal de Recherche</h2>
+            <div class="journal-entries">
+                <div class="journal-entry">
+                    <div class="entry-date">15 Avril 2025</div>
+                    <h3>Découverte sur l'optimisation des réseaux de neurones</h3>
+                    <p>Aujourd'hui, j'ai expérimenté une nouvelle méthode d'optimisation des couches cachées qui semble réduire le temps d'entraînement de 35% sans perte de précision significative.</p>
+                    <div class="entry-tags">
+                        <span class="entry-tag">Deep Learning</span>
+                        <span class="entry-tag">Optimisation</span>
+                    </div>
+                </div>
+                <div class="journal-entry">
+                    <div class="entry-date">3 Mars 2025</div>
+                    <h3>Premier test concluant de l'interface Bio-Interface</h3>
+                    <p>Les premiers résultats des capteurs EMG sont encourageants. La précision de détection des micro-mouvements atteint désormais 87%, ce qui est suffisant pour commencer les tests d'application réelle.</p>
+                    <div class="entry-tags">
+                        <span class="entry-tag">Biométrie</span>
+                        <span class="entry-tag">Interface</span>
+                    </div>
+                </div>
+                <div class="journal-entry">
+                    <div class="entry-date">18 Février 2025</div>
+                    <h3>Intégration de Qiskit pour le compilateur quantique</h3>
+                    <p>J'ai commencé à explorer l'intégration de Qiskit comme base pour le compilateur quantique. Les défis principaux concernent la traduction des algorithmes classiques vers le paradigme quantique.</p>
+                    <div class="entry-tags">
+                        <span class="entry-tag">Informatique Quantique</span>
+                        <span class="entry-tag">Qiskit</span>
+                    </div>
+                </div>
+            </div>
+            <button class="load-more-btn">Voir plus d'entrées</button>
+        </section> -->
+    </main>
+
+    <!-- Footer identique sur toutes les pages -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="contact-section" id="contact">
+                <h2>Contact (連絡)</h2>
+                <div class="contact-links">
+                    <p><a href="mailto:alexis.michaux-kinet@etu.umontpellier.fr">alexis.michaux-kinet@etu.umontpellier.fr</a></p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/alexis-michaux-kinet-89062b2b4/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                        <a href="https://github.com/Yota02" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Alexis Michaux-Kinet (アレクシ)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/laboratoire.js"></script>
+</body>
+</html>

@@ -1,0 +1,895 @@
+/* Styles spécifiques à la page Laboratoire */
+
+/* Header et titre principal */
+.lab-header {
+    text-align: center;
+    padding: 80px 5% 50px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(249,249,249,0.96) 100%);
+}
+
+.lab-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+.lab-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    font-family: var(--font-headings);
+    position: relative;
+    display: inline-block;
+}
+
+.jp-text {
+    opacity: 0.6;
+    font-size: 0.7em;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.lab-subtitle {
+    font-size: 1.4rem;
+    color: var(--subtle-text-color);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-weight: 300;
+}
+
+/* Filtres pour le laboratoire */
+.lab-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 5% 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #f5f5f5;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--subtle-text-color);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.filter-btn:hover {
+    background: #eaeaea;
+    transform: translateY(-2px);
+}
+
+.filter-btn:active {
+    transform: translateY(-1px);
+    transition: all 0.1s;
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Grille des projets de laboratoire */
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0 5% 60px;
+    perspective: 1000px;
+}
+
+/* Cartes de projet */
+.lab-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.5s ease,
+                opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    transform-origin: center bottom;
+    opacity: 0;
+    /* Animation flottante subtile */
+    animation: float 6s ease-in-out infinite;
+    animation-delay: calc(var(--animation-order, 0) * 0.5s);
+}
+
+.lab-card:nth-child(odd) {
+    animation-duration: 7s;
+}
+
+.lab-card:nth-child(3n) {
+    animation-duration: 8s;
+}
+
+.lab-card.show {
+    opacity: 1;
+    animation: cardAppear 0.6s forwards;
+}
+
+.lab-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    animation-play-state: paused;
+}
+
+.lab-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+.lab-card:hover::before {
+    opacity: 1;
+}
+
+.lab-card-header {
+    padding: 25px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lab-card-header h2 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    animation: badgePulse 2s infinite alternate;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.experimental {
+    background-color: rgba(255, 87, 51, 0.15);
+    color: #ff5733;
+}
+
+.prototype {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+}
+
+.conceptual {
+    background-color: rgba(52, 152, 219, 0.15);
+    color: #3498db;
+}
+
+.lab-card-body {
+    padding: 0;
+    flex: 1;
+}
+
+.experiment-visual {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.experiment-visual::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 30%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.experiment-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.lab-card:hover .experiment-visual img {
+    transform: scale(1.08) rotate(1deg);
+}
+
+.experiment-details {
+    padding: 25px;
+}
+
+.experiment-details p {
+    color: var(--subtle-text-color);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-pill {
+    background: #f5f5f5;
+    color: var(--subtle-text-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.lab-card:hover .tech-pill {
+    background: #eaeaea;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.lab-card-footer {
+    padding: 20px 25px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    color: var(--subtle-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.progress-value {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #ff5f6d);
+    transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: progressShine 2.5s infinite;
+}
+
+.lab-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lab-button {
+    background-color: white;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.lab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.lab-button:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(188, 0, 45, 0.2);
+}
+
+.lab-button:hover::before {
+    left: 0;
+}
+
+.lab-link {
+    color: var(--subtle-text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    padding-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.lab-link::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.lab-link:hover {
+    color: var(--accent-color);
+    padding-right: 25px;
+}
+
+.lab-link:hover::after {
+    opacity: 1;
+}
+
+/* Carte d'idée spéciale */
+.idea-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    border: 2px dashed #e0e0e0;
+}
+
+.idea-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0) 0%, rgba(240,240,240,0.5) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.idea-card:hover::before {
+    opacity: 1;
+}
+
+.idea-content {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.idea-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+    display: inline-block;
+}
+
+.idea-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.idea-button {
+    margin-top: 20px;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.idea-button:hover {
+    background-color: var(--subtle-accent);
+    border-color: var(--subtle-accent);
+    transform: translateY(-2px);
+}
+
+/* Formulaire de proposition d'idée */
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.form-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.idea-form-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.form-overlay.active .idea-form-container {
+    transform: translateY(0);
+}
+
+.close-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--subtle-text-color);
+    transition: color 0.3s ease;
+}
+
+.close-form:hover {
+    color: var(--accent-color);
+}
+
+.idea-form-container h3 {
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.form-hint {
+    font-size: 0.85rem;
+    color: var(--subtle-text-color);
+    margin-top: 5px;
+}
+
+.submit-idea {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-idea:hover {
+    background-color: var(--subtle-accent);
+}
+
+/* Section du processus */
+.lab-process {
+    padding: 80px 5%;
+    background-color: #f9f9f9;
+    background: linear-gradient(135deg, rgba(249,249,249,0.8) 0%, rgba(240,240,240,0.8) 100%);
+}
+
+.lab-process h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lab-process h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    transform: translateX(-50%);
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 0;
+}
+
+.process-step {
+    flex: 1 1 200px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.process-step h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.process-step p {
+    color: var(--subtle-text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.step-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tool-tag {
+    background-color: rgba(188, 0, 45, 0.08);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Journal de laboratoire */
+.lab-journal {
+    padding: 80px 5%;
+}
+
+.lab-journal h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lab-journal h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    transform: translateX(-50%);
+}
+
+.journal-entries {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.journal-entry {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.journal-entry:hover {
+    transform: translateY(-5px);
+}
+
+.entry-date {
+    display: inline-block;
+    background-color: rgba(188, 0, 45, 0.05);
+    color: var(--accent-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.journal-entry h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.journal-entry p {
+    color: var(--subtle-text-color);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.entry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.entry-tag {
+    background-color: #f0f0f0;
+    color: var(--subtle-text-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.load-more-btn {
+    display: block;
+    margin: 40px auto 0;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes cardAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) rotateX(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); opacity: 0.8; }
+}
+
+@keyframes badgePulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Media queries pour responsive */
+@media (max-width: 1200px) {
+    .process-steps {
+        flex-direction: column;
+        max-width: 600px;
+    }
+    
+    .process-step {
+        flex: none;
+    }
+
+    .process-steps::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .lab-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .lab-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lab-process h2,
+    .lab-journal h2 {
+        font-size: 2rem;
+    }
+
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+
+    .idea-form-container {
+        padding: 30px 20px;
+    }
+}
+
+/* Effet de filtre pour les projets */
+.lab-card.hidden {
+    display: none;
+}
+
+.lab-card.fade {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+                transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.lab-card.fade.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Effet d'ondulation pour les boutons */
+.lab-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+}
