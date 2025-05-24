@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor'IA Project - Alexis Michaux</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/logos/Victoria.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header identique -->
+    <header class="site-header">
+        <a href="../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html#accueil">Accueil</a></li>
+                <li><a href="tous-les-projets.html" class="active">Projets</a></li>
+                <li><a href="../competences.html">Compétences</a></li>
+                <li><a href="../certification.html">Certifications</a></li>
+                <li><a href="../laboratoire.html">Laboratoire</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal spécifique au projet -->
+    <main class="project-detail-page">
+        <a href="../laboratoire.html" class="back-link">← Retour au laboratoire</a>
+        
+        <section class="project-header section">
+            <h1>
+                <span class="project-logo">🧠</span>
+                Victor'IA Project
+            </h1>
+            <p class="project-subtitle">Développement d'un Small Language Model (SLM) optimisé pour des tâches spécifiques</p>
+        </section>
+
+        <!-- Image principale -->
+        <section class="project-media section">
+            <div class="main-image-container">
+                <img src="../images/laboratoire/victoria.png" alt="Victor'IA Project" class="main-project-image" onclick="openMainImageModal()">
+                <div class="image-overlay">
+                    <span class="zoom-icon">🔍</span>
+                    <div class="overlay-text">Cliquer pour agrandir</div>
+                </div>
+                <div id="mainImageModal" class="modal">
+                    <span class="close" onclick="closeMainImageModal()">&times;</span>
+                    <div class="modal-content">
+                        <img id="mainModalImage" src="" alt="Image principale agrandie">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-info section">
+            <div class="info-columns">
+                <div class="column description">
+                    <h2>À propos du projet</h2>
+                    <p>Victor'IA est un projet de recherche et développement visant à créer un Small Language Model (SLM) optimisé pour des tâches spécifiques. Contrairement aux grands modèles de langage (LLM) qui nécessitent d'importantes ressources de calcul, Victor'IA est conçu pour être léger, efficient et spécialisé.</p>
+                    
+                    <p>Ce projet s'inscrit dans une démarche d'expérimentation pour rendre l'intelligence artificielle plus accessible et performante sur des tâches ciblées, tout en réduisant significativement l'empreinte énergétique et les ressources nécessaires.</p>
+
+                    <div class="features-section">
+                        <h2>Objectifs du projet</h2>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h3>🎯 Spécialisation</h3>
+                                <p>Développer un modèle de langage hautement spécialisé dans un domaine précis, permettant d'obtenir des performances supérieures aux modèles généralistes sur des tâches spécifiques.</p>
+                            </div>
+
+                            <div class="feature-item">
+                                <h3>⚡ Efficience</h3>
+                                <p>Optimiser l'architecture du modèle pour réduire sa taille et sa consommation de ressources, tout en maintenant des performances élevées dans son domaine de spécialisation.</p>
+                            </div>
+
+                            <div class="feature-item">
+                                <h3>🧪 Expérimentation</h3>
+                                <p>Explorer de nouvelles techniques de distillation de connaissances et d'architectures de réseaux de neurones pour améliorer l'efficacité des modèles de langage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features-section">
+                        <h2>Approche technique</h2>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h3>🔄 Architecture hybride</h3>
+                                <p>Victor'IA utilise une architecture transformeur modifiée, combinant attention locale et globale pour optimiser le traitement des contextes de différentes tailles.</p>
+                            </div>
+
+                            <div class="feature-item">
+                                <h3>📚 Distillation de connaissances</h3>
+                                <p>Application de techniques de distillation pour transférer les connaissances de modèles plus grands vers notre SLM compact.</p>
+                            </div>
+
+                            <div class="feature-item">
+                                <h3>🛠️ Fine-tuning spécifique</h3>
+                                <p>Processus d'apprentissage en plusieurs étapes avec des ensembles de données soigneusement sélectionnés pour maximiser la performance sur les tâches cibles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column tech-stack">
+                    <h2>Technologies Utilisées</h2>
+                    <ul class="tech-logo-list">
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/python.png" alt="Logo Python" class="tech-logo">
+                                <span>Python</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/pytorch.png" alt="Logo PyTorch" class="tech-logo">
+                                <span>PyTorch</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/huggingface.png" alt="Logo Hugging Face" class="tech-logo">
+                                <span>Hugging Face</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/tensorflow.png" alt="Logo TensorFlow" class="tech-logo">
+                                <span>TensorFlow</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/deeplearning.png" alt="Logo Deep Learning" class="tech-logo">
+                                <span>Deep Learning</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tech-item">
+                                <img src="../images/logos/docker.png" alt="Logo Docker" class="tech-logo">
+                                <span>Docker</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="project-details">
+                        <h2>Détails Techniques</h2>
+                        <ul class="details-list">
+                            <li><strong>Taille du modèle:</strong> 300M - 1B paramètres</li>
+                            <li><strong>Contexte:</strong> 2048-4096 tokens</li>
+                            <li><strong>Architecture:</strong> Transformeur modifié</li>
+                            <li><strong>Optimisation:</strong> Quantification INT8/FP16</li>
+                            <li><strong>Inférence:</strong> CPU/GPU optimisé</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-stats">
+                        <h2>État du projet</h2>
+                        <ul class="stats-list">
+                            <li>
+                                <span class="stat-label">Avancement</span>
+                                <span class="stat-value">5%</span>
+                            </li>
+                            <li>
+                                <span class="stat-label">Phase</span>
+                                <span class="stat-value">Conception</span>
+                            </li>
+                            <li>
+                                <span class="stat-label">Début</span>
+                                <span class="stat-value">Juin 2025</span>
+                            </li>
+                            <li>
+                                <span class="stat-label">Équipe</span>
+                                <span class="stat-value">1 personne</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-container">
+                        <h2>Feuille de route</h2>
+                        <div class="development-timeline">
+                            <div class="timeline-item conceptual animate-on-scroll">
+                                <div class="timeline-date">Juin 2025</div>
+                                <h3>Recherche et conception</h3>
+                                <p>Exploration des architectures et définition des objectifs</p>
+                            </div>
+                            <div class="timeline-item conceptual animate-on-scroll">
+                                <div class="timeline-date">Août 2025</div>
+                                <h3>Premier prototype</h3>
+                                <p>Implémentation d'un modèle de base et tests initiaux</p>
+                            </div>
+                            <div class="timeline-item conceptual animate-on-scroll">
+                                <div class="timeline-date">Octobre 2025</div>
+                                <h3>Optimisation et spécialisation</h3>
+                                <p>Fine-tuning et optimisation pour des cas d'usage spécifiques</p>
+                            </div>
+                            <div class="timeline-item conceptual animate-on-scroll">
+                                <div class="timeline-date">Décembre 2025</div>
+                                <h3>Version bêta</h3>
+                                <p>Déploiement d'une version de test pour recueillir des retours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="concept-discussion">
+            <h2>Défis et perspectives</h2>
+            <div class="discussion-points">
+                <div class="discussion-point animate-on-scroll">
+                    <h3>Compromis taille/performance</h3>
+                    <p>L'un des défis majeurs est de trouver l'équilibre optimal entre la taille réduite du modèle et le maintien de performances acceptables. Nos recherches explorent différentes techniques de compression et d'élagage pour y parvenir.</p>
+                </div>
+                <div class="discussion-point animate-on-scroll">
+                    <h3>Spécialisation vs généralisation</h3>
+                    <p>Déterminer le niveau idéal de spécialisation pour maintenir une utilité pratique tout en optimisant les performances sur les tâches cibles représente un défi permanent pour ce projet.</p>
+                </div>
+                <div class="discussion-point animate-on-scroll">
+                    <h3>Applications potentielles</h3>
+                    <p>Les SLMs comme Victor'IA offrent un potentiel considérable pour des applications embarquées, les appareils à ressources limitées, et les cas d'usage nécessitant une réponse rapide sans dépendance au cloud.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery section">
+            <h2>Ressources et visualisations</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../images/laboratoire/victoria.png" alt="Architecture du modèle">
+                    <div class="gallery-overlay">
+                        <h3>Architecture conceptuelle</h3>
+                        <p>Diagramme de l'architecture envisagée pour Victor'IA</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../images/laboratoire/attention_mechanism.png" alt="Mécanisme d'attention">
+                    <div class="gallery-overlay">
+                        <h3>Mécanisme d'attention</h3>
+                        <p>Visualisation du mécanisme d'attention modifié</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../images/laboratoire/model_comparison.png" alt="Comparaison de modèles">
+                    <div class="gallery-overlay">
+                        <h3>Benchmark préliminaire</h3>
+                        <p>Comparaison de performance avec d'autres modèles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Image agrandie">
+                <div id="imageCounter" class="image-counter"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer identique -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="contact-section" id="contact">
+                <h2>Contact (連絡)</h2>
+                <div class="contact-links">
+                    <p><a href="mailto:alexis.michaux-kinet@etu.umontpellier.fr">alexis.michaux-kinet@etu.umontpellier.fr</a></p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/alexis-michaux-kinet-89062b2b4/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                        <a href="https://github.com/Yota02" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Alexis Michaux-Kinet (アレクシ)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/lab-template.js"></script>
+</body>
+</html>

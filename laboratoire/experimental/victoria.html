@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor'IA - Projet Expérimental</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/lab-template.css">
+    <link rel="icon" href="../../images/logos/Victoria.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-project-type="experimental" class="lab-template-page">
+    <header class="site-header">
+        <a href="../../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html#accueil">Accueil</a></li>
+                <li><a href="../../projets/tous-les-projets.html">Projets</a></li>
+                <li><a href="../../competences.html">Compétences</a></li>
+                <li><a href="../../certification.html">Certifications</a></li>
+                <li><a href="../../laboratoire.html" class="active">Laboratoire</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-detail-page">
+        <a href="../../laboratoire.html" class="back-link">← Retour au laboratoire</a>
+        
+        <section class="project-header section">
+            <h1>
+                <span class="status-indicator experimental">expérimental</span>
+                Victor'IA Project
+            </h1>
+            <p class="project-subtitle">Un laboratoire d'expérimentation pour le développement d'un Small Language Model spécialisé</p>
+        </section>
+
+        <section class="project-media section">
+            <div class="main-image-container">
+                <img src="../../images/laboratoire/victoria.png" alt="Victor'IA Project - Expérimentation" class="main-project-image" onclick="labTemplate.openModal()">
+                <div class="image-overlay">
+                    <span class="zoom-icon">🔍</span>
+                    <div class="overlay-text">Cliquer pour agrandir</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-info section">
+            <div class="info-columns">
+                <div class="column">
+                    <h2>L'expérimentation en cours</h2>
+                    
+                    <div class="lab-effect">
+                        <p>Victor'IA est un projet expérimental visant à créer un Small Language Model (SLM) optimisé pour des tâches spécifiques. À la différence des modèles de langage traditionnels qui cherchent à être généralistes, notre approche vise à développer un modèle hautement spécialisé, économe en ressources et précis dans ses domaines d'application ciblés.</p>
+                        
+                        <p>Cette expérimentation explore les limites de la miniaturisation des modèles de langage tout en maintenant des performances acceptables pour des tâches spécifiques.</p>
+                    </div>
+                    
+                    <!-- <div class="data-monitor animate-on-scroll">
+                        <div class="monitor-label">Taux de compression du modèle</div>
+                        <div class="monitor-value">98.5%</div>
+                    </div>
+                    
+                    <div class="data-monitor animate-on-scroll">
+                        <div class="monitor-label">Précision sur tâches spécifiques</div>
+                        <div class="monitor-value">89.7%</div>
+                    </div> -->
+                    
+                    <div class="experiment-warning">
+                        <h4>⚠️ Phase expérimentale</h4>
+                        <p>Ce projet est actuellement dans sa phase d'expérimentation initiale. Les résultats et les métriques sont préliminaires et sujets à modification au fur et à mesure de nos avancées.</p>
+                    </div>
+                    
+                    <!-- <div class="tech-card experimental">
+                        <h3>Approche technique innovante</h3>
+                        <p>Notre méthodologie d'expérimentation combine plusieurs techniques novatrices:</p>
+                        <ul>
+                            <li>Architecture hybride avec attention locale/globale adaptative</li>
+                            <li>Distillation de connaissances multi-étapes à partir de modèles plus grands</li>
+                            <li>Quantification dynamique avec précision mixte</li>
+                            <li>Élagage neuronal progressif guidé par l'importance des connexions</li>
+                            <li>Fine-tuning ciblé avec jeux de données spécialisés</li>
+                        </ul>
+                    </div> -->
+                </div>
+                
+                <div class="column">
+                    <div class="timeline-container">
+                        <h2>Protocole expérimental</h2>
+                        <div class="development-timeline">
+                            <div class="timeline-item experimental animate-on-scroll">
+                                <div class="timeline-date">Phase 1 (Actuelle)</div>
+                                <h3>Recherche de faisabilité</h3>
+                                <p>Établissement des métriques de base et définition des seuils de performance acceptables.</p>
+                            </div>
+                            <div class="timeline-item experimental animate-on-scroll">
+                                <div class="timeline-date">Phase 2</div>
+                                <h3>Développement du prototype</h3>
+                                <p>Implémentation d'un modèle minimal avec attention locale et tests préliminaires.</p>
+                            </div>
+                            <div class="timeline-item experimental animate-on-scroll">
+                                <div class="timeline-date">Phase 3</div>
+                                <h3>Optimisation et itération</h3>
+                                <p>Ajustement des hyperparamètres, techniques de distillation et processus d'élagage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-header">
+                            <div class="progress-label">Avancement de l'expérimentation</div>
+                            <div class="progress-value">5%</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress experimental" data-value="5%" style="width: 5%"></div>
+                        </div>
+                    </div>
+                    
+                   <!--  <div class="tech-card experimental">
+                        <h3>Défis expérimentaux</h3>
+                        <p>Notre expérimentation fait face à plusieurs défis techniques:</p>
+                        <ul>
+                            <li>Compromis entre la taille du modèle et ses capacités</li>
+                            <li>Pertes de précision lors de la distillation des connaissances</li>
+                            <li>Déséquilibre entre généralisation et spécialisation</li>
+                            <li>Optimisation des couches d'attention pour des contextes réduits</li>
+                            <li>Instabilité lors de l'entraînement de modèles fortement élagués</li>
+                        </ul>
+                    </div> -->
+                    
+                    <div class="lab-button-container">
+                        <button class="lab-button experimental" disabled>Données préliminaires (à venir)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="interactive-demo animate-on-scroll">
+            <h2>Variables d'expérimentation</h2>
+            <p>Explorez les différents paramètres expérimentaux qui influencent les performances du modèle:</p>
+            
+            <div class="demo-container">
+                <div class="interactive-element" data-param="size">Taille du modèle</div>
+                <div class="interactive-element" data-param="context">Taille du contexte</div>
+                <div class="interactive-element" data-param="attention">Type d'attention</div>
+                <div class="interactive-element" data-param="quantization">Niveau de quantification</div>
+                <div class="interactive-element" data-param="pruning">Taux d'élagage</div>
+            </div>
+            
+            <div class="demo-hint">Cliquez sur un paramètre pour explorer son impact (simulation)</div>
+        </section> -->
+
+        <!-- <section class="project-gallery section">
+            <h2>Visualisations expérimentales</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/laboratoire/attention_mechanism.png" alt="Mécanisme d'attention adaptatif">
+                    <div class="gallery-overlay">
+                        <h3>Mécanisme d'attention adaptatif</h3>
+                        <p>Notre approche expérimentale d'attention hybride locale/globale</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/laboratoire/model_comparison.png" alt="Comparaison avec d'autres modèles">
+                    <div class="gallery-overlay">
+                        <h3>Benchmark comparative</h3>
+                        <p>Performance relative aux modèles existants sur des tâches spécifiques</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/laboratoire/knowledge_distillation.png" alt="Processus de distillation">
+                    <div class="gallery-overlay">
+                        <h3>Distillation de connaissances</h3>
+                        <p>Visualisation du processus de transfert des connaissances</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/laboratoire/pruning_visualization.png" alt="Visualisation de l'élagage">
+                    <div class="gallery-overlay">
+                        <h3>Élagage neuronal</h3>
+                        <p>Impact de l'élagage sur la densité et la structure du réseau</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="concept-discussion">
+            <h2>Implications expérimentales</h2>
+            <div class="discussion-points">
+                <div class="discussion-point animate-on-scroll">
+                    <h3>Nouveaux paradigmes de spécialisation</h3>
+                    <p>Notre expérimentation suggère que la spécialisation extrême des modèles de langage pourrait créer une nouvelle catégorie d'IA hautement efficientes dans des domaines spécifiques, remettant en question le paradigme actuel des modèles toujours plus grands.</p>
+                </div>
+                <div class="discussion-point animate-on-scroll">
+                    <h3>Démocratisation de l'IA</h3>
+                    <p>En réduisant considérablement les ressources nécessaires pour exécuter des modèles de langage performants, cette approche expérimentale pourrait contribuer à démocratiser l'accès aux technologies d'IA avancées.</p>
+                </div>
+                <div class="discussion-point animate-on-scroll">
+                    <h3>Applications embarquées</h3>
+                    <p>Les résultats préliminaires suggèrent que notre approche expérimentale pourrait permettre le déploiement de modèles de langage sophistiqués sur des appareils à ressources limitées, ouvrant la voie à de nouvelles applications en périphérie.</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="labTemplate.closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="contact-section" id="contact">
+                <h2>Contact</h2>
+                <div class="contact-links">
+                    <p><a href="mailto:alexis.michaux-kinet@etu.umontpellier.fr">alexis.michaux-kinet@etu.umontpellier.fr</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Alexis Michaux-Kinet (アレクシ)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/lab-template.js"></script>
+</body>
+</html>

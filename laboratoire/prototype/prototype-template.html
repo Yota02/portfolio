@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype - Nom du Projet</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/lab-template.css">
+    <link rel="icon" href="../../images/logos/Victoria.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-project-type="prototype" class="lab-template-page">
+    <header class="site-header">
+        <a href="../../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html#accueil">Accueil</a></li>
+                <li><a href="../../projets/tous-les-projets.html">Projets</a></li>
+                <li><a href="../../competences.html">Compétences</a></li>
+                <li><a href="../../certification.html">Certifications</a></li>
+                <li><a href="../../laboratoire.html" class="active">Laboratoire</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-detail-page">
+        <a href="../../laboratoire.html" class="back-link">← Retour au laboratoire</a>
+        
+        <section class="project-header section">
+            <h1>
+                <span class="status-indicator prototype">Prototype</span>
+                Nom du Projet
+            </h1>
+            <p class="project-subtitle">Description du prototype - Une solution fonctionnelle en développement.</p>
+        </section>
+
+        <section class="project-media section">
+            <div class="main-image-container">
+                <img src="../../images/projet/prototype.png" alt="Image principale du Prototype" class="main-project-image" onclick="openMainImageModal()">
+                <div class="image-overlay">
+                    <span class="zoom-icon">🔍</span>
+                    <div class="overlay-text">Cliquer pour agrandir</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-info section">
+            <div class="info-columns">
+                <div class="column">
+                    <h2>Présentation du Prototype</h2>
+                    <p>Ce prototype a été développé pour tester la faisabilité et l'efficacité de notre concept. Il représente une version fonctionnelle mais non finalisée du produit envisagé.</p>
+                    
+                    <div class="tech-card prototype">
+                        <h3>Fonctionnalités</h3>
+                        <ul class="feature-list">
+                            <li>Fonctionnalité principale #1</li>
+                            <li>Fonctionnalité principale #2</li>
+                            <li>Interface utilisateur simplifiée</li>
+                            <li>Stockage des données de test</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="interactive-demo">
+                        <h3>Démo interactive</h3>
+                        <div class="demo-container">
+                            <div class="interactive-element">Élément 1</div>
+                            <div class="interactive-element">Élément 2</div>
+                            <div class="interactive-element">Élément 3</div>
+                        </div>
+                        <p class="demo-hint">Cliquez sur les éléments pour interagir</p>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="timeline-container">
+                        <h2>Évolution du prototype</h2>
+                        <div class="development-timeline">
+                            <div class="timeline-item prototype animate-on-scroll">
+                                <div class="timeline-date">5 Mai 2025</div>
+                                <h3>Première ébauche</h3>
+                                <p>Conception et définition des objectifs</p>
+                            </div>
+                            <div class="timeline-item prototype animate-on-scroll">
+                                <div class="timeline-date">15 Mai 2025</div>
+                                <h3>Prototype Alpha</h3>
+                                <p>Première version fonctionnelle avec les fonctionnalités de base</p>
+                            </div>
+                            <div class="timeline-item prototype animate-on-scroll">
+                                <div class="timeline-date">25 Mai 2025</div>
+                                <h3>Tests utilisateurs</h3>
+                                <p>Recueil des feedbacks pour amélioration</p>
+                            </div>
+                            <div class="timeline-item prototype animate-on-scroll">
+                                <div class="timeline-date">En cours</div>
+                                <h3>Prototype Beta</h3>
+                                <p>Amélioration des fonctionnalités et de l'interface</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <h2>État d'avancement</h2>
+                        <div class="progress-header">
+                            <span class="progress-label">Fonctionnalités de base</span>
+                            <span class="progress-value">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress prototype" data-value="90%"></div>
+                        </div>
+                        
+                        <div class="progress-header">
+                            <span class="progress-label">Interface utilisateur</span>
+                            <span class="progress-value">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress prototype" data-value="75%"></div>
+                        </div>
+                        
+                        <div class="progress-header">
+                            <span class="progress-label">Tests et validation</span>
+                            <span class="progress-value">60%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress prototype" data-value="60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery section">
+            <h2>Aperçu du prototype</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/projet/prototype.png" alt="Vue 1">
+                    <div class="gallery-overlay">
+                        <h3>Interface principale</h3>
+                        <p>Écran d'accueil du prototype</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/projet/prototype.png" alt="Vue 2">
+                    <div class="gallery-overlay">
+                        <h3>Panneau de configuration</h3>
+                        <p>Options et réglages disponibles</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/projet/prototype.png" alt="Vue 3">
+                    <div class="gallery-overlay">
+                        <h3>Visualisation de données</h3>
+                        <p>Affichage et analyse des résultats</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback-panel" id="feedbackContainer">
+            <div class="feedback-form">
+                <h2>Donnez votre avis</h2>
+                <p>Ce prototype est en cours de développement et votre feedback est précieux.</p>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="userRating">Évaluation globale</label>
+                        <select id="userRating" name="userRating" required>
+                            <option value="">Sélectionnez une note</option>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Très bien</option>
+                            <option value="3">3 - Bien</option>
+                            <option value="2">2 - À améliorer</option>
+                            <option value="1">1 - Insuffisant</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userComment">Commentaires</label>
+                        <textarea id="userComment" name="userComment" rows="4" placeholder="Partagez vos suggestions d'amélioration..."></textarea>
+                    </div>
+                    <button type="submit" class="lab-button prototype">Envoyer mon feedback</button>
+                </form>
+            </div>
+            <div class="feedback-success">
+                <h3>Merci pour votre feedback !</h3>
+                <p>Vos commentaires nous aideront à améliorer ce prototype.</p>
+                <button class="lab-button prototype" onclick="window.location.reload()">Soumettre un autre avis</button>
+            </div>
+        </section>
+
+        <div id="mainImageModal" class="modal">
+            <span class="close" onclick="mainTemplate.closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="mainModalImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="mainTemplate.closeModal()">&times;</span>
+            <button class="prev" onclick="mainTemplate.changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="mainTemplate.changeSlide(1)">&#10095;</button>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Image agrandie">
+                <div id="imageCounter" class="image-counter"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="contact-section" id="contact">
+                <h2>Contact</h2>
+                <div class="contact-links">
+                    <p><a href="mailto:alexis.michaux-kinet@etu.umontpellier.fr">alexis.michaux-kinet@etu.umontpellier.fr</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Alexis Michaux-Kinet (アレクシ)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/lab-template.js"></script>
+</body>
+</html>

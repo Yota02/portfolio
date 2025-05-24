@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expérimental - Nom du Projet</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/lab-template.css">
+    <link rel="icon" href="../../images/logos/Victoria.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-project-type="experimental" class="lab-template-page">
+    <header class="site-header">
+        <a href="../../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html#accueil">Accueil</a></li>
+                <li><a href="../../projets/tous-les-projets.html">Projets</a></li>
+                <li><a href="../../competences.html">Compétences</a></li>
+                <li><a href="../../certification.html">Certifications</a></li>
+                <li><a href="../../laboratoire.html" class="active">Laboratoire</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-detail-page">
+        <a href="../../laboratoire.html" class="back-link">← Retour au laboratoire</a>
+        
+        <section class="project-header section">
+            <h1>
+                <span class="status-indicator experimental">Expérimental</span>
+                Nom du Projet
+            </h1>
+            <p class="project-subtitle">Description du projet expérimental - Une exploration des limites technologiques.</p>
+        </section>
+
+        <section class="project-media section">
+            <div class="main-image-container">
+                <img src="../../images/projet/prototype.png" alt="Image principale du Projet" class="main-project-image" onclick="openMainImageModal()">
+                <div class="image-overlay">
+                    <span class="zoom-icon">🔍</span>
+                    <div class="overlay-text">Cliquer pour agrandir</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-info section">
+            <div class="info-columns">
+                <div class="column">
+                    <h2>Le Laboratoire Expérimental</h2>
+                    <p>Cette section présente un projet hautement expérimental qui repousse les limites actuelles de la technologie. Les résultats peuvent être imprévisibles et le processus de développement est en évolution constante.</p>
+                    
+                    <div class="experiment-warning">
+                        <h4>⚠️ Recherche en cours</h4>
+                        <p>Ce projet est en phase d'expérimentation active. Les fonctionnalités et résultats peuvent changer rapidement.</p>
+                    </div>
+
+                    <div class="tech-card experimental">
+                        <h3>Données en temps réel</h3>
+                        <div class="lab-effect">
+                            <div class="data-monitor">
+                                <div class="monitor-label">Précision du modèle</div>
+                                <div class="monitor-value">87.5</div>
+                            </div>
+                            <div class="data-monitor">
+                                <div class="monitor-label">Temps de traitement (ms)</div>
+                                <div class="monitor-value">124.7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="timeline-container">
+                        <h2>Chronologie d'expérimentation</h2>
+                        <div class="development-timeline">
+                            <div class="timeline-item experimental animate-on-scroll">
+                                <div class="timeline-date">15 Juin 2025</div>
+                                <h3>Lancement de l'expérimentation</h3>
+                                <p>Établissement des hypothèses initiales et mise en place de l'environnement de test.</p>
+                            </div>
+                            <div class="timeline-item experimental animate-on-scroll">
+                                <div class="timeline-date">22 Juin 2025</div>
+                                <h3>Premiers résultats</h3>
+                                <p>Analyse des données préliminaires et ajustement des paramètres.</p>
+                            </div>
+                            <div class="timeline-item experimental animate-on-scroll">
+                                <div class="timeline-date">En cours</div>
+                                <h3>Itération et optimisation</h3>
+                                <p>Cycle continu d'amélioration basé sur les résultats obtenus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <h2>État d'avancement</h2>
+                        <div class="progress-header">
+                            <span class="progress-label">Recherche fondamentale</span>
+                            <span class="progress-value">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress experimental" data-value="85%"></div>
+                        </div>
+                        
+                        <div class="progress-header">
+                            <span class="progress-label">Prototype fonctionnel</span>
+                            <span class="progress-value">45%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress experimental" data-value="45%"></div>
+                        </div>
+                        
+                        <div class="progress-header">
+                            <span class="progress-label">Documentation</span>
+                            <span class="progress-value">20%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress experimental" data-value="20%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery section">
+            <h2>Capture de l'expérimentation</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/projet/prototype.png" alt="Capture 1">
+                    <div class="gallery-overlay">
+                        <h3>Phase Alpha</h3>
+                        <p>Premier test de concept</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/projet/prototype.png" alt="Capture 2">
+                    <div class="gallery-overlay">
+                        <h3>Résultat intermédiaire</h3>
+                        <p>Analyse des données</p>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="../../images/projet/prototype.png" alt="Capture 3">
+                    <div class="gallery-overlay">
+                        <h3>Simulation avancée</h3>
+                        <p>Modélisation des comportements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="mainImageModal" class="modal">
+            <span class="close" onclick="mainTemplate.closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="mainModalImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="mainTemplate.closeModal()">&times;</span>
+            <button class="prev" onclick="mainTemplate.changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="mainTemplate.changeSlide(1)">&#10095;</button>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Image agrandie">
+                <div id="imageCounter" class="image-counter"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="contact-section" id="contact">
+                <h2>Contact</h2>
+                <div class="contact-links">
+                    <p><a href="mailto:alexis.michaux-kinet@etu.umontpellier.fr">alexis.michaux-kinet@etu.umontpellier.fr</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Alexis Michaux-Kinet (アレクシ)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/lab-template.js"></script>
+</body>
+</html>

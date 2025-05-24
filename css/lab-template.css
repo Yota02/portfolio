@@ -1,0 +1,1375 @@
+/* Styles de base communs à tous les templates */
+:root {
+    --prototype-color: #2ecc71;
+    --prototype-light: rgba(46, 204, 113, 0.15);
+    --prototype-hover: #27ae60;
+    
+    --experimental-color: #ff5733;
+    --experimental-light: rgba(255, 87, 51, 0.15);
+    --experimental-hover: #e74c3c;
+    
+    --conceptual-color: #3498db;
+    --conceptual-light: rgba(52, 152, 219, 0.15);
+    --conceptual-hover: #2980b9;
+    
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    
+    --transition-slow: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --transition-medium: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Style commun de base */
+.lab-template-page {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Animation pour les éléments qui apparaissent au défilement */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-medium);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation d'entrée pour le titre */
+.project-header h1.animated {
+    animation: slideInDown 0.8s forwards;
+}
+
+.project-subtitle {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: var(--transition-medium);
+}
+
+.project-subtitle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles des boutons spécifiques au laboratoire */
+.lab-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-decoration: none;
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-family: var(--font-body);
+    margin: 10px 0;
+}
+
+/* Variations de boutons selon le type de projet */
+.lab-button.prototype {
+    color: var(--prototype-color);
+    border-color: var(--prototype-color);
+    background-color: white;
+}
+
+.lab-button.prototype:hover {
+    color: white;
+    background-color: var(--prototype-color);
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);
+    transform: translateY(-2px);
+}
+
+.lab-button.experimental {
+    color: var(--experimental-color);
+    border-color: var(--experimental-color);
+    background-color: white;
+}
+
+.lab-button.experimental:hover {
+    color: white;
+    background-color: var(--experimental-color);
+    box-shadow: 0 4px 10px rgba(255, 87, 51, 0.2);
+    transform: translateY(-2px);
+}
+
+.lab-button.conceptual {
+    color: var(--conceptual-color);
+    border-color: var(--conceptual-color);
+    background-color: white;
+}
+
+.lab-button.conceptual:hover {
+    color: white;
+    background-color: var(--conceptual-color);
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+/* États des boutons */
+.lab-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.lab-button.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Indicateurs de statut */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.status-indicator::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.status-indicator.prototype {
+    background-color: var(--prototype-light);
+    color: var(--prototype-color);
+}
+
+.status-indicator.prototype::before {
+    background-color: var(--prototype-color);
+}
+
+.status-indicator.experimental {
+    background-color: var(--experimental-light);
+    color: var(--experimental-color);
+}
+
+.status-indicator.experimental::before {
+    background-color: var(--experimental-color);
+}
+
+.status-indicator.conceptual {
+    background-color: var(--conceptual-light);
+    color: var(--conceptual-color);
+}
+
+.status-indicator.conceptual::before {
+    background-color: var(--conceptual-color);
+}
+
+/* Timeline de développement */
+.development-timeline {
+    margin: 50px 0;
+    position: relative;
+}
+
+.development-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    background-color: #e0e0e0;
+}
+
+.timeline-item {
+    padding-left: 50px;
+    position: relative;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: var(--transition-medium);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #ccc;
+}
+
+.timeline-item.prototype::before {
+    border-color: var(--prototype-color);
+}
+
+.timeline-item.experimental::before {
+    border-color: var(--experimental-color);
+}
+
+.timeline-item.conceptual::before {
+    border-color: var(--conceptual-color);
+}
+
+.timeline-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.timeline-item p {
+    color: #666;
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* Barres de progression */
+.progress-container {
+    margin: 15px 0;
+    width: 100%;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.progress-label {
+    font-weight: 500;
+}
+
+.progress-value {
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: progressShine 2s infinite;
+}
+
+.progress.prototype {
+    background: linear-gradient(90deg, var(--prototype-color), #27ae60);
+}
+
+.progress.experimental {
+    background: linear-gradient(90deg, var(--experimental-color), #e74c3c);
+}
+
+.progress.conceptual {
+    background: linear-gradient(90deg, var(--conceptual-color), #2980b9);
+}
+
+/* Cartes d'informations techniques */
+.tech-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-medium);
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.tech-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+}
+
+.tech-card.prototype h3::after {
+    background-color: var(--prototype-color);
+}
+
+.tech-card.experimental h3::after {
+    background-color: var(--experimental-color);
+}
+
+.tech-card.conceptual h3::after {
+    background-color: var(--conceptual-color);
+}
+
+.tech-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Styles pour les listes technologiques */
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tech-pill {
+    background-color: #f5f5f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    transition: var(--transition-fast);
+}
+
+.tech-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-pill.prototype {
+    background-color: var(--prototype-light);
+    color: var(--prototype-color);
+}
+
+.tech-pill.experimental {
+    background-color: var(--experimental-light);
+    color: var(--experimental-color);
+}
+
+.tech-pill.conceptual {
+    background-color: var(--conceptual-light);
+    color: var(--conceptual-color);
+}
+
+/* Gallerie d'images */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: var(--transition-medium);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition-medium);
+    cursor: pointer;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: var(--transition-medium);
+    pointer-events: none;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.gallery-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Modal pour les images */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 40px;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+}
+
+/* Section commentaires */
+.comments-section {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.comment-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-success {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: var(--prototype-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Section d'équipe */
+.team-section {
+    margin-top: 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-member {
+    text-align: center;
+    position: relative;
+    transition: var(--transition-medium);
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-medium);
+}
+
+.team-member:hover img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-member h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Section téléchargements */
+.downloads-section {
+    margin-top: 40px;
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    transition: var(--transition-medium);
+}
+
+.download-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.download-icon {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.download-info {
+    flex: 1;
+}
+
+.download-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.download-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.download-meta {
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.download-meta span {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.download-meta span::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.download-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+/* Feedback panel */
+.feedback-panel {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 40px;
+    transition: var(--transition-medium);
+}
+
+.feedback-panel.submitted {
+    background-color: var(--prototype-light);
+    box-shadow: 0 5px 20px rgba(46, 204, 113, 0.15);
+}
+
+.feedback-panel h3 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.feedback-form {
+    display: block;
+}
+
+.feedback-success {
+    display: none;
+    text-align: center;
+}
+
+.feedback-panel.submitted .feedback-form {
+    display: none;
+}
+
+.feedback-panel.submitted .feedback-success {
+    display: block;
+    animation: fadeIn 0.5s forwards;
+}
+
+.feedback-success h3 {
+    color: var(--prototype-color);
+}
+
+.feedback-success p {
+    margin-bottom: 20px;
+}
+
+/* Dialogues */
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-medium);
+    z-index: 1000;
+}
+
+.dialog.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dialog-content {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(30px);
+    transition: var(--transition-medium);
+    position: relative;
+}
+
+.dialog.open .dialog-content {
+    transform: translateY(0);
+}
+
+.dialog-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    transition: var(--transition-fast);
+}
+
+.dialog-close:hover {
+    color: #333;
+    transform: rotate(90deg);
+}
+
+.dialog-title {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.4rem;
+}
+
+/* Styles spécifiques par type de projet */
+
+/* 1. Prototype */
+body[data-project-type="prototype"] .project-header {
+    border-left: 5px solid var(--prototype-color);
+    padding-left: 20px;
+}
+
+body[data-project-type="prototype"] .section-title::after {
+    background-color: var(--prototype-color);
+}
+
+body[data-project-type="prototype"] .back-link {
+    color: var(--prototype-color);
+}
+
+/* 2. Expérimental */
+body[data-project-type="experimental"] .project-header {
+    border-left: 5px solid var(--experimental-color);
+    padding-left: 20px;
+}
+
+body[data-project-type="experimental"] .section-title::after {
+    background-color: var(--experimental-color);
+}
+
+body[data-project-type="experimental"] .back-link {
+    color: var(--experimental-color);
+}
+
+/* Éléments spécifiques aux projets expérimentaux */
+.lab-effect {
+    position: relative;
+    transition: var(--transition-medium);
+}
+
+.lab-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--experimental-color);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: particleFade 1s forwards;
+}
+
+.data-monitor {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--experimental-color);
+}
+
+.monitor-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.monitor-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    transition: var(--transition-fast);
+}
+
+.monitor-value.value-change {
+    color: var(--experimental-color);
+}
+
+.experiment-warning {
+    background-color: rgba(243, 156, 18, 0.15);
+    border-left: 3px solid var(--warning-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.experiment-warning h4 {
+    color: var(--warning-color);
+    margin-bottom: 10px;
+}
+
+.experiment-warning p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* 3. Conceptuel */
+body[data-project-type="conceptual"] .project-header {
+    border-left: 5px solid var(--conceptual-color);
+    padding-left: 20px;
+}
+
+body[data-project-type="conceptual"] .section-title::after {
+    background-color: var(--conceptual-color);
+}
+
+body[data-project-type="conceptual"] .back-link {
+    color: var(--conceptual-color);
+}
+
+/* Éléments spécifiques aux projets conceptuels */
+.concept-diagram {
+    position: relative;
+    margin: 30px 0;
+    cursor: zoom-in;
+}
+
+.concept-diagram img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-medium);
+}
+
+.concept-diagram:hover img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.zoom-container {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    display: none;
+    z-index: 100;
+}
+
+.zoomed-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(2);
+}
+
+.concept-connection {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: var(--conceptual-light);
+    color: var(--conceptual-color);
+    margin: 10px;
+}
+
+.concept-connection::before,
+.concept-connection::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: var(--conceptual-color);
+    top: 50%;
+}
+
+.concept-connection::before {
+    left: -20px;
+}
+
+.concept-connection::after {
+    right: -20px;
+}
+
+.concept-connection.pulse {
+    animation: conceptPulse 1s;
+}
+
+/* Nouveaux styles pour différencier les types de pages laboratoire */
+
+/* Styles spécifiques pour les entêtes selon le type */
+body[data-project-type="prototype"] .project-header {
+    border-color: var(--prototype-color);
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+body[data-project-type="experimental"] .project-header {
+    border-color: var(--experimental-color);
+    background: linear-gradient(135deg, rgba(255, 87, 51, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+body[data-project-type="conceptual"] .project-header {
+    border-color: var(--conceptual-color);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+/* Mises en page spécifiques */
+/* Pour les prototypes: disposition plus orientée produit */
+body[data-project-type="prototype"] .project-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(46, 204, 113, 0.15);
+}
+
+body[data-project-type="prototype"] .main-project-image {
+    transform-origin: center bottom;
+}
+
+body[data-project-type="prototype"] .main-image-container:hover .main-project-image {
+    transform: scale(1.04) translateY(-5px);
+}
+
+/* Pour les expérimentaux: effet de laboratoire scientifique */
+body[data-project-type="experimental"] .project-media {
+    position: relative;
+    border: 2px dashed var(--experimental-color);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+body[data-project-type="experimental"] .main-project-image {
+    filter: brightness(1.03) contrast(1.05);
+}
+
+body[data-project-type="experimental"] .main-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 60%, rgba(255, 87, 51, 0.2));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+body[data-project-type="experimental"] .main-image-container:hover::before {
+    opacity: 1;
+}
+
+/* Pour les conceptuels: apparence plus abstraite et théorique */
+body[data-project-type="conceptual"] .project-media {
+    position: relative;
+    padding: 20px;
+    background-color: rgba(52, 152, 219, 0.03);
+    border-radius: 15px;
+}
+
+body[data-project-type="conceptual"] .main-project-image {
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body[data-project-type="conceptual"] .main-image-container:hover .main-project-image {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.25);
+}
+
+/* Styles pour la section de discussion conceptuelle */
+.concept-discussion {
+    padding: 40px 5%;
+    background-color: rgba(52, 152, 219, 0.03);
+    margin-top: 60px;
+}
+
+.discussion-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.discussion-point {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.discussion-point.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.discussion-point h3 {
+    color: var(--conceptual-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.discussion-point h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--conceptual-color);
+}
+
+/* Styles pour la carte conceptuelle */
+.concept-map {
+    margin: 30px 0;
+}
+
+.relationships-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.relationships-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: rgba(52, 152, 219, 0.3);
+    z-index: 0;
+}
+
+/* Styles pour les démos interactives */
+.interactive-demo {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(46, 204, 113, 0.05);
+    border-radius: 10px;
+}
+
+.demo-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.interactive-element {
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+}
+
+.interactive-element:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.interactive-element.active {
+    background-color: var(--prototype-color);
+    color: white;
+    border-color: var(--prototype-color);
+}
+
+.demo-hint {
+    font-size: 0.9rem;
+    color: #777;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Moniteurs de données pour projets expérimentaux */
+.data-monitor {
+    margin: 15px 0;
+}
+
+.monitor-value {
+    position: relative;
+    display: inline-block;
+}
+
+.monitor-value::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--experimental-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.data-monitor:hover .monitor-value::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Améliorer la liste de features pour les prototypes */
+body[data-project-type="prototype"] .feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+body[data-project-type="prototype"] .feature-list li {
+    padding: 10px 0 10px 25px;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+body[data-project-type="prototype"] .feature-list li:last-child {
+    border-bottom: none;
+}
+
+body[data-project-type="prototype"] .feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--prototype-color);
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes particleFade {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(0, -50px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes conceptPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+}
+
+/* Message temporaire */
+.demo-message {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgba(52, 152, 219, 0.9);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    animation: messageSlideIn 0.4s forwards;
+    z-index: 1000;
+}
+
+.demo-message.fade-out {
+    animation: messageSlideOut 0.3s forwards;
+}
+
+@keyframes messageSlideIn {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes messageSlideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .development-timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-item {
+        padding-left: 35px;
+    }
+    
+    .timeline-item::before {
+        left: 4px;
+    }
+    
+    .close-modal {
+        top: -30px;
+        right: 0;
+    }
+    
+    .tech-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lab-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .tech-list {
+        gap: 8px;
+    }
+    
+    .tech-pill {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Classes utilitaires */
+.text-center {
+    text-align: center;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #333;
+}
+
+.highlight-prototype {
+    color: var(--prototype-color);
+}
+
+.highlight-experimental {
+    color: var(--experimental-color);
+}
+
+.highlight-conceptual {
+    color: var(--conceptual-color);
+}

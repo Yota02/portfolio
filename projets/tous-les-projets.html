@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="images/logos/Victoria.png" type="image/png">
+    <link rel="icon" href="images/logos/Victoria.png" type="image/png">
+    <link rel="stylesheet" href="../css/github-projects.css">
 </head>
 <body>
     <header class="site-header">
@@ -17,11 +18,10 @@
             <ul>
                 <li><a href="../index.html#accueil">Accueil</a></li>
                 <li><a href="tous-les-projets.html" class="active">Projets</a></li>
-                <li><a href="../competences.html" class="active">Compétences</a></li>
+                <li><a href="../competences.html">Compétences</a></li>
                 <li><a href="../certification.html">Certifications</a></li>
-                <li><a href="../index.html#a-propos">À Propos</a></li>
                 <li><a href="../laboratoire.html">Laboratoire</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -212,5 +212,31 @@
     </footer>
 
     <script src="../js/script.js"></script>
+    <script src="../js/github-projects.js"></script>
+    <script>
+        // Ajouter une fonction pour filtrer les projets open source
+        document.addEventListener('DOMContentLoaded', function() {
+            const openSourceFilter = document.querySelector('[data-filter="open-source"]');
+            if (openSourceFilter) {
+                openSourceFilter.addEventListener('click', function() {
+                    const allProjects = document.querySelectorAll('.project-card');
+                    
+                    allProjects.forEach(project => {
+                        if (project.querySelector('[data-github]')) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                    
+                    // Mettre à jour les boutons actifs
+                    document.querySelectorAll('.filter-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    openSourceFilter.classList.add('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
