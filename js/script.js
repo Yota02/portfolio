@@ -47,8 +47,8 @@ const projectGalleries = {
     },
     'StarGuardian': {
         images: [
-            '../images/projet/StarGuardian/execl_star_guardian.png',
-            '../images/projet/StarGuardian/main.png',
+            '../images/projet/starGuardian/execl_star_guardian.png',
+            '../images/projet/starGuardian/main.png',
         ],
         titles: [
             'Execl final',
