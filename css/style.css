@@ -2618,3 +2618,274 @@ a.logo:hover { color: var(--accent-color); } /* Change couleur au survol */
         gap: 15px;
     }
 }
+
+/* Style pour le sélecteur de niveau */
+.level-selector {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.level-selector label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.level-selector select {
+    flex: 1;
+    padding: 8px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: white;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.level-selector select:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(188, 0, 45, 0.1);
+}
+
+.level-selector select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(188, 0, 45, 0.2);
+}
+
+.level-selector select option {
+    padding: 10px;
+    background-color: white;
+    color: var(--text-color);
+}
+
+.level-selector select option:hover {
+    background-color: #f8f9fa;
+}
+
+/* Animation pour l'effet de filtrage */
+.niveau1-content,
+.niveau2-content {
+    transition: all 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.niveau1-content[style*="display: none"],
+.niveau2-content[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .level-selector {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .level-selector label {
+        text-align: center;
+    }
+    
+    .level-selector select {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .level-selector {
+        padding: 12px;
+    }
+    
+    .level-selector select {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        padding-right: 35px;
+    }
+}
+
+/* Style pour les logos d'institutions dans la timeline */
+.institution-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 12px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    vertical-align: middle;
+}
+
+.institution-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajustement du titre pour bien aligner le logo */
+.timeline-item h3 {
+    color: var(--accent-color);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .institution-logo {
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+    }
+    
+    .timeline-item h3 {
+        font-size: 1.2em;
+        gap: 8px;
+    }
+}
+
+/* --- Styles pour le lien roadmap --- */
+.roadmap-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(144, 9, 41, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmap-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.roadmap-link:hover {
+    background-color: var(--subtle-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(188, 0, 45, 0.4);
+}
+
+.roadmap-link:hover::before {
+    left: 100%;
+}
+
+.roadmap-link:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(188, 0, 45, 0.3);
+}
+
+/* Style cohérent pour la navigation des catégories */
+.category-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+#categorySelect {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    background: white;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+#categorySelect:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(188, 0, 45, 0.1);
+}
+
+#categorySelect:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .category-nav {
+        position: sticky;
+        top: 60px;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0;
+        padding: 1rem;
+        z-index: 100;
+        background-color: white;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    #categorySelect {
+        min-width: 100%;
+        max-width: 300px;
+    }
+    
+    .roadmap-link {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+/* Animation pour le pin au survol */
+.roadmap-link:hover {
+    animation: roadmapBounce 0.6s ease;
+}
+
+@keyframes roadmapBounce {
+    0%, 100% { transform: translateY(-2px) scale(1); }
+    25% { transform: translateY(-3px) scale(1.02); }
+    75% { transform: translateY(-1px) scale(1.02); }
+}

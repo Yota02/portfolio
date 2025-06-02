@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap des Projets - Portfolio Alexis Michaux</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/roadmap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/logos/Victoria.png" type="image/png">
+</head>
+<body>
+    <header class="site-header">
+        <a href="../index.html" class="logo">Alexis Michaux-Kinet (アレクシ)</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html#accueil">Accueil</a></li>
+                <li><a href="tous-les-projets.html">Projets</a></li>
+                <li><a href="../competences.html">Compétences</a></li>
+                <li><a href="../certification.html">Certifications</a></li>
+                <li><a href="../laboratoire.html">Laboratoire</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="roadmap-page">
+        <section class="roadmap-header section">
+            <a href="tous-les-projets.html" class="back-link">← Retour aux projets</a>
+            <h1>Roadmap des Projets (プロジェクトロードマップ)</h1>
+            <p class="roadmap-subtitle">Visualisez l'évolution chronologique de mes projets informatiques</p>
+            
+            <!-- Filtres -->
+            <div class="roadmap-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="completed">Terminés</button>
+                <button class="filter-btn" data-filter="in-progress">En cours</button>
+                <button class="filter-btn" data-filter="planned">Planifiés</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="ai">IA</button>
+                <button class="filter-btn" data-filter="apps">Applications</button>
+            </div>
+        </section>
+
+        <!-- Légende -->
+        <section class="roadmap-legend">
+            <div class="legend-item">
+                <span class="status-indicator completed"></span>
+                <span>Terminé</span>
+            </div>
+            <div class="legend-item">
+                <span class="status-indicator in-progress"></span>
+                <span>En cours</span>
+            </div>
+            <div class="legend-item">
+                <span class="status-indicator planned"></span>
+                <span>Planifié</span>
+            </div>
+        </section>
+
+        <!-- Timeline principale -->
+        <section class="roadmap-timeline">
+            <div class="timeline-container">
+                
+                <!-- 2023 -->
+                <!-- <div class="timeline-year">
+                    <h2>2023</h2>
+                    <div class="year-line"></div>
+                </div> -->
+
+                <!-- 2024 -->
+                <div class="timeline-year">
+                    <h2>2024</h2>
+                    <div class="year-line"></div>
+                    
+                    <!-- PlayToWin -->
+                    <div class="project-milestone completed web" data-category="web" data-status="completed">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">Sep 2024 - En cours</div>
+                            <h3>
+                                <img src="../images/projet/PlayToWin/icon.png" alt="PlayToWin" class="project-icon">
+                                Play To Win
+                            </h3>
+                            <p>Plateforme de services de coaching personnalisés pour joueurs</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="PlayToWin.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge in-progress">En cours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trains -->
+                    <div class="project-milestone completed games" data-category="games" data-status="completed">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">Mar 2024 - Juin 2024</div>
+                            <h3>
+                                <img src="../images/projet/trains/trains.png" alt="Trains" class="project-icon">
+                                Trains
+                            </h3>
+                            <p>Adaptation du jeu de société Trains en jeu vidéo</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">JavaFX</span>
+                                <span class="tech-tag">Socket</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="trains.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge completed">Terminé</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Break The Code -->
+                    <div class="project-milestone completed web" data-category="web" data-status="completed">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">Sep 2024 - Jan 2025</div>
+                            <h3>
+                                <img src="../images/projet/CTF/StormFlash.png" alt="BreakTheCode" class="project-icon">
+                                Break The Code
+                            </h3>
+                            <p>Plateforme dédiée aux défis Capture The Flag</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">WordPress</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="BreakTheCode.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge completed">Terminé</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="timeline-year current">
+                    <h2>2025</h2>
+                    <div class="year-line current-year"></div>
+                    
+                    <!-- CodeTonFutur -->
+                    <div class="project-milestone in-progress web" data-category="web" data-status="in-progress">
+                        <div class="milestone-marker current"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">Jan 2025 - En cours</div>
+                            <h3>
+                                <img src="../images/projet/CodeTonFutur/victoria_v.png" alt="CodeTonFutur" class="project-icon">
+                                CodeTonFutur
+                            </h3>
+                            <p>Site web dédié à la vulgarisation de l'informatique appliquée aux sciences</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="CodeTonFutur.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge in-progress">En cours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Star Guardian -->
+                    <div class="project-milestone in-progress apps" data-category="apps" data-status="in-progress">
+                        <div class="milestone-marker current"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">Jan 2025 - En cours</div>
+                            <h3>
+                                <img src="../images/projet/starGuardian/icon.png" alt="Star Guardian" class="project-icon">
+                                Star Guardian
+                            </h3>
+                            <p>Outils d'analyse de données statistiques d'alerte collision satellites</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Tkinter</span>
+                                <span class="tech-tag">Excel</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="StarGuardian.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge in-progress">En cours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projekt Übersetzung -->
+                    <div class="project-milestone in-progress apps" data-category="apps" data-status="in-progress">
+                        <div class="milestone-marker current"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">Avr 2025 - En cours</div>
+                            <h3>
+                                <img src="../images/projet/ProjektBersetzung/icon.png" alt="Projekt Übersetzung" class="project-icon">
+                                Projekt Übersetzung
+                            </h3>
+                            <p>Logiciel destiné à la traduction de romans PDF</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Tkinter</span>
+                                <span class="tech-tag">IA</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="ProjektBersetzung.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge in-progress">En cours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OneClickIssue -->
+                    <div class="project-milestone completed apps" data-category="apps" data-status="completed">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">2025</div>
+                            <h3>
+                                <img src="../images/projet/OneClickIssue/logo.png" alt="OneClickIssue" class="project-icon">
+                                OneClickIssue
+                            </h3>
+                            <p>Outil de création automatique d'issues GitHub</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyQt5</span>
+                                <span class="tech-tag">GitHub API</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="OneClickIssue.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge completed">Terminé</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Img Classifier -->
+                    <div class="project-milestone completed ai" data-category="ai" data-status="completed">
+                        <div class="milestone-marker"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">2025</div>
+                            <h3>
+                                <img src="../images/projet/IA_Kiana/kiana.png" alt="Img Classifier" class="project-icon">
+                                Img Classifier
+                            </h3>
+                            <p>Logiciel basé sur l'IA pour classifier des images</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Hugging Face</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="classifier_kiana.html" class="view-project">Voir le projet</a>
+                                <span class="status-badge completed">Terminé</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Victor'IA (planifié) -->
+                    <div class="project-milestone planned ai" data-category="ai" data-status="planned">
+                        <div class="milestone-marker planned"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">Juin 2025 - 2026</div>
+                            <h3>
+                                <img src="../images/laboratoire/victoria.png" alt="Victor'IA" class="project-icon">
+                                Victor'IA Project
+                            </h3>
+                            <p>Modèle de langage optimisé pour les ressources limitées</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Transformers</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <a href="victoria.html" class="view-project">Voir le concept</a>
+                                <span class="status-badge in-progress">En cours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2026+ Projets futurs -->
+                <!-- <div class="timeline-year future">
+                    <h2>2026+</h2>
+                    <div class="year-line future-year"></div>
+                    
+                    <div class="project-milestone planned" data-category="all" data-status="planned">
+                        <div class="milestone-marker planned"></div>
+                        <div class="milestone-content">
+                            <div class="milestone-date">2026+</div>
+                            <h3>🚀 Projets Spatial</h3>
+                            <p>Applications pour le secteur aérospatial après le Master</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">À définir</span>
+                            </div>
+                            <div class="milestone-actions">
+                                <span class="status-badge planned">Vision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Statistiques -->
+        <section class="roadmap-stats section">
+            <h2>Statistiques des Projets</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" id="total-projects">10+</span>
+                    <span class="stat-label">Projets Total</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="completed-projects">6</span>
+                    <span class="stat-label">Terminés</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="active-projects">4</span>
+                    <span class="stat-label">En cours</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="planned-projects">2</span>
+                    <span class="stat-label">Planifiés</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="contact-section" id="contact">
+                <h2>Contact (連絡)</h2>
+                <div class="contact-links">
+                    <p><a href="mailto:alexis.michaux-kinet@etu.umontpellier.fr">alexis.michaux-kinet@etu.umontpellier.fr</a></p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/alexis-michaux-kinet-89062b2b4/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                        <a href="https://github.com/Yota02" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Alexis Michaux-Kinet (アレクシ)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/roadmap.js"></script>
+</body>
+</html>

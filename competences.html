@@ -32,6 +32,14 @@
     <main class="competences-page">
 
         <nav class="competences-nav">
+            <div class="level-selector">
+                <label for="levelFilter">Niveau :</label>
+                <select id="levelFilter">
+                    <option value="all">Tous les niveaux</option>
+                    <option value="niveau1">Niveau 1</option>
+                    <option value="niveau2">Niveau 2</option>
+                </select>
+            </div>
             <ul>
                 <li><a href="#developper" class="nav-item active">Développer</a></li>
                 <li><a href="#optimiser" class="nav-item">Optimiser</a></li>
@@ -52,8 +60,8 @@
             <div class="competence-card" id="developper">
                 <h2>Développer (デベロッパー)</h2>
                 <div class="ac-levels">
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 1</h3>
+                    <div class="ac-level niveau1-content">
+                        <h3 class="level-title">Niveau 1 Développer des applications informatiques simples</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Implémenter des conceptions simples</h3>
@@ -189,10 +197,150 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="ac-level niveau2-content">
+                        <h3 class="level-title">Niveau 2 Partir des exigences et aller jusqu’à une application complète</h3>
+                        <div class="ac-group">
+                        <!-- Développer -->
+                        <div class="ac-item">
+                            <h3>AC1 - Élaborer et implémenter les spécifications fonctionnelles et non-fonctionnelles à partir des exigences</h3>
+                            <div class="acquisition-status">
+                                <span class="status-badge">Acquis</span>
+                                <p>Capacité à transformer les besoins en spécifications techniques et à les implémenter.
+                                </p>
+                            </div>
+
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/PlayToWin.html" class="project-link">
+                                        <h4>Play To Win</h4>
+                                        <p>Rédaction du cahier des charges</p>
+                                        <p>Implémentation des fonctionnalités selon les spécifications</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                                <div class="project-evidence">
+                                    <a href="projets/BreakTheCode.html" class="project-link">
+                                        <h4>Break The Code</h4>
+                                        <p>Rédaction du cahier des charges</p>
+                                        <p>Implémentation des fonctionnalités selon les spécifications</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ac-item">
+                            <h3>AC2 - Appliquer des principes d'accessibilité et d'ergonomie</h3>
+                            <div class="acquisition-status">
+                                <span class="status-badge">Acquis</span>
+                                <p>Mise en œuvre des bonnes pratiques d'UX/UI et d'accessibilité.</p>
+                            </div>
+
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/CodeTonFutur.html" class="project-link">
+                                        <h4>CodeTonFutur</h4>
+                                        <p>Interface adaptative et responsive</p>
+                                        <p>Respect des normes WCAG</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/BreakTheCode.html" class="project-link">
+                                        <h4>Break The Code</h4>
+                                        <p>Interface adaptative et responsive</p>
+                                        <p>Respect des normes WCAG</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/StarGuardian.html" class="project-link">
+                                        <h4>Star Guardian</h4>
+                                        <p>Interface adaptative et responsive</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ac-item">
+                            <h3>AC3 - Adopter de bonnes pratiques de conception et de programmation</h3>
+                            <div class="acquisition-status">
+                                <span class="status-badge">Acquis</span>
+                                <p>Application des principes SOLID et des design patterns.</p>
+                            </div>
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/OneClickIssue.html" class="project-link">
+                                        <h4>OneClickIssue</h4>
+                                        <p>Architecture Clean Code</p>
+                                        <p>Tests unitaires et intégration continue</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/PlayToWin.html" class="project-link">
+                                        <h4>Play To Win</h4>
+                                        <p>Architecture MVCS</p>
+                                        <p>Utilisation des principes SOLID</p>
+                                        <p>Utilisation des design patterns</p>
+                                        <p>Tests unitaires et intégration continue</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/StarGuardian.html" class="project-link">
+                                        <h4>Star Guardian</h4>
+                                        <p>Architecture Clean Code</p>
+                                        <p>Architecture héréditaire</p>
+                                        <p>Utilisation des principes SOLID</p>
+                                        <p>Tests unitaires</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ac-item">
+                            <h3>AC4 - Vérifier et valider la qualité de l'application par les tests</h3>
+                            <div class="acquisition-status">
+                                <span class="status-badge">Acquis</span>
+                                <p>Mise en place d'une stratégie de tests complète.</p>
+                            </div>
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/StarGuardian.html" class="project-link">
+                                        <h4>Star Guardian</h4>
+                                        <p>Tests unitaires avec PyTest</p>
+                                        <p>Tests d'intégration</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="projects-list">
+                                <div class="project-evidence">
+                                    <a href="projets/trains.html" class="project-link">
+                                        <h4>Trains</h4>
+                                        <p>Tests unitaires avec Java</p>
+                                        <span class="view-project">Voir le projet →</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="ac-level">
-                    <h3 class="level-title">Niveau 2</h3>
+                <div class="ac-level niveau2-content">
+                    <h3 class="level-title">Niveau 2 Partir des exigences et aller jusqu’à une application complète</h3>
                     <div class="ac-group">
                         <!-- Développer -->
                         <div class="ac-item">
@@ -338,8 +486,8 @@
                 <h2>Optimiser (オプティマイザー)</h2>
                 <div class="ac-levels">
                     <!-- Niveau 1 -->
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 1</h3>
+                    <div class="ac-level niveau1-content">
+                        <h3 class="level-title">Niveau 1 Appréhender et construire des algorithmes</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Analyser un problème avec méthode</h3>
@@ -406,8 +554,8 @@
                     </div>
             
                     <!-- Niveau 2 -->
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 2</h3>
+                    <div class="ac-level niveau2-content">
+                        <h3 class="level-title">Niveau 2 Sélectionner les algorithmes adéquats pour répondre à un problème donné</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Choisir des structures de données complexes adaptées au problème</h3>
@@ -524,8 +672,8 @@
                 <h2>Administrer (管理する)</h2>
                 <div class="ac-levels">
                     <!-- Niveau 1 -->
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 1</h3>
+                    <div class="ac-level niveau1-content">
+                        <h3 class="level-title">Niveau 1 Installer et configurer un poste de travail</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Identifier les différents composants (matériels et logiciels) d'un système numérique</h3>
@@ -624,8 +772,8 @@
                     </div>
             
                     <!-- Niveau 2 -->
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 2</h3>
+                    <div class="ac-level niveau2-content">
+                        <h3 class="level-title">Niveau 2 Déployer des services dans une architecture réseau</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Concevoir et développer des applications communicantes</h3>
@@ -698,8 +846,8 @@
                 <h2>Gérer (管理)</h2>
                 <div class="ac-levels">
                     <!-- Niveau 1 -->
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 1</h3>
+                    <div class="ac-level niveau1-content">
+                        <h3 class="level-title">Niveau 1 Concevoir et mettre en place une base de données à partir d’un cahier des charges client</h3>
                         <div class="ac-group">
                             <div class="ac-item">
 
@@ -783,8 +931,8 @@
                     </div>
             
                     <!-- Niveau 2 -->
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 2</h3>
+                    <div class="ac-level niveau2-content">
+                        <h3 class="level-title">Niveau 2 Optimiser une base de données, interagir avec une application et mettre en oeuvre la sécurité</h3>
                         <div class="ac-group">
 
                             <div class="ac-item">
@@ -909,7 +1057,7 @@
                 <div class="ac-levels">
                     <!-- Niveau 1 -->
                     <div class="ac-level">
-                        <h3 class="level-title">Niveau 1</h3>
+                        <h3 class="level-title">Niveau 1 Identifier les besoins métiers des clients et des utilisateurs</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Appréhender les besoins du client et de l'utilisateur</h3>
@@ -1000,7 +1148,7 @@
                     
                     <!-- Niveau 2 -->
                     <div class="ac-level">
-                        <h3 class="level-title">Niveau 2</h3>
+                        <h3 class="level-title">Niveau 2 Appliquer une démarche de suivi de projet en fonction des besoins métiers des clients et des utilisateurs</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Identifier les processus présents dans une organisation en vue d'améliorer les systèmes d'information</h3>
@@ -1113,7 +1261,7 @@
                 <div class="ac-levels">
                     <!-- Niveau 1 -->
                     <div class="ac-level">
-                        <h3 class="level-title">Niveau 1</h3>
+                        <h3 class="level-title">Niveau 1 Identifier ses aptitudes pour travailler dans une équipe</h3>
                         <div class="ac-group">
                             <div class="ac-item">
                                 <h3>AC1 - Appréhender l'écosystème numérique</h3>
@@ -1230,8 +1378,8 @@
                     </div>
             
                     <!-- Niveau 2 -->
-                    <div class="ac-level">
-                        <h3 class="level-title">Niveau 2</h3>
+                    <div class="ac-level niveau2-content">
+                        <h3 class="level-title">Niveau 2 Situer son rôle et ses missions au sein d’une équipe informatique</h3>
                         <div class="ac-group">
 
                             <div class="ac-item">
@@ -1353,6 +1501,32 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // JavaScript pour le filtrage des niveaux
+        document.addEventListener('DOMContentLoaded', function() {
+            const levelFilter = document.getElementById('levelFilter');
+            
+            levelFilter.addEventListener('change', function() {
+                const selectedLevel = this.value;
+                const niveau1Elements = document.querySelectorAll('.niveau1-content');
+                const niveau2Elements = document.querySelectorAll('.niveau2-content');
+                
+                // Masquer tous les éléments d'abord
+                niveau1Elements.forEach(el => el.style.display = 'none');
+                niveau2Elements.forEach(el => el.style.display = 'none');
+                
+                // Afficher les éléments selon la sélection
+                if (selectedLevel === 'all') {
+                    niveau1Elements.forEach(el => el.style.display = 'block');
+                    niveau2Elements.forEach(el => el.style.display = 'block');
+                } else if (selectedLevel === 'niveau1') {
+                    niveau1Elements.forEach(el => el.style.display = 'block');
+                } else if (selectedLevel === 'niveau2') {
+                    niveau2Elements.forEach(el => el.style.display = 'block');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

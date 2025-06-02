@@ -1,0 +1,351 @@
+/* Styles pour la roadmap des projets */
+
+.roadmap-page {
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.roadmap-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.roadmap-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+/* Filtres */
+.roadmap-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    color: var(--accent-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Légende */
+.roadmap-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.status-indicator.completed {
+    background: #4CAF50;
+}
+
+.status-indicator.in-progress {
+    background: #FF9800;
+    animation: pulse 2s infinite;
+}
+
+.status-indicator.planned {
+    background: #2196F3;
+}
+
+/* Timeline */
+.roadmap-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-container {
+    position: relative;
+}
+
+.timeline-year {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.timeline-year h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.timeline-year.current h2 {
+    color: #FF9800;
+}
+
+.timeline-year.future h2 {
+    color: #2196F3;
+}
+
+.year-line {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    width: 4px;
+    height: calc(100% - 60px);
+    background: linear-gradient(to bottom, var(--accent-color), transparent);
+    transform: translateX(-50%);
+}
+
+.current-year {
+    background: linear-gradient(to bottom, #FF9800, transparent) !important;
+}
+
+.future-year {
+    background: linear-gradient(to bottom, #2196F3, transparent) !important;
+}
+
+/* Milestones */
+.project-milestone {
+    position: relative;
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+}
+
+.project-milestone:nth-child(even) {
+    margin-left: 55%;
+}
+
+.project-milestone:nth-child(odd) {
+    margin-right: 55%;
+}
+
+.milestone-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px var(--accent-color);
+    z-index: 10;
+}
+
+.project-milestone:nth-child(even) .milestone-marker {
+    left: -60px;
+}
+
+.project-milestone:nth-child(odd) .milestone-marker {
+    right: -60px;
+}
+
+.milestone-marker.current {
+    background: #FF9800;
+    box-shadow: 0 0 0 4px #FF9800;
+    animation: pulse 2s infinite;
+}
+
+.milestone-marker.planned {
+    background: #2196F3;
+    box-shadow: 0 0 0 4px #2196F3;
+}
+
+.milestone-content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.milestone-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.in-progress .milestone-content {
+    border-left-color: #FF9800;
+}
+
+.planned .milestone-content {
+    border-left-color: #2196F3;
+}
+
+.milestone-date {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.milestone-content h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.project-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    background: var(--accent-light);
+    color: var(--accent-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.milestone-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.view-project {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.view-project:hover {
+    color: var(--accent-dark);
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-badge.completed {
+    background: #E8F5E8;
+    color: #4CAF50;
+}
+
+.status-badge.in-progress {
+    background: #FFF3E0;
+    color: #FF9800;
+}
+
+.status-badge.planned {
+    background: #E3F2FD;
+    color: #2196F3;
+}
+
+/* Statistiques */
+.roadmap-stats {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-milestone:nth-child(even),
+    .project-milestone:nth-child(odd) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 3rem;
+    }
+    
+    .milestone-marker {
+        left: 0 !important;
+        right: auto !important;
+    }
+    
+    .year-line {
+        left: 10px;
+    }
+    
+    .roadmap-filters {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
